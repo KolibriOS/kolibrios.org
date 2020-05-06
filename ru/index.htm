@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru" onmouseup="dropdown_hide()">
+<head>
+  <meta charset="utf-8" />
+  <title>KolibriOS - официальный сайт</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="description" content="KolibriOS - официальный сайт" />
+  <meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source" />
+  <link rel="stylesheet" type="text/css" href="/style.css" charset="utf-8" />
+  <script type='text/javascript' src='/script.js'></script>
+</head>
+<body onkeydown='checkkey(event)'>
+  <div id="menu">
+    <a href="/ru/index" class='a'>Колибри</a>
+    <a href="/ru/download" >Скачать</a>
+    <a href="/ru/screen" >Скриншоты</a>
+    <a href="http://board.kolibrios.org">Форум</a>
+    <a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=ru">Вики</a>
+    <a href="http://websvn.kolibrios.org">SVN</a>
+    <a href="http://bugs.kolibrios.org" class="notrequired">Баг-трекер</a>
+    <a onclick="dropdown_show(this)" id="l"><img src="/i/fl/ru.png" class="flag" alt="ru"></a>
+  </div>
+
+	<div id="lang-dropdown">
+		<ul>
+
+			<li><a href='/en/index'><img src='/i/fl/en.png' class='flag' alt='en'/>English</a></li>
+			<li><a href='/de/index'><img src='/i/fl/de.png' class='flag' alt='de'/>Deutsch</a></li>
+			<li><a href='/es/index'><img src='/i/fl/es.png' class='flag' alt='es'/>Español</a></li>
+			<li><a href='/fr/index'><img src='/i/fl/fr.png' class='flag' alt='fr'/>Français</a></li>
+			<li><a href='/it/index'><img src='/i/fl/it.png' class='flag' alt='it'/>Italiano</a></li>
+			<li><a href='/nl/index'><img src='/i/fl/nl.png' class='flag' alt='nl'/>Nederlands</a></li>
+			<li><a class='sel' href='/ru/index'><img src='/i/fl/ru.png' class='flag' alt='ru'/>Русский</a></li>      </ul>
+    </div>
+
+
+	<div id="article" class="index_russian">
+		<a href="http://vk.com/kolibri_os" target="_blank">
+			<img id="banner" class="big" src="/i/banners/ru.png" alt="Мы стали ещё ближе. Следите за новостями ВКонтакте!" />
+		</a>
+		<br />
+		<p><strong>Kolibri</strong> &mdash; очень миниатюрная и невероятно быстрая операционная система. Её основной дистрибутив умещается на дискету (1,44 Мб) - и это при том, что содержит набор драйверов, браузер, текстовый процессор, графический редактор, просмотрщик, более 30 игр и другие программы. Встроена полная поддержка файловых систем FAT12/16/32, для чтения доступны NTFS, ISO&nbsp;9660, Ext2/3/4.</p>
+		<p>Такая скорость и компактность достигается благодаря тому, что ядро и большинство программ написаны на ассемблере FASM, тем самым максимально оптимизированы под процессоры х86. Для запуска достаточно всего 8 мегабайт оперативной памяти. Мечтали вы когда-нибудь о том, чтобы приложения запускались мгновенно, сразу после нажатия на иконку? Без крутящихся часиков и кружков. Просто сразу. Попробуйте Kolibri и сравните её с такими тяжеловесами, как Windows и Linux.</p>
+		<p>Kolibri отделилась от <a href="http://menuetos.net" target="_blank">MenuetOS</a> в 2004 году, и с тех пор разрабатывается сообществом программистов преимущественно из стран бывшего СССР. Ведётся работа по облегчению жизни разработчиков и пользователей. Ваши отзывы очень полезны, хотя помощь, конечно же, еще полезнее.</p>
+		<br>
+		Надеемся, Вам понравится,<br>
+		команда Колибри.
+	</div>
+  <div id="footer">&copy; 2004<span>&ndash;</span>2015 команда Колибри</div></body>
+</html>

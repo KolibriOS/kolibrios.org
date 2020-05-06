@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr" onmouseup="dropdown_hide()">
+<head>
+  <meta charset="utf-8" />
+  <title>Kolibri - Téléchargements</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="description" content="Kolibri - Téléchargements" />
+  <meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source" />
+  <link rel="stylesheet" type="text/css" href="/style.css" charset="utf-8" />
+  <script type='text/javascript' src='/script.js'></script>
+</head>
+<body onkeydown='checkkey(event)'>
+  <div id="menu">
+    <a href="/fr/index" >Kolibri</a>
+    <a href="/fr/download" class='a'>Téléchargement</a>
+    <a href="/fr/screen" >Copies d'écran</a>
+    <a href="http://board.kolibrios.org">Forum</a>
+    <a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=fr">Wiki</a>
+    <a href="http://websvn.kolibrios.org">SVN</a>
+    <a href="http://bugs.kolibrios.org" class="notrequired">Suivi des bogues</a>
+    <a onclick="dropdown_show(this)" id="l"><img src="/i/fl/fr.png" class="flag" alt="fr"></a>
+  </div>
+
+	<div id="lang-dropdown">
+		<ul>
+
+			<li><a href='/en/download'><img src='/i/fl/en.png' class='flag' alt='en'/>English</a></li>
+			<li><a href='/de/download'><img src='/i/fl/de.png' class='flag' alt='de'/>Deutsch</a></li>
+			<li><a href='/es/download'><img src='/i/fl/es.png' class='flag' alt='es'/>Español</a></li>
+			<li><a class='sel' href='/fr/download'><img src='/i/fl/fr.png' class='flag' alt='fr'/>Français</a></li>
+			<li><a href='/it/download'><img src='/i/fl/it.png' class='flag' alt='it'/>Italiano</a></li>
+			<li><a href='/nl/download'><img src='/i/fl/nl.png' class='flag' alt='nl'/>Nederlands</a></li>
+			<li><a href='/ru/download'><img src='/i/fl/ru.png' class='flag' alt='ru'/>Русский</a></li>      </ul>
+    </div>
+
+	<div id="article" class="download">
+	<h3>Kolibri - Téléchargements</h3>
+		<table>
+			<tr>
+				<td><div class="icon_cell" style="background-position: 0 -32px;"></div></td>
+				<td class="description_cell">Image universelle pour mémoire flash et disque dur</td>
+				<td class="date_cell">$autobuild_date_en</td>
+				<td>
+					<a href="//builds.kolibrios.org/eng/latest-distr.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_distr">English</a>
+					<a href="//builds.kolibrios.org/rus/latest-distr.7z" title="rev. $autobuild_rev_rus, $autobuild_size_rus_distr">Русский</a>
+					<a href="//builds.kolibrios.org/it/latest-img.7z" title="rev. $autobuild_rev_it, $autobuild_size_it_img">Italiano</a>
+					<a href="//builds.kolibrios.org/sp/latest-img.7z" title="rev. $autobuild_rev_sp, $autobuild_size_sp_img">Español</a>
+				</td>
+			</tr>
+			<tr>
+				<td><div class="icon_cell" style="background-position: 0 -64px;"></div></td>
+				<td class="description_cell">Image CD autonome « Live »</td>
+				<td class="date_cell">$autobuild_date_en</td>
+				<td>
+					<a href="//builds.kolibrios.org/eng/latest-iso.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_iso">English</a>
+					<a href="//builds.kolibrios.org/rus/latest-iso.7z" title="rev. $autobuild_rev_rus, $autobuild_size_rus_iso">Русский</a>
+					<a href="//builds.kolibrios.org/it/latest-iso.7z" title="rev. $autobuild_rev_it, $autobuild_size_it_iso">Italiano</a>
+					<a href="//builds.kolibrios.org/sp/latest-iso.7z" title="rev. $autobuild_rev_sp, $autobuild_size_sp_iso">Español</a>
+				</td>
+			</tr>
+			<tr>
+			    <td><div class="icon_cell" style="background-position: 0 -192px;"></div></td>
+			    <td class="description_cell" colspan="3">
+			    	<a href="//archive.kolibrios.org/fr/" style="padding-bottom: 1px; border-bottom: 1px dashed #ccc;
+			    	margin-left:0;">Versions antérieures de Kolibri (0.0.0.1 &ndash; 0.7.7.0)</a>
+			    </td>
+			</tr>
+		</table>		
+
+		<p style="line-height:1.4; margin: 20px 0;">
+			Sur cette page, vous pouvez télécharger les distributions compilées chaque nuit - incluant donc les mises à jours les plus récentes du système, 
+	éventuellement instables. Tous les fichiers sont compressés avec <a href='http://www.7-zip.org' target='_blank'>7zip</a>.
+	KolibriOS est distribué sous licence <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPL v2</a> , son code source est disponible
+	sur notre serveur <a href='svn://kolibrios.org'>SVN</a>.		</p>
+
+	</div>
+  <div id="footer">&copy; 2004<span>&ndash;</span>2013 l'équipe KolibriOS</div></body>
+</html>

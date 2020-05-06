@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr" onmouseup="dropdown_hide()">
+<head>
+  <meta charset="utf-8" />
+  <title>KolibriOS - Site Officiel</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="description" content="KolibriOS - Site Officiel" />
+  <meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source" />
+  <link rel="stylesheet" type="text/css" href="/style.css" charset="utf-8" />
+  <script type='text/javascript' src='/script.js'></script>
+</head>
+<body onkeydown='checkkey(event)'>
+  <div id="menu">
+    <a href="/fr/index" class='a'>Kolibri</a>
+    <a href="/fr/download" >Téléchargement</a>
+    <a href="/fr/screen" >Copies d'écran</a>
+    <a href="http://board.kolibrios.org">Forum</a>
+    <a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=fr">Wiki</a>
+    <a href="http://websvn.kolibrios.org">SVN</a>
+    <a href="http://bugs.kolibrios.org" class="notrequired">Suivi des bogues</a>
+    <a onclick="dropdown_show(this)" id="l"><img src="/i/fl/fr.png" class="flag" alt="fr"></a>
+  </div>
+
+	<div id="lang-dropdown">
+		<ul>
+
+			<li><a href='/en/index'><img src='/i/fl/en.png' class='flag' alt='en'/>English</a></li>
+			<li><a href='/de/index'><img src='/i/fl/de.png' class='flag' alt='de'/>Deutsch</a></li>
+			<li><a href='/es/index'><img src='/i/fl/es.png' class='flag' alt='es'/>Español</a></li>
+			<li><a class='sel' href='/fr/index'><img src='/i/fl/fr.png' class='flag' alt='fr'/>Français</a></li>
+			<li><a href='/it/index'><img src='/i/fl/it.png' class='flag' alt='it'/>Italiano</a></li>
+			<li><a href='/nl/index'><img src='/i/fl/nl.png' class='flag' alt='nl'/>Nederlands</a></li>
+			<li><a href='/ru/index'><img src='/i/fl/ru.png' class='flag' alt='ru'/>Русский</a></li>      </ul>
+    </div>
+
+
+	<div id="article" style="padding-bottom: 30px;">
+		<a href="https://www.facebook.com/groups/kolibrios" target="_blank"><img id="banner" src="/i/banners/fr.png" alt="Suivez-nous sur Facebook!" /></a>
+		<p style="padding: 15px 0;">
+			<strong>KolibriOS</strong> est un système d'exploitation, tout petit mais incroyablement optimisé. Du fait 
+			de cette optimisation, il ne nécessite que quelques megaoctets d'espace disque et seulement 8Mo de mémoire 
+			vive. 
+			Le système démarre en moins de 10 secondes sur <a href="http://www.compactpc.com.tw" target="_blank">un PC 
+			à 100€</a>, de l'allumage à l'affichage de l'interface graphique. 
+                	Les applications se lancent instantanément, sans avoir à supporter de pointeur en forme de sablier.<br/>
+
+			<iframe style="margin:5px 0 5px 25px; float:right;" width="560" height="315" src="http://www.youtube.com/embed/XnlA4ijrTBo" frameborder="0" allowfullscreen></iframe>
+		</p>
+        
+        <p>Ces performances sont atteintes grâce à l'écriture du coeur de <b>KolibriOS</b> (noyau et pilotes) en 
+		langage assembleur <a href="http://www.flatassembler.net" target="_blank">FASM</a>.</p>
+		<br/>
+		<p><b>Kolibri</b> propose de nombreuses <a href="http://wiki.kolibrios.org/wiki/Applications">applications</a>, 
+		dont un traitement de textes, un afficheur d'images, un éditeur d'images, un navigateur Web... et plus de 
+		30 jeux. 
+		Les systèmes de fichiers FAT12/16/32 sont supportés en lecture/écriture&nbsp;; NTFS, ISO9660, Ext2/3/4 le 
+		sont en lecture seule. Enfin des <a href="http://wiki.kolibrios.org/wiki/Hardware_Support">pilotes</a> ont 
+		été écrits pour les cartes vidéo, son et réseau les plus courantes. </p>
+		<br/>
+		<p><b>KolibriOS</b> a été lancé en 2004 basé sur le code de <a href="http://menuetos.net" target="_blank">MenuetOS</a> ; depuis lors il est développé en toute indépendance. Tout le code est libre, publié en majorité sous licence 
+		<a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">GPL v2</a>. </p>
+		<br/>
+		<p>Essayez <strong>Kolibri</strong> et comparez le avec les poids lourds que sont Windows et Linux.<br/>
+		Vos <a href="http://board.kolibrios.org">réactions</a> seront très appréciées, et votre 
+		<a href="http://wiki.kolibrios.org/wiki/Kolibri_tomorrow">soutien</a> encore davantage.</p>
+	</div>  
+  <div id="footer">&copy; 2004<span>&ndash;</span>2013 l'équipe KolibriOS</div></body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru" onmouseup="dropdown_hide()">
+<head>
+  <meta charset="utf-8" />
+  <title>Страница закачек KolibriOS</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="description" content="Страница закачек KolibriOS" />
+  <meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source" />
+  <link rel="stylesheet" type="text/css" href="/style.css" charset="utf-8" />
+  <script type='text/javascript' src='/script.js'></script>
+</head>
+<body onkeydown='checkkey(event)'>
+  <div id="menu">
+    <a href="/ru/index" >Колибри</a>
+    <a href="/ru/download" class='a'>Скачать</a>
+    <a href="/ru/screen" >Скриншоты</a>
+    <a href="http://board.kolibrios.org">Форум</a>
+    <a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=ru">Вики</a>
+    <a href="http://websvn.kolibrios.org">SVN</a>
+    <a href="http://bugs.kolibrios.org" class="notrequired">Баг-трекер</a>
+    <a onclick="dropdown_show(this)" id="l"><img src="/i/fl/ru.png" class="flag" alt="ru"></a>
+  </div>
+
+	<div id="lang-dropdown">
+		<ul>
+
+			<li><a href='/en/download'><img src='/i/fl/en.png' class='flag' alt='en'/>English</a></li>
+			<li><a href='/de/download'><img src='/i/fl/de.png' class='flag' alt='de'/>Deutsch</a></li>
+			<li><a href='/es/download'><img src='/i/fl/es.png' class='flag' alt='es'/>Español</a></li>
+			<li><a href='/fr/download'><img src='/i/fl/fr.png' class='flag' alt='fr'/>Français</a></li>
+			<li><a href='/it/download'><img src='/i/fl/it.png' class='flag' alt='it'/>Italiano</a></li>
+			<li><a href='/nl/download'><img src='/i/fl/nl.png' class='flag' alt='nl'/>Nederlands</a></li>
+			<li><a class='sel' href='/ru/download'><img src='/i/fl/ru.png' class='flag' alt='ru'/>Русский</a></li>      </ul>
+    </div>
+
+	<div id="article" class="download">
+	<h3>Страница закачек KolibriOS</h3>
+		<table>
+			<tr>
+				<td><div class="icon_cell" style="background-position: 0 -32px;"></div></td>
+				<td class="description_cell">Универсальный образ Flash/HDD</td>
+				<td class="date_cell">$autobuild_date_ru</td>
+				<td>
+					<a href="//builds.kolibrios.org/eng/latest-distr.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_distr">English</a>
+					<a href="//builds.kolibrios.org/rus/latest-distr.7z" title="rev. $autobuild_rev_rus, $autobuild_size_rus_distr">Русский</a>
+					<a href="//builds.kolibrios.org/it/latest-img.7z" title="rev. $autobuild_rev_it, $autobuild_size_it_img">Italiano</a>
+					<a href="//builds.kolibrios.org/sp/latest-img.7z" title="rev. $autobuild_rev_sp, $autobuild_size_sp_img">Español</a>
+				</td>
+			</tr>
+			<tr>
+				<td><div class="icon_cell" style="background-position: 0 -64px;"></div></td>
+				<td class="description_cell">Загрузочный компакт-диск LiveCD</td>
+				<td class="date_cell">$autobuild_date_ru</td>
+				<td>
+					<a href="//builds.kolibrios.org/eng/latest-iso.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_iso">English</a>
+					<a href="//builds.kolibrios.org/rus/latest-iso.7z" title="rev. $autobuild_rev_rus, $autobuild_size_rus_iso">Русский</a>
+					<a href="//builds.kolibrios.org/it/latest-iso.7z" title="rev. $autobuild_rev_it, $autobuild_size_it_iso">Italiano</a>
+					<a href="//builds.kolibrios.org/sp/latest-iso.7z" title="rev. $autobuild_rev_sp, $autobuild_size_sp_iso">Español</a>
+				</td>
+			</tr>
+			<tr>
+			    <td><div class="icon_cell" style="background-position: 0 -192px;"></div></td>
+			    <td class="description_cell" colspan="3">
+			    	<a href="//archive.kolibrios.org/ru/" style="padding-bottom: 1px; border-bottom: 1px dashed #ccc;
+			    	margin-left:0;">Архив старых версий Kolibri 0.1.0.0 – 0.7.7.0</a>
+			    </td>
+			</tr>
+		</table>		
+
+		<p style="line-height:1.4; margin: 20px 0;">
+			На этой странице представлены ночные сборки дистрибутива &mdash; это означает, что они всегда 
+   содержат самые последние изменения в системе и потому могут быть нестабильны. Колибри распространяется
+   на условиях <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>, её исходники
+   доступны на нашем <a href='svn://kolibrios.org'>SVN</a> сервере. 
+   <br />
+   Успеха и процветания.		</p>
+
+	</div>
+  <div id="footer">&copy; 2004<span>&ndash;</span>2015 команда Колибри</div></body>
+</html>

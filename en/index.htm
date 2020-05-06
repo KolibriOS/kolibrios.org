@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" onmouseup="dropdown_hide()">
+<head>
+  <meta charset="utf-8" />
+  <title>KolibriOS official site</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="description" content="KolibriOS official site" />
+  <meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source" />
+  <link rel="stylesheet" type="text/css" href="/style.css" charset="utf-8" />
+  <script type='text/javascript' src='/script.js'></script>
+</head>
+<body onkeydown='checkkey(event)'>
+  <div id="menu">
+    <a href="/en/index" class='a'>Kolibri</a>
+    <a href="/en/download" >Download</a>
+    <a href="/en/screen" >Screenshots</a>
+    <a href="https://board.kolibrios.org">Forum</a>
+    <a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=en">Wiki</a>
+    <a href="http://websvn.kolibrios.org">SVN</a>
+    <a href="http://bugs.kolibrios.org" class="notrequired">Bug tracker</a>
+    <a onclick="dropdown_show(this)" id="l"><img src="/i/fl/en.png" class="flag" alt="en"></a>
+  </div>
+
+	<div id="lang-dropdown">
+		<ul>
+
+			<li><a class='sel' href='/en/index'><img src='/i/fl/en.png' class='flag' alt='en'/>English</a></li>
+			<li><a href='/de/index'><img src='/i/fl/de.png' class='flag' alt='de'/>Deutsch</a></li>
+			<li><a href='/es/index'><img src='/i/fl/es.png' class='flag' alt='es'/>Español</a></li>
+			<li><a href='/fr/index'><img src='/i/fl/fr.png' class='flag' alt='fr'/>Français</a></li>
+			<li><a href='/it/index'><img src='/i/fl/it.png' class='flag' alt='it'/>Italiano</a></li>
+			<li><a href='/nl/index'><img src='/i/fl/nl.png' class='flag' alt='nl'/>Nederlands</a></li>
+			<li><a href='/ru/index'><img src='/i/fl/ru.png' class='flag' alt='ru'/>Русский</a></li>      </ul>
+    </div>
+
+
+	<div id="article" style="padding-bottom: 30px;">
+		<a href="https://www.facebook.com/groups/kolibrios" target="_blank"><img id="banner" src="/i/banners/en.png" alt="We got closer. Follow us on Facebook!" /></a>
+		<br />
+
+		<p><strong>KolibriOS</strong> is a tiny yet incredibly powerful and fast operating system. This power requires only a few megabyte disk space and 8MB of RAM to run. <b>Kolibri</b> features a rich set of <a href="http://wiki.kolibrios.org/wiki/Applications">applications</a> that include word processor, image viewer, graphical editor, web browser and well over 30 exciting games. Full FAT12/16/32 support is implemented, as well as read-only support for NTFS, ISO9660 and Ext2/3/4. <a href="http://wiki.kolibrios.org/wiki/Hardware_Support">Drivers</a> are written for popular sound, network and graphics cards.</p>
+
+		<iframe style="margin:5px 0 5px 25px; float:right;" width="560" height="315" src="https://www.youtube.com/embed/XnlA4ijrTBo" frameborder="0" allowfullscreen></iframe>
+		<p style="padding: 15px 0;">Have you ever dreamed of a system that boots in less than 10 seconds from power-on to working GUI, on <a href="http://www.compactpc.com.tw" target="_blank">$100 PC</a>? Applications that start instantly, immediately after clicking an icon, without annoying hourglass pointers? This speed is achieved since the core parts of <b>KolibriOS</b> (kernel and drivers) are written entirely in <a href="http://www.flatassembler.net" target="_blank">FASM</a> assembly language! Try <strong>Kolibri</strong> and compare it with such heavyweights as Windows and Linux.</p>
+
+		<p><b>KolibriOS</b> has forked off from <a href="http://menuetos.net" target="_blank">MenuetOS</a> in 2004, and is run under independent development since then. All our code is open-source, with the majority of the code released under <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">GPLv2</a> license. Your <a href="http://board.kolibrios.org">feedback</a> is very much appreciated, and your <a href="http://wiki.kolibrios.org/wiki/Kolibri_tomorrow">help</a> is even more welcome.</p>
+
+	</div>  <div id="footer">&copy; 2004<span>&ndash;</span>2013 KolibriOS Team</div></body>
+</html>
