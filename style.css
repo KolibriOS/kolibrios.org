@@ -59,7 +59,7 @@ body {
 	color: #999;
 	font-weight: bold;
 	text-decoration: none !important;
-	margin: 2%;
+	margin: 1%;
 	font-size: 1rem;
 	cursor: pointer;
 	-webkit-transition: color 0.15s ease;
@@ -332,7 +332,7 @@ td {
 	cursor: pointer;
 }
 
-#panel_minislides > a > img {
+#panel_minislides > a:not(.nav) > img {
 	margin: 8px 9px;
 	padding: 1px;
 	width: 80px;
@@ -382,6 +382,9 @@ iframe {
 	}
 	html {
 		overflow-y: auto;
+	}
+	#menu > a {
+		margin: 2%;
 	}
 	#article {
 		margin-left: 3%;
