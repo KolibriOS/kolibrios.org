@@ -59,7 +59,8 @@ body {
 	color: #999;
 	font-weight: bold;
 	text-decoration: none !important;
-	margin: 12px;
+	margin: 2%;
+	font-size: 1rem;
 	cursor: pointer;
 	-webkit-transition: color 0.15s ease;
 	-moz-transition: color 0.15s ease;
@@ -365,6 +366,10 @@ td {
 	overflow: hidden;
 }
 
+iframe {
+	max-width: 100%;
+}
+
 
 
 
@@ -417,9 +422,6 @@ td {
 		padding: 5px 10px;
 		width: auto;
 	}
-	#menu a {
-		margin: 6px;
-	}
 	#show {
 		border: none;
 		display: inline;
@@ -437,7 +439,7 @@ td {
 
 @media (max-width:864px) {
 	#menu {
-		font-size: 1.6em;
+		font-size: 1rem;
 		line-height: 1.6;
 	}
 	#lang-dropdown > ul > li a {
