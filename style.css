@@ -273,19 +273,18 @@ td {
 }
 
 #show {
-	max-width:800px;
-	max-height:600px;
-	width: 100%;
-	height: 100%;
-	cursor:pointer;
-	border: 4px solid #aaa;
-	display: block;
-
-	position: relative;
-	top: 50%;
-	left: 50%;
-	margin-left: -400px;
-	margin-top: -340px;
+	max-width: 1152px;
+    max-height: 864px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border: 4px solid #aaa;
+    display: block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-left: -576px;
+    margin-top: -432px;
 	}
 
 #show img {
