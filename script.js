@@ -14,14 +14,8 @@ function checkkey(e)
 }
 
 window.onload = function() {
-	/*
-	if (document.documentElement.clientWidth<800)
-	{
-		document.getElementById("show").style.top = (document.documentElement.clientHeight - document.getElementById("show").offsetHeight) /2 + "px";
-	}
-	*/
 	if (document.getElementById("show"))
-	if (document.getElementById("screen").offsetHeight <  800) setTimeout( 'previews();', 1000);
+	if (document.getElementById("screen").offsetHeight <  1200) setTimeout( 'toggle_previews();', 1000);
 }
 
 function next() {
@@ -30,7 +24,7 @@ function next() {
 	if (current >= LAST_IMG_ID) current = FIRST_IMG_ID; else current++;
 	document.getElementById("slide"+current).className = "visible";
 	document.getElementById("mslide"+current).className = "minislide active";
-	document.getElementById("slide_description").innerHTML = document.getElementById("slide"+current).alt;
+	document.getElementById("spoiler").innerHTML = document.getElementById("slide"+current).alt;
 }
 function previous() {
 	document.getElementById("mslide"+current).className = "minislide";
@@ -38,28 +32,26 @@ function previous() {
 	if (current <= FIRST_IMG_ID) current = LAST_IMG_ID; else current--;
 	document.getElementById("slide"+current).className = "visible";
 	document.getElementById("mslide"+current).className = "minislide active";
-	document.getElementById("slide_description").innerHTML = document.getElementById("slide"+current).alt;
+	document.getElementById("spoiler").innerHTML = document.getElementById("slide"+current).alt;
 }
 function mini(new_current) {
 	document.getElementById("mslide"+current).className = "minislide";
 	document.getElementById("slide"+current).className = "minislide";
 	document.getElementById("slide"+new_current).className = "visible";
 	document.getElementById("mslide"+new_current).className = "minislide active";
-	document.getElementById("slide_description").innerHTML = document.getElementById("slide"+new_current).alt;
+	document.getElementById("spoiler").innerHTML = document.getElementById("slide"+new_current).alt;
 	current = new_current;
 }
 
-function previews() {
+function toggle_previews() {
 	if (previews_visible==true)
 	{
 		previews_visible=false;
-		document.getElementById("text_preview").innerHTML = "show previews";
 		hide_previews(0);
 	}
 	else
 	{
 		previews_visible = true;
-		document.getElementById("text_preview").innerHTML = "hide previews";
 		document.getElementById("panel_minislides").style.height = "auto";
 		document.getElementById("spoiler").style.borderBottom = "1px #555 solid";
 	}

@@ -1,38 +1,39 @@
 <!doctype html>
 <html lang="nl" onmouseup="dropdown_hide()">
 <head>
-  <meta charset="utf-8" />
-  <title>KolibriOS officiële site</title>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <meta name="description" content="KolibriOS officiële site" />
-  <meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source" />
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" type="text/css" href="/style.css" charset="utf-8" />
-  <script type='text/javascript' src='/script.js'></script>
+	<meta charset="utf-8">
+	<title>KolibriOS officiële site</title>
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+	<meta name="description" content="KolibriOS officiële site">
+	<meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="/style.css">
+	<script type='text/javascript' src='/script.js'></script>
 </head>
 <body onkeydown='checkkey(event)'>
-  <div id="menu">
-    <a href="/nl/index" class='a'>Kolibri</a>
-    <a href="/nl/download" >Download</a>
-    <a href="/nl/screen" >Schermopnames</a>
-    <a href="http://board.kolibrios.org">Forum</a>
-    <a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=nl">Wiki</a>
-    <a href="http://websvn.kolibrios.org">Broncode en extra programma's</a>
-    <a href="http://bugs.kolibrios.org" class="notrequired">Bug Tracker</a>
-    <a onclick="dropdown_show(this)" id="l"><img src="/i/fl/nl.png" class="flag" alt="nl"></a>
-  </div>
+	<div id="menu">
+		<a href="/nl/index" class='a'>Kolibri</a>
+		<a href="/nl/download">Download</a>
+		<a href="/nl/screen">Schermopnames</a>
+		<a href="http://board.kolibrios.org">Forum</a>
+		<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=nl">Wiki</a>
+		<a href="http://websvn.kolibrios.org">Broncode en extra programma's</a>
+		<a href="http://bugs.kolibrios.org" class="notrequired">Bug Tracker</a>
+		<button onclick="dropdown_show(this)" id="l"><img src="/i/fl/nl.png" alt="nl"></button>
+	</div>
 
 	<div id="lang-dropdown">
 		<ul>
+			<li><a href='/en/index'><img src='/i/fl/en.png' alt='en'/>English</a></li>
+			<li><a href='/de/index'><img src='/i/fl/de.png' alt='de'/>Deutsch</a></li>
+			<li><a href='/es/index'><img src='/i/fl/es.png' alt='es'/>Español</a></li>
+			<li><a href='/fr/index'><img src='/i/fl/fr.png' alt='fr'/>Français</a></li>
+			<li><a href='/it/index'><img src='/i/fl/it.png' alt='it'/>Italiano</a></li>
+			<li><a class='sel' href='/nl/index'><img src='/i/fl/nl.png' alt='nl'/>Nederlands</a></li>
+			<li><a href='/ru/index'><img src='/i/fl/ru.png' alt='ru'/>Русский</a></li>
+		</ul>
+	</div>
 
-			<li><a href='/en/index'><img src='/i/fl/en.png' class='flag' alt='en'/>English</a></li>
-			<li><a href='/de/index'><img src='/i/fl/de.png' class='flag' alt='de'/>Deutsch</a></li>
-			<li><a href='/es/index'><img src='/i/fl/es.png' class='flag' alt='es'/>Español</a></li>
-			<li><a href='/fr/index'><img src='/i/fl/fr.png' class='flag' alt='fr'/>Français</a></li>
-			<li><a href='/it/index'><img src='/i/fl/it.png' class='flag' alt='it'/>Italiano</a></li>
-			<li><a class='sel' href='/nl/index'><img src='/i/fl/nl.png' class='flag' alt='nl'/>Nederlands</a></li>
-			<li><a href='/ru/index'><img src='/i/fl/ru.png' class='flag' alt='ru'/>Русский</a></li>      </ul>
-    </div>
 
 	<div id="article" style="padding-bottom: 30px;">
 		<a href="https://www.facebook.com/groups/kolibrios" target="_blank"><img id="banner" src="/i/banners/en.png" alt="We got closer. Follow us on Facebook!" /></a>
@@ -44,6 +45,7 @@
 
 		<p style="padding: 15px 0;">Heb je ooit gedroomd van een besturingssysteem dat er slechts tien seconden over doet om te laden vanaf het moment dat je de computer aanzet naar een werkende omgeving, op een computer die slechts 90 euro kost? Applicaties die meteen opstarten als je op hun icoontjes klikt, zonder die irritante zandloper-cursors? Deze snelheid komt doordat de kernel en de drivers van KolibriOS geheel geschreven zijn in <a href="http://www.flatassembler.net" target="_blank">FASM</a> Assembler programmeertaal. Probeer <strong>KolibriOS</strong> en vergelijk het met zwaargewichten als Windows en Linux.</p>
 
-		<p><b>KolibriOS</b> is afgesplitst van <a href="http://menuetos.net" target="_blank">MenuetOS</a> in 2004 en is sindsdien onder actieve ontwikkeling. Al onze code is vrij (open-source), de meeste code staat onder de <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">GPLv2</a> licensie. Je <a href="http://board.kolibrios.org">feedback</a> wordt heel erg gewaardeerd en je <a href="http://wiki.kolibrios.org/wiki/Kolibri_tomorrow">hulp</a> is zelfs nog meer welkom.</p>
-	</div>  <div id="footer">&copy; 2004<span>&ndash;</span>2020 KolibriOS Team</div></body>
+		<p><b>KolibriOS</b> is afgesplitst van MenuetOS in 2004 en is sindsdien onder actieve ontwikkeling. Al onze code is vrij (open-source), de meeste code staat onder de <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">GPLv2</a> licensie. Je <a href="http://board.kolibrios.org">feedback</a> wordt heel erg gewaardeerd en je <a href="http://wiki.kolibrios.org/wiki/Kolibri_tomorrow">hulp</a> is zelfs nog meer welkom.</p>
+	
+	</div><div id="footer">&copy; 2004<span>&ndash;</span>2020 KolibriOS Team</div></body>
 </html>

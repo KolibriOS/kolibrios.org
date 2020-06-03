@@ -1,38 +1,38 @@
 <!doctype html>
 <html lang="it" onmouseup="dropdown_hide()">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <title>Kolibri Downloads</title>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <meta name="description" content="Kolibri Downloads" />
-  <meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta name="description" content="Kolibri Downloads">
+  <meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" type="text/css" href="/style.css" charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="/style.css">
   <script type='text/javascript' src='/script.js'></script>
 </head>
 <body onkeydown='checkkey(event)'>
-  <div id="menu">
-    <a href="/it/index" >Kolibri</a>
-    <a href="/it/download" class='a'>Download</a>
-    <a href="/it/screen" >Screenshot</a>
-    <a href="http://board.kolibrios.org">Forum</a>
-    <a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=it">Wiki</a>
-    <a href="http://websvn.kolibrios.org">Repository SVN</a>
-    <a href="http://bugs.kolibrios.org" class="notrequired">Bug tracker</a>
-    <a onclick="dropdown_show(this)" id="l"><img src="/i/fl/it.png" class="flag" alt="it"></a>
-  </div>
+	<div id="menu">
+		<a href="/it/index" >Kolibri</a>
+		<a href="/it/download" class='a'>Download</a>
+		<a href="/it/screen" >Screenshot</a>
+		<a href="http://board.kolibrios.org">Forum</a>
+		<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=it">Wiki</a>
+		<a href="http://websvn.kolibrios.org">Repository SVN</a>
+		<a href="http://bugs.kolibrios.org" class="notrequired">Bug tracker</a>
+		<button onclick="dropdown_show(this)" id="l"><img src="/i/fl/it.png" alt="it"></button>
+	</div>
 
 	<div id="lang-dropdown">
 		<ul>
-
-			<li><a href='/en/download'><img src='/i/fl/en.png' class='flag' alt='en'/>English</a></li>
-			<li><a href='/de/download'><img src='/i/fl/de.png' class='flag' alt='de'/>Deutsch</a></li>
-			<li><a href='/es/download'><img src='/i/fl/es.png' class='flag' alt='es'/>Español</a></li>
-			<li><a href='/fr/download'><img src='/i/fl/fr.png' class='flag' alt='fr'/>Français</a></li>
-			<li><a class='sel' href='/it/download'><img src='/i/fl/it.png' class='flag' alt='it'/>Italiano</a></li>
-			<li><a href='/nl/download'><img src='/i/fl/nl.png' class='flag' alt='nl'/>Nederlands</a></li>
-			<li><a href='/ru/download'><img src='/i/fl/ru.png' class='flag' alt='ru'/>Русский</a></li>      </ul>
-    </div>
+			<li><a href='/en/download'><img src='/i/fl/en.png' alt='en'/>English</a></li>
+			<li><a href='/de/download'><img src='/i/fl/de.png' alt='de'/>Deutsch</a></li>
+			<li><a href='/es/download'><img src='/i/fl/es.png' alt='es'/>Español</a></li>
+			<li><a href='/fr/download'><img src='/i/fl/fr.png' alt='fr'/>Français</a></li>
+			<li><a class='sel' href='/it/download'><img src='/i/fl/it.png' alt='it'/>Italiano</a></li>
+			<li><a href='/nl/download'><img src='/i/fl/nl.png' alt='nl'/>Nederlands</a></li>
+			<li><a href='/ru/download'><img src='/i/fl/ru.png' alt='ru'/>Русский</a></li>
+		</ul>
+	</div>
 
 	<div id="article" class="download">
 	<h3>Kolibri Downloads</h3>

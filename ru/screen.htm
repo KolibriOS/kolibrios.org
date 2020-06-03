@@ -1,73 +1,65 @@
 <!doctype html>
 <html lang="ru" onmouseup="dropdown_hide()">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <title>Галерея скриншотов Kolibri</title>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-  <meta name="description" content="Галерея скриншотов Kolibri" />
-  <meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta name="description" content="Галерея скриншотов Kolibri">
+  <meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" type="text/css" href="/style.css" charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="/style.css" charset="utf-8">
   <script type='text/javascript' src='/script.js'></script>
 </head>
 <body onkeydown='checkkey(event)'>
   <div id="menu">
-    <a href="/ru/index" >Колибри</a>
-    <a href="/ru/download" >Скачать</a>
+    <a href="/ru/index">Колибри</a>
+    <a href="/ru/download">Скачать</a>
     <a href="/ru/screen" class='a'>Скриншоты</a>
     <a href="http://board.kolibrios.org">Форум</a>
     <a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=ru">Вики</a>
     <a href="http://websvn.kolibrios.org">SVN</a>
     <a href="http://bugs.kolibrios.org" class="notrequired">Баг-трекер</a>
-    <a onclick="dropdown_show(this)" id="l"><img src="/i/fl/ru.png" class="flag" alt="ru"></a>
+    <button onclick="dropdown_show(this)" id="l"><img src="/i/fl/ru.png" alt="ru"></button>
   </div>
 
 	<div id="lang-dropdown">
 		<ul>
-
-			<li><a href='/en/screen'><img src='/i/fl/en.png' class='flag' alt='en'/>English</a></li>
-			<li><a href='/de/screen'><img src='/i/fl/de.png' class='flag' alt='de'/>Deutsch</a></li>
-			<li><a href='/es/screen'><img src='/i/fl/es.png' class='flag' alt='es'/>Español</a></li>
-			<li><a href='/fr/screen'><img src='/i/fl/fr.png' class='flag' alt='fr'/>Français</a></li>
-			<li><a href='/it/screen'><img src='/i/fl/it.png' class='flag' alt='it'/>Italiano</a></li>
-			<li><a href='/nl/screen'><img src='/i/fl/nl.png' class='flag' alt='nl'/>Nederlands</a></li>
-			<li><a class='sel' href='/ru/screen'><img src='/i/fl/ru.png' class='flag' alt='ru'/>Русский</a></li>      </ul>
+			<li><a href='/en/screen'><img src='/i/fl/en.png' alt='en'/>English</a></li>
+			<li><a href='/de/screen'><img src='/i/fl/de.png' alt='de'/>Deutsch</a></li>
+			<li><a href='/es/screen'><img src='/i/fl/es.png' alt='es'/>Español</a></li>
+			<li><a href='/fr/screen'><img src='/i/fl/fr.png' alt='fr'/>Français</a></li>
+			<li><a href='/it/screen'><img src='/i/fl/it.png' alt='it'/>Italiano</a></li>
+			<li><a href='/nl/screen'><img src='/i/fl/nl.png' alt='nl'/>Nederlands</a></li>
+			<li><a class='sel' href='/ru/screen'><img src='/i/fl/ru.png' alt='ru'/>Русский</a></li>
+		</ul>
     </div>
 
 
 <div id="carousel">
-	<div id="spoiler" onclick="previews()" >
-		<div id="show_previews">
-			<img src="/i/items.png" width="16" height="16" alt="hide minislides" />
-			<span id="text_preview">hide previews</span>
-		</div>
-		<span id="slide_description">Kolibri empty desktop</span>
-	</div>
+	<div id="spoiler" onclick="toggle_previews()">Kolibri empty desktop</div>
 	<div id="panel_minislides">
-		<a href="javascript:previous()" class="nav"><img src="/i/scroll-left.gif" width="13" height="25" alt="previous" /></a>
-		<a href="javascript:mini(1)"><img id="mslide1" src="/i/slaid/minislaid1.png" class="minislide active" alt="kolibri empty desktop" /></a>
-		<a href="javascript:mini(2)"><img id="mslide2" src="/i/slaid/minislaid2.png" class="minislide" alt="desktop with menu" /></a>
-		<a href="javascript:mini(3)"><img id="mslide3" src="/i/slaid/minislaid3.png" class="minislide" alt="file managers" /></a>
-		<a href="javascript:mini(4)"><img id="mslide4" src="/i/slaid/minislaid4.png" class="minislide" alt="IRC, Text-Based Browser"/></a>
-		<a href="javascript:mini(5)"><img id="mslide5" src="/i/slaid/minislaid5.png" class="minislide" alt="some games" /></a>
-		<a href="javascript:mini(6)"><img id="mslide6" src="/i/slaid/minislaid6.png" class="minislide" alt="debug tools" /></a>
-		<a href="javascript:next()" class="nav"><img src="/i/scroll-right.gif" width="13" height="25" alt="next" /></a>
+		<button onclick="previous()"></button>
+		<button onclick="mini(1)" id="mslide1" class="active"></button>
+		<button onclick="mini(2)" id="mslide2"></button>
+		<button onclick="mini(3)" id="mslide3"></button>
+		<button onclick="mini(4)" id="mslide4"></button>
+		<button onclick="mini(5)" id="mslide5"></button>
+		<button onclick="mini(6)" id="mslide6"></button>
+		<button onclick="next()"></button>
 	</div>
 </div>
 
 
 <div id="screen">
-	<a id="show" href="javascript:next()">
-		<img id='slide1' class='visible'   src='/i/slaid/slaid1.png' alt="Чистый стол Kolibri" />
-		<img id='slide2' class='invisable' src='/i/slaid/slaid2.png' alt="Демки" />
-		<img id='slide3' class='invisable' src='/i/slaid/slaid3.png' alt="Файловые менеджеры" />
-		<img id='slide4' class='invisable' src='/i/slaid/slaid4.png' alt="Сетевые приложения" />
-		<img id='slide5' class='invisable' src='/i/slaid/slaid5.png' alt="Игры" />
-		<img id='slide6' class='invisable' src='/i/slaid/slaid6.png' alt="Средства разработчика" />
-	</a>
+	<div id="show" onclick="next()">
+		<img id='slide1' src='/i/slaid/slaid1.png' alt="Чистый стол Kolibri" class='visible'>
+		<img id='slide2' src='/i/slaid/slaid2.png' alt="Демки">
+		<img id='slide3' src='/i/slaid/slaid3.png' alt="Файловые менеджеры">
+		<img id='slide4' src='/i/slaid/slaid4.png' alt="Сетевые приложения">
+		<img id='slide5' src='/i/slaid/slaid5.png' alt="Игры">
+		<img id='slide6' src='/i/slaid/slaid6.png' alt="Средства разработчика">
+	</div>
 </div>
 
-<br />
-<br />
-  </body>
+</body>
 </html>
