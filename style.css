@@ -94,8 +94,8 @@ strong {
 
 h3 {
 	color: #000;
-	font-weight: bold;
 	padding: 10px 25px;
+	font-size: 130%;
 	}
 
 #footer {
@@ -321,20 +321,18 @@ iframe {
 
 /*   Adaptive coding   */
 
-@media (max-width:1060px) {
+@media (max-width:864px) {
 	#article, #footer, #screen, #show, #menu {
 		position: static;
 	}
 	html {
 		overflow-y: auto;
 	}
-	#menu > a {
-		margin: 2%;
-	}
 	#article {
 		margin-top: 0;
 		line-height: 1.45em;
 		padding: 1% 4%;
+		border-radius: 0;
 	}
 	#article.releases {
 		font-size: 75%;
@@ -357,6 +355,13 @@ iframe {
 		padding: 5px 10px;
 		width: auto;
 	}
+	#menu > a {
+		margin: 2%;
+	}
+	#menu a.notrequired {
+		display: none !important;
+		visibility: collapse;
+	}
 	#show {
 		display: inline;
 		margin: 0;
@@ -370,12 +375,5 @@ iframe {
 		display: block;
 		margin: 5px;
 		padding-bottom: 0;
-	}
-}
-
-@media (max-width:864px) {
-	#menu a.notrequired {
-		display: none !important;
-		visibility: collapse;
 	}
 }
