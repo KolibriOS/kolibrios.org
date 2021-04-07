@@ -2,7 +2,7 @@
 <html lang="ru" onmouseup="dropdown_hide()">
 <head>
 	<meta charset="utf-8" />
-	<title>Страница закачек KolibriOS</title>
+	<title>Скачать дистрибутив KolibriOS</title>
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	<meta name="description" content="Страница закачек KolibriOS" />
 	<meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source" />
@@ -36,7 +36,7 @@
 	</div>
 
 	<div id="article" class="download">
-	<h3>Страница закачек KolibriOS</h3>
+	<h3>Скачать дистрибутив KolibriOS</h3>
 		<table>
 			<tr>
 				<td><div class="icon_cell" style="background-position: 0 -32px;"></div></td>
@@ -78,5 +78,5 @@
    Успеха и процветания.		</p>
 
 	</div>
-	<div id="footer">&copy; 2004<span>&ndash;</span>2020 команда Колибри</div></body>
+	<div id="footer">&copy; 2004<span>&ndash;</span>2021 команда Колибри</div></body>
 </html>
