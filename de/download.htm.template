@@ -38,20 +38,9 @@
 	<h1>Kolibri Dateien</h1>
 		<table>
 			<tr>
-				<td><div class="icon_cell" style="background-position: 0 -32px;"></div></td>
-				<td class="description_cell">Universal Abbild Flash/HDD</td>
-				<td class="date_cell">$autobuild_date_en</td>
-				<td>
-					<a href="//builds.kolibrios.org/eng/latest-distr.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_distr">English</a>
-					<a href="//builds.kolibrios.org/rus/latest-distr.7z" title="rev. $autobuild_rev_rus, $autobuild_size_rus_distr">Русский</a>
-					<a href="//builds.kolibrios.org/it/latest-img.7z" title="rev. $autobuild_rev_it, $autobuild_size_it_img">Italiano</a>
-					<a href="//builds.kolibrios.org/sp/latest-img.7z" title="rev. $autobuild_rev_sp, $autobuild_size_sp_img">Español</a>
-				</td>
-			</tr>
-			<tr>
-				<td><div class="icon_cell" style="background-position: 0 -64px;"></div></td>
+				<td><div style="background-position: 0 -64px;"></div></td>
 				<td class="description_cell">LiveCD Abbild</td>
-				<td class="date_cell">$autobuild_date_en</td>
+				<td class="date_cell">$autobuild_date_ru</td>
 				<td>
 					<a href="//builds.kolibrios.org/eng/latest-iso.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_iso">English</a>
 					<a href="//builds.kolibrios.org/rus/latest-iso.7z" title="rev. $autobuild_rev_rus, $autobuild_size_rus_iso">Русский</a>
@@ -60,13 +49,36 @@
 				</td>
 			</tr>
 			<tr>
-			    <td><div class="icon_cell" style="background-position: 0 -192px;"></div></td>
-			    <td class="description_cell" colspan="3">
-			    	<a href="//archive.kolibrios.org/de/" style="padding-bottom: 1px; border-bottom: 1px dashed #ccc;
-			    	margin-left:0;">Kolibri vorausgegangene Veröffentlichungen</a>
-			    </td>
+				<td><div style="background-position: 0 -32px;"></div></td>
+				<td class="description_cell">Universal Abbild Flash/HDD</td>
+				<td class="date_cell">$autobuild_date_ru</td>
+				<td>
+					<a href="//builds.kolibrios.org/eng/latest-distr.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_distr">English</a>
+					<a href="//builds.kolibrios.org/rus/latest-distr.7z" title="rev. $autobuild_rev_rus, $autobuild_size_rus_distr">Русский</a>
+					<a href="//builds.kolibrios.org/it/latest-distr.7z" title="rev. $autobuild_rev_it, $autobuild_size_it_distr">Italiano</a>
+					<a href="//builds.kolibrios.org/sp/latest-distr.7z" title="rev. $autobuild_rev_sp, $autobuild_size_sp_distr">Español</a>
+				</td>
 			</tr>
-		</table>		
+			<tr>
+			<tr>
+				<td><div style="background-position: 0 -159px;"></div></td>
+				<td class="description_cell"><span class="beta">Hybrid UEFI/BIOS-Image für Flash/HDD</span></td>
+				<td class="date_cell">$autobuild_date_ru</td>
+				<td>
+					<a href="//builds.kolibrios.org/eng/latest-raw.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_raw">English</a>
+					<a href="//builds.kolibrios.org/rus/latest-raw.7z" title="rev. $autobuild_rev_rus, $autobuild_size_rus_raw">Русский</a>
+					<a href="//builds.kolibrios.org/it/latest-raw.7z" title="rev. $autobuild_rev_it, $autobuild_size_it_raw">Italiano</a>
+					<a href="//builds.kolibrios.org/sp/latest-raw.7z" title="rev. $autobuild_rev_sp, $autobuild_size_sp_raw">Español</a>
+				</td>
+			</tr>
+			<tr>
+				<td><div></div></td>
+				<td colspan="3">
+					<button class="help-button" onclick="alert('For a beginner, the LiveCD is best.\n\nCompared to a LiveCD, the advantage of a universal image is that you can save changes made in Kolibri.\n\nHybrid image includes support for UEFI technology, which is used to boot the system on new computers and laptops. Beta version.');">Welches soll man wählen?</button>
+					<a href="//archive.kolibrios.org/de/">Kolibri vorausgegangene Veröffentlichungen</a>
+				</td>
+			</tr>
+		</table>	
 
 		<p style="line-height:1.4; margin: 20px 0;">
 			Auf dieser Seite können Sie sich die Nightly Builds herunterladen, diese Versionen enthalten die neuesten Softwareänderungen und können daher
