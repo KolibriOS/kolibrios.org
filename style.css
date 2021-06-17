@@ -386,5 +386,7 @@ iframe {
 }
 
 acronym {
-	border-bottom: 1px dashed lightgray;
+	border-bottom: 1px dashed #ccc;
+	text-decoration: none;
+    cursor: help;
 }
