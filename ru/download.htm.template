@@ -51,7 +51,7 @@
 			</tr>
 			<tr>
 				<td><div style="background-position: 0 -32px;"></div></td>
-				<td class="description_cell">Универсальный образ Flash/HDD</td>
+				<td class="description_cell">Универсальный образ Flash/<acronym title="Загрузка несколько операционных систем на одном компьютере">Multi-boot</acronym></td>
 				<td class="date_cell">$autobuild_date_ru</td>
 				<td>
 					<a href="//builds.kolibrios.org/eng/latest-distr.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_distr">English</a>

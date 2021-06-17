@@ -385,3 +385,6 @@ iframe {
     background: #ff9800;
 }
 
+acronym {
+	border-bottom: 1px dashed lightgray;
+}
