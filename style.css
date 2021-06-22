@@ -225,9 +225,9 @@ td {
 #carousel {
 	position: fixed;
 	bottom:0;
-	width: 500px;
+	width: 420px;
 	padding: 0 7px;
-	left: calc(50% - 250px);
+	left: calc(50% - 210px);
 	border-radius: 5px 5px 0 0;
 	text-align: center;
 	background: #333;
@@ -280,6 +280,14 @@ iframe {
 	#menu a.notrequired {
 		display: none !important;
 		visibility: collapse;
+	}
+	#show {
+		display: inline;
+		margin: 0;
+		display: block;
+		border: none;
+		overflow: visible;
+		margin-top: 40px;
 	}
 	.download table a {
 		float: left;
