@@ -225,66 +225,21 @@ td {
 #carousel {
 	position: fixed;
 	bottom:0;
-	left: 0;
-	width: 100%;
+	width: 500px;
+	padding: 0 7px;
+	left: calc(50% - 250px);
+	border-radius: 5px 5px 0 0;
 	text-align: center;
 	background: #333;
 	z-index:9000;
-}
-
-#carousel * {
 	vertical-align: middle;
-}
-
-
-#panel_minislides button {
-	margin: 8px 8px;
-	outline: none;
-	width: 84px;
-	height: 64px;
-	background-repeat: no-repeat;
-	background-position: center;
-	border: 2px #444 solid;
-}
-
-#panel_minislides button:first-child { background-image: url(/i/scroll-left.gif);border:none;width:20px;}
-#panel_minislides button:last-child { background-image: url(/i/scroll-right.gif);border:none;width:20px;}
-
-#panel_minislides button:nth-child(2) {background-image: url(/i/slaid/minislaid1.png);}
-#panel_minislides button:nth-child(3) {background-image: url(/i/slaid/minislaid2.png);}
-#panel_minislides button:nth-child(4) {background-image: url(/i/slaid/minislaid3.png);}
-#panel_minislides button:nth-child(5) {background-image: url(/i/slaid/minislaid4.png);}
-#panel_minislides button:nth-child(6) {background-image: url(/i/slaid/minislaid5.png);}
-#panel_minislides button:nth-child(7) {background-image: url(/i/slaid/minislaid6.png);}
-
-#panel_minislides .active {
-	border-color: #fff !important;
-}
-
-#spoiler {
-	width:100%;
-	border-bottom:1px #555 solid;
-	cursor: pointer;
-	background: 7px 7px no-repeat url("/i/items.png");
 	color:#fff;
 	text-shadow: 1px 1px 0 #111;
 }
 
-#show_previews {
-	position: absolute;
-	left: 7px;
-	top: 7px;
-	color:#888;
-	text-decoration:none;
-}
-
-
-
 iframe {
 	max-width: 100%;
 }
-
-
 
 
 /*   Adaptive coding   */
@@ -325,14 +280,6 @@ iframe {
 	#menu a.notrequired {
 		display: none !important;
 		visibility: collapse;
-	}
-	#show {
-		display: inline;
-		margin: 0;
-		display: block;
-		border: none;
-		overflow: visible;
-		margin-top: 40px;
 	}
 	.download table a {
 		float: left;

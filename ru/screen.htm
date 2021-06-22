@@ -7,8 +7,8 @@
   <meta name="description" content="Галерея скриншотов Kolibri">
   <meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" type="text/css" href="/style.css" charset="utf-8">
-  <script type='text/javascript' src='/script.js'></script>
+  <link rel="stylesheet" type="text/css" href="../style.css" charset="utf-8">
+  <script type='text/javascript' src='../script.js'></script>
 </head>
 <body onkeydown='checkkey(event)'>
   <div id="menu">
@@ -35,29 +35,16 @@
     </div>
 
 
-<div id="carousel">
-	<div id="spoiler" onclick="toggle_previews()">Kolibri empty desktop</div>
-	<div id="panel_minislides">
-		<button onclick="previous()"></button>
-		<button onclick="mini(1)" id="mslide1" class="active"></button>
-		<button onclick="mini(2)" id="mslide2"></button>
-		<button onclick="mini(3)" id="mslide3"></button>
-		<button onclick="mini(4)" id="mslide4"></button>
-		<button onclick="mini(5)" id="mslide5"></button>
-		<button onclick="mini(6)" id="mslide6"></button>
-		<button onclick="next()"></button>
-	</div>
-</div>
+<div id="carousel"></div>
 
-
-<div id="screen">
-	<div id="show" onclick="next()">
-		<img id='slide1' src='/i/slaid/slaid1.png' alt="Чистый стол Kolibri" class='visible'>
-		<img id='slide2' src='/i/slaid/slaid2.png' alt="Демки">
-		<img id='slide3' src='/i/slaid/slaid3.png' alt="Файловые менеджеры">
-		<img id='slide4' src='/i/slaid/slaid4.png' alt="Сетевые приложения">
-		<img id='slide5' src='/i/slaid/slaid5.png' alt="Игры">
-		<img id='slide6' src='/i/slaid/slaid6.png' alt="Средства разработчика">
+<div id="screen" onclick="next()">
+	<div id="show" >
+		<img id='slide1' src='../i/slaid/slaid1.png' alt="Чистый стол Kolibri" class='visible'>
+		<img id='slide2' src='../i/slaid/slaid2.png' alt="Демки">
+		<img id='slide3' src='../i/slaid/slaid3.png' alt="Файловые менеджеры">
+		<img id='slide4' src='../i/slaid/slaid4.png' alt="Сетевые приложения">
+		<img id='slide5' src='../i/slaid/slaid5.png' alt="Игры">
+		<img id='slide6' src='../i/slaid/slaid6.png' alt="Средства разработчика">
 	</div>
 </div>
 
