@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="ru" onmouseup="dropdown_hide()">
 <head>
-	<meta charset="utf-8" />
+	<meta>
 	<title>Скачать дистрибутив KolibriOS</title>
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	<meta name="description" content="Страница закачек KolibriOS" />
 	<meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source" />
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" type="text/css" href="/style.css" charset="utf-8" />
-	<script type='text/javascript' src='/script.js'></script>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+	<script src='/script.js'></script>
 </head>
 
 <body onkeydown='checkkey(event)'>
@@ -60,8 +60,7 @@
 					<a href="//builds.kolibrios.org/sp/latest-distr.7z" title="rev. $autobuild_rev_sp, $autobuild_size_sp_distr">Español</a>
 				</td>
 			</tr>
-			<tr>
-			<tr>
+			 			<tr>
 				<td><div style="background-position: 0 -159px;"></div></td>
 				<td class="description_cell"><span class="beta">Гибридный UEFI/BIOS образ для Flash/HDD</span></td>
 				<td class="date_cell">$autobuild_date_ru</td>

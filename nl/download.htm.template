@@ -8,7 +8,7 @@
 	<meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="/style.css">
-	<script type='text/javascript' src='/script.js'></script>
+	<script src='/script.js'></script>
 </head>
 <body onkeydown='checkkey(event)'>
 	<div id="menu">
@@ -59,8 +59,7 @@
 					<a href="//builds.kolibrios.org/sp/latest-distr.7z" title="rev. $autobuild_rev_sp, $autobuild_size_sp_distr">Español</a>
 				</td>
 			</tr>
-			<tr>
-			<tr>
+			 			<tr>
 				<td><div style="background-position: 0 -159px;"></div></td>
 				<td class="description_cell"><span class="beta">Hybride UEFI/BIOS-image voor Flash/HDD</span></td>
 				<td class="date_cell">$autobuild_date_ru</td>
