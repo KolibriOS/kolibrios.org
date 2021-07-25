@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ru" onmouseup="dropdown_hide()">
 <head>
-	<meta>
+	<meta charset="utf-8">
 	<title>Скачать дистрибутив KolibriOS</title>
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	<meta name="description" content="Страница закачек KolibriOS" />
