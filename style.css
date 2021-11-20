@@ -232,9 +232,10 @@ td {
 	position: fixed;
     bottom: 10px;
     right: 10px;
-    width: 400px;
+    width: 350px;
     border-radius: 5px;
     text-align: center;
+    background: #333333;
     background: #333333DD;
     z-index: 10;
     color: #fff;
