@@ -39,7 +39,7 @@
 	<h1>Kolibri downloads</h1>
 		<table>
 			<tr>
-				<td><div style="background-position: 0 -64px;"></div></td>
+				<td width=38><img src="../i/i_cd.png" alt="cd"></td>
 				<td class="description_cell">CD-versie (live-CD)</td>
 				<td class="date_cell">$autobuild_date_ru</td>
 				<td>
@@ -50,7 +50,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td><div style="background-position: 0 -32px;"></div></td>
+				<td width=38><img src="../i/i_floppy.png" alt="floppy"></td>
 				<td class="description_cell">Universele afbeelding Flash/HDD</td>
 				<td class="date_cell">$autobuild_date_ru</td>
 				<td>
@@ -60,9 +60,9 @@
 					<a href="//builds.kolibrios.org/sp/latest-distr.7z" title="rev. $autobuild_rev_sp, $autobuild_size_sp_distr">Español</a>
 				</td>
 			</tr>
-			 			<tr>
-				<td><div style="background-position: 0 -159px;"></div></td>
-				<td class="description_cell"><span class="beta">Hybride UEFI/BIOS-image voor Flash/HDD</span></td>
+			<tr>
+				<td width=38><img src="../i/i_uefi.png" alt="uefi"></td>
+				<td class="description_cell">Hybride UEFI/BIOS-image voor Flash/HDD</td>
 				<td class="date_cell">$autobuild_date_ru</td>
 				<td>
 					<a href="//builds.kolibrios.org/eng/latest-raw.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_raw">English</a>
@@ -74,19 +74,19 @@
 			<tr>
 				<td><div></div></td>
 				<td colspan="3">
-					<button class="help-button" onclick="alert('For a beginner, the LiveCD is best.\n\nCompared to a LiveCD, the advantage of a universal image is that you can save changes made in Kolibri.\n\nHybrid image includes support for UEFI technology, which is used to boot the system on new computers and laptops. Beta version.');">Welke te kiezen?</button>
+					<button class="help-button" onclick="alert('For a beginner, the LiveCD is best.\n\nCompared to a LiveCD, the advantage of a universal image is that you can save changes made in Kolibri.\n\nHybrid image includes support for UEFI technology, which is used to boot the system on new computers and laptops.');">Welke te kiezen?</button>
 					<a href="//archive.kolibrios.org/nl/">Kolibri vorige releases</a>
 				</td>
 			</tr>
 		</table>
 
-		<p style="line-height:1.4; margin: 20px 0;">
-			Hier kunt u de versies downloaden die 's nachts gebouwd zijn. Deze bevatten de nieuwste snufjes en kunnen daardoor instabiel zijn.
+		<p>Hier kunt u de versies downloaden die 's nachts gebouwd zijn. Deze bevatten de nieuwste snufjes en kunnen daardoor instabiel zijn.
   			Alle bestanden zijn gecomprimeerd met het programma <a href='http://www.7-zip.org' target='_blank'>7zip</a>.
  			KolibriOS is vrijgegeven onder een <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a> licentie,
   			de broncode kunt u downloaden via onze <a href='svn://kolibrios.org'>SVN-server</a>.
   		</p>
 
 	</div>
-  <div id="footer">&copy; 2004<span>&ndash;</span>2021 KolibriOS Team</div></body>
+  <div id="footer">&copy; 2004<span>&ndash;</span>2021 KolibriOS Team</div>
+</body>
 </html>

@@ -39,8 +39,8 @@
 	<h1>Скачать дистрибутив KolibriOS</h1>
 		<table>
 			<tr>
-				<td><div style="background-position: 0 -64px;"></div></td>
-				<td class="description_cell">Загрузочный компакт-диск LiveCD</td>
+				<td width=38><img src="../i/i_cd.png" alt="cd"></td>
+				<td class="description_cell" width=100>Загрузочный компакт-диск LiveCD</td>
 				<td class="date_cell">$autobuild_date_ru</td>
 				<td>
 					<a href="//builds.kolibrios.org/eng/latest-iso.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_iso">English</a>
@@ -50,7 +50,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td><div style="background-position: 0 -32px;"></div></td>
+				<td width=38><img src="../i/i_floppy.png" alt="floppy"></td>
 				<td class="description_cell">Универсальный образ Flash/<acronym title="Загрузка несколько операционных систем на одном компьютере">Multi-boot</acronym></td>
 				<td class="date_cell">$autobuild_date_ru</td>
 				<td>
@@ -60,9 +60,9 @@
 					<a href="//builds.kolibrios.org/sp/latest-distr.7z" title="rev. $autobuild_rev_sp, $autobuild_size_sp_distr">Español</a>
 				</td>
 			</tr>
-			 			<tr>
-				<td><div style="background-position: 0 -159px;"></div></td>
-				<td class="description_cell"><span class="beta">Гибридный UEFI/BIOS образ для Flash/HDD</span></td>
+			<tr>
+				<td width=38><img src="../i/i_uefi.png" alt="uefi"></td>
+				<td class="description_cell">Гибридный UEFI/BIOS образ для Flash/HDD</td>
 				<td class="date_cell">$autobuild_date_ru</td>
 				<td>
 					<a href="//builds.kolibrios.org/eng/latest-raw.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_raw">English</a>
@@ -74,21 +74,19 @@
 			<tr>
 				<td><div></div></td>
 				<td colspan="3">
-					<button class="help-button" onclick="alert('Для новичка лучше всего подойдёт LiveCD.\n\nПо сравнению с LiveCD преимущество универсального образа в том, что можно сохранять изменения, сделанные в Колибри.\n\nГибридный образ имеет в своём составе поддержку технологии UEFI, которая используется для загрузки системы на новых компьютерах и ноутбуках. Beta-версия.');">Какой выбрать?</button>
+					<button class="help-button" onclick="alert('Для новичка лучше всего подойдёт LiveCD.\n\nПо сравнению с LiveCD преимущество универсального образа в том, что можно сохранять изменения, сделанные в Колибри.\n\nГибридный образ имеет в своём составе поддержку технологии UEFI, которая используется для загрузки системы на новых компьютерах и ноутбуках.');">Какой выбрать?</button>
 					<a href="//archive.kolibrios.org/ru/">Архив старых версий</a>
 				</td>
 			</tr>
 		</table>		
 
-		<p style="line-height:1.4; margin: 20px 0;">
-			На этой странице представлены ночные сборки дистрибутива &mdash; это означает, что они всегда 
+		<p>На этой странице представлены ночные сборки дистрибутива &mdash; это означает, что они всегда 
    		содержат самые последние изменения в системе и потому могут быть нестабильны. Колибри распространяется
    		на условиях <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>, её исходники
-   		доступны на нашем <a href='svn://kolibrios.org'>SVN</a> сервере. 
-   		<br>
-   		Успеха и процветания.
- 		</p>
+   		доступны на нашем <a href='svn://kolibrios.org'>SVN</a> сервере.<br>
+   		Успеха и процветания.</p>
 
 	</div>
-	<div id="footer">&copy; 2004<span>&ndash;</span>2021 команда Колибри</div></body>
+	<div id="footer">&copy; 2004<span>&ndash;</span>2021 команда Колибри</div>
+</body>
 </html>

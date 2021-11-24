@@ -40,7 +40,7 @@
 	<h1>Descargas de Kolibri</h1>
 		<table>
 			<tr>
-				<td><div style="background-position: 0 -64px;"></div></td>
+				<td width=38><img src="../i/i_cd.png" alt="cd"></td>
 				<td class="description_cell">Imágen para CD (LiveCD)</td>
 				<td class="date_cell">$autobuild_date_ru</td>
 				<td>
@@ -51,7 +51,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td><div style="background-position: 0 -32px;"></div></td>
+				<td width=38><img src="../i/i_floppy.png" alt="floppy"></td>
 				<td class="description_cell">Imágen universal para memorias flash y discos duros</td>
 				<td class="date_cell">$autobuild_date_ru</td>
 				<td>
@@ -61,9 +61,9 @@
 					<a href="//builds.kolibrios.org/sp/latest-distr.7z" title="rev. $autobuild_rev_sp, $autobuild_size_sp_distr">Español</a>
 				</td>
 			</tr>
-			 			<tr>
-				<td><div style="background-position: 0 -159px;"></div></td>
-				<td class="description_cell"><span class="beta">Imagen híbrida UEFI/BIOS para Flash/HDD</span></td>
+			<tr>
+				<td width=38><img src="../i/i_uefi.png" alt="uefi"></td>
+				<td class="description_cell">Imagen híbrida UEFI/BIOS para Flash/HDD</td>
 				<td class="date_cell">$autobuild_date_ru</td>
 				<td>
 					<a href="//builds.kolibrios.org/eng/latest-raw.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_raw">English</a>
@@ -75,16 +75,15 @@
 			<tr>
 				<td><div></div></td>
 				<td colspan="3">
-					<button class="help-button" onclick="alert('Para un principiante, el LiveCD es lo mejor.\n\nEn comparación con un LiveCD, la ventaja de una imagen genérica es que puede guardar los cambios realizados en Kolibri.\n\nLa imagen híbrida incluye soporte para la tecnología UEFI, que se utiliza para iniciar el sistema en computadoras y laptops nuevas. Versión beta.');">¿Cuál elegir?</button>
+					<button class="help-button" onclick="alert('Para un principiante, el LiveCD es lo mejor.\n\nEn comparación con un LiveCD, la ventaja de una imagen genérica es que puede guardar los cambios realizados en Kolibri.\n\nLa imagen híbrida incluye soporte para la tecnología UEFI, que se utiliza para iniciar el sistema en computadoras y laptops nuevas.');">¿Cuál elegir?</button>
 					<a href="//archive.kolibrios.org/es/">Versiones anteriores de Kolibri</a>
 				</td>
 			</tr>
 		</table>
 
-		<p style="line-height:1.4; margin: 20px 0;">
-			Licencia <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>.
-		</p>
+		<p>Licencia <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>.</p>
 
 	</div>
-  <div id="footer">&copy; 2004<span>&ndash;</span>2021 KolibriOS Team</div></body>
+  <div id="footer">&copy; 2004<span>&ndash;</span>2021 KolibriOS Team</div>
+</body>
 </html>

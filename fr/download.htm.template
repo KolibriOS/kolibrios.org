@@ -39,7 +39,7 @@
 	<h1>Kolibri - Téléchargements</h1>
 		<table>
 			<tr>
-				<td><div style="background-position: 0 -64px;"></div></td>
+				<td width=38><img src="../i/i_cd.png" alt="cd"></td>
 				<td class="description_cell">Image CD autonome « Live »</td>
 				<td class="date_cell">$autobuild_date_ru</td>
 				<td>
@@ -50,7 +50,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td><div style="background-position: 0 -32px;"></div></td>
+				<td width=38><img src="../i/i_floppy.png" alt="floppy"></td>
 				<td class="description_cell">Image universelle pour mémoire flash et disque dur</td>
 				<td class="date_cell">$autobuild_date_ru</td>
 				<td>
@@ -60,9 +60,9 @@
 					<a href="//builds.kolibrios.org/sp/latest-distr.7z" title="rev. $autobuild_rev_sp, $autobuild_size_sp_distr">Español</a>
 				</td>
 			</tr>
-			 			<tr>
-				<td><div style="background-position: 0 -159px;"></div></td>
-				<td class="description_cell"><span class="beta">Image hybride UEFI/BIOS pour Flash/HDD</span></td>
+			<tr>
+				<<td width=38><img src="../i/i_uefi.png" alt="uefi"></td>
+				<td class="description_cell">Image hybride UEFI/BIOS pour Flash/HDD</td>
 				<td class="date_cell">$autobuild_date_ru</td>
 				<td>
 					<a href="//builds.kolibrios.org/eng/latest-raw.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_raw">English</a>
@@ -74,18 +74,18 @@
 			<tr>
 				<td><div></div></td>
 				<td colspan="3">
-					<button class="help-button" onclick="alert('For a beginner, the LiveCD is best.\n\nCompared to a LiveCD, the advantage of a universal image is that you can save changes made in Kolibri.\n\nHybrid image includes support for UEFI technology, which is used to boot the system on new computers and laptops. Beta version.');">Lequel choisir ?</button>
+					<button class="help-button" onclick="alert('For a beginner, the LiveCD is best.\n\nCompared to a LiveCD, the advantage of a universal image is that you can save changes made in Kolibri.\n\nHybrid image includes support for UEFI technology, which is used to boot the system on new computers and laptops.');">Lequel choisir ?</button>
 					<a href="//archive.kolibrios.org/fr/">Versions antérieures de Kolibri</a>
 				</td>
 			</tr>
 		</table>		
 
-		<p style="line-height:1.4; margin: 20px 0;">
-			Sur cette page, vous pouvez télécharger les distributions compilées chaque nuit - incluant donc les mises à jours les plus récentes du système, 
+		<p>Sur cette page, vous pouvez télécharger les distributions compilées chaque nuit - incluant donc les mises à jours les plus récentes du système, 
 	éventuellement instables. Tous les fichiers sont compressés avec <a href='http://www.7-zip.org' target='_blank'>7zip</a>.
 	KolibriOS est distribué sous licence <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPL v2</a> , son code source est disponible
-	sur notre serveur <a href='svn://kolibrios.org'>SVN</a>.		</p>
+	sur notre serveur <a href='svn://kolibrios.org'>SVN</a>.</p>
 
 	</div>
-  <div id="footer">&copy; 2004<span>&ndash;</span>2021 l'équipe KolibriOS</div></body>
+  <div id="footer">&copy; 2004<span>&ndash;</span>2021 l'équipe KolibriOS</div>
+</body>
 </html>

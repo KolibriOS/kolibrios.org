@@ -155,8 +155,16 @@ td {
 
 .date_cell {
 	padding-left: 10px;
-	padding-right: 35px;
+	padding-right: 15px;
 	text-align: center;
+}
+
+.download table tr > :first-child {
+	width: 32px;
+}
+
+.download td img {
+	vertical-align: middle;
 }
 
 .download .description_cell {
@@ -167,7 +175,7 @@ td {
 	text-align: left;
 	margin: 3px 0;
 	width: 46%;
-	}
+}
 
 .download table a {
 	margin: 0 6px;
@@ -179,17 +187,10 @@ td {
 	top: -1px;
 }
 
-.download table tr > :first-child {
-	width: 32px;
+.download p {
+	line-height:1.4;
+	margin: 20px 0;
 }
-
-.download table td > div {
-	display: inline-block;
-	width: 32px;
-	height:32px;
-	background: url(i/icons.png) no-repeat;
-	vertical-align: middle;
-	}
 
 /*  SCREENS.CSS  */
 
