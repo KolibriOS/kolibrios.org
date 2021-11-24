@@ -3,45 +3,46 @@
 <head>
 	<meta charset="utf-8">
 	<title>KolibriOS Screenshots</title>
-	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="../favicon.ico">
 	<meta name="description" content="KolibriOS Screenshots">
 	<meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source">
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" type="text/css" href="/style.css">
-	<script src='/script.js'></script>
+	<link rel="stylesheet" type="text/css" href="../style.css">
+	<script src='../script.js'></script>
 </head>
 <body onkeydown='checkkey(event)'>
-	<div id="menu">
-		<a href="/en/index">Kolibri</a>
-		<a href="/en/download">Download</a>
-		<a href="/en/screen" class='a'>Screenshots</a>
+
+	<nav id="lang-dropdown">
+		<ul>
+			<li><a class='sel' href='../en/screen.htm'><img src='../i/fl/en.png' alt='en'/>English</a></li>
+			<li><a href='../de/screen.htm'><img src='../i/fl/de.png' alt='de'/>Deutsch</a></li>
+			<li><a href='../es/screen.htm'><img src='../i/fl/es.png' alt='es'/>Español</a></li>
+			<li><a href='../fr/screen.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a></li>
+			<li><a href='../it/screen.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a></li>
+			<li><a href='../nl/screen.htm'><img src='../i/fl/nl.png' alt='nl'/>Nederlands</a></li>
+			<li><a href='../ru/screen.htm'><img src='../i/fl/ru.png' alt='ru'/>Русский</a></li>
+		</ul>
+	</nav>
+
+	<nav id="menu">
+		<a href="../en/index.htm">Kolibri</a>
+		<a href="../en/download.htm">Download</a>
+		<a href="../en/screen.htm" class='a'>Screenshots</a>
 		<a href="http://board.kolibrios.org">Forum</a>
 		<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=en">Wiki</a>
 		<a href="http://websvn.kolibrios.org">SVN</a>
 		<a href="http://bugs.kolibrios.org" class="notrequired">Bug tracker</a>
-		<button onclick="dropdown_show(this)" id="l"><img src="/i/fl/en.png" alt="en"></button>
-	</div>
-
-	<div id="lang-dropdown">
-		<ul>
-			<li><a class='sel' href='/en/screen'><img src='/i/fl/en.png' alt='en'/>English</a></li>
-			<li><a href='/de/screen'><img src='/i/fl/de.png' alt='de'/>Deutsch</a></li>
-			<li><a href='/es/screen'><img src='/i/fl/es.png' alt='es'/>Español</a></li>
-			<li><a href='/fr/screen'><img src='/i/fl/fr.png' alt='fr'/>Français</a></li>
-			<li><a href='/it/screen'><img src='/i/fl/it.png' alt='it'/>Italiano</a></li>
-			<li><a href='/nl/screen'><img src='/i/fl/nl.png' alt='nl'/>Nederlands</a></li>
-			<li><a href='/ru/screen'><img src='/i/fl/ru.png' alt='ru'/>Русский</a></li>
-		</ul>
-	</div>
+		<button onclick="dropdown_show(this)" id="l"><img src="../i/fl/en.png" alt="en"></button>
+	</nav>
 
 <div id="screen">
 	<div id="show" onclick="next()">
-		<img id='slide1' src='/i/slaid/slaid1.png' alt="Kolibri empty desktop" class='visible'>
-		<img id='slide2' src='/i/slaid/slaid2.png' alt="Demos">
-		<img id='slide3' src='/i/slaid/slaid3.png' alt="File managers">
-		<img id='slide4' src='/i/slaid/slaid4.png' alt="Network programs">
-		<img id='slide5' src='/i/slaid/slaid5.png' alt="Games">
-		<img id='slide6' src='/i/slaid/slaid6.png' alt="Developer and debug tools">
+		<img id='slide1' src='../i/slaid/slaid1.png' alt="Kolibri empty desktop" class='visible'>
+		<img id='slide2' src='../i/slaid/slaid2.png' alt="Demos">
+		<img id='slide3' src='../i/slaid/slaid3.png' alt="File managers">
+		<img id='slide4' src='../i/slaid/slaid4.png' alt="Network programs">
+		<img id='slide5' src='../i/slaid/slaid5.png' alt="Games">
+		<img id='slide6' src='../i/slaid/slaid6.png' alt="Developer and debug tools">
 	</div>
 </div>
 

@@ -3,41 +3,40 @@
 <head>
 	<meta charset="utf-8">
 	<title>KolibriOS officiële site</title>
-	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="../favicon.ico">
 	<meta name="description" content="KolibriOS officiële site">
 	<meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source">
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" type="text/css" href="/style.css">
-	<script src='/script.js'></script>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <script src='../script.js'></script>
 </head>
 <body onkeydown='checkkey(event)'>
-	<div id="menu">
-		<a href="/nl/index" class='a'>Kolibri</a>
-		<a href="/nl/download">Download</a>
-		<a href="/nl/screen">Schermopnames</a>
+
+	<nav id="lang-dropdown">
+		<ul>
+			<li><a href='../en/index.htm'><img src='../i/fl/en.png' alt='en'/>English</a></li>
+			<li><a href='../de/index.htm'><img src='../i/fl/de.png' alt='de'/>Deutsch</a></li>
+			<li><a href='../es/index.htm'><img src='../i/fl/es.png' alt='es'/>Español</a></li>
+			<li><a href='../fr/index.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a></li>
+			<li><a href='../it/index.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a></li>
+			<li><a href='../nl/index.htm' class='sel'><img src='../i/fl/nl.png' alt='nl'/>Nederlands</a></li>
+			<li><a href='../ru/index.htm'><img src='../i/fl/ru.png' alt='ru'/>Русский</a></li>		</ul>
+	</nav>
+
+	<nav id="menu">
+		<a href="../nl/index.htm" class='a'>Kolibri</a>
+		<a href="../nl/download.htm">Download</a>
+		<a href="../nl/screen.htm">Schermopnames</a>
 		<a href="http://board.kolibrios.org">Forum</a>
 		<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=nl">Wiki</a>
 		<a href="http://websvn.kolibrios.org">Broncode en extra programma's</a>
 		<a href="http://bugs.kolibrios.org" class="notrequired">Bug Tracker</a>
-		<button onclick="dropdown_show(this)" id="l"><img src="/i/fl/nl.png" alt="nl"></button>
-	</div>
-
-	<div id="lang-dropdown">
-		<ul>
-			<li><a href='/en/index'><img src='/i/fl/en.png' alt='en'/>English</a></li>
-			<li><a href='/de/index'><img src='/i/fl/de.png' alt='de'/>Deutsch</a></li>
-			<li><a href='/es/index'><img src='/i/fl/es.png' alt='es'/>Español</a></li>
-			<li><a href='/fr/index'><img src='/i/fl/fr.png' alt='fr'/>Français</a></li>
-			<li><a href='/it/index'><img src='/i/fl/it.png' alt='it'/>Italiano</a></li>
-			<li><a class='sel' href='/nl/index'><img src='/i/fl/nl.png' alt='nl'/>Nederlands</a></li>
-			<li><a href='/ru/index'><img src='/i/fl/ru.png' alt='ru'/>Русский</a></li>
-		</ul>
-	</div>
-
+		<button onclick="dropdown_show(this)" id="l"><img src="../i/fl/nl.png" alt="nl"></button>
+	</nav>
 
 	<div id="article" style="padding-bottom: 30px;">
-		<a href="https://www.facebook.com/groups/kolibrios" target="_blank"><img id="banner" src="/i/banners/en.png" alt="We got closer. Follow us on Facebook!" /></a>
-		<br />
+		<a href="https://www.facebook.com/groups/kolibrios" target="_blank"><img id="banner" src="/i/banners/en.png" alt="We got closer. Follow us on Facebook!"></a>
+		<br>
 
 		<p><strong>KolibriOS</strong> is een klein maar verbazingwekkend krachtig en snel besturingssysteem. Voor <b>KolibriOS</b> heb je maar een paar megabyte aan schijfruimte en 8 megabyte aan RAM nodig. KolibriOS bevat een grote lijst <a href="http://wiki.kolibrios.org/wiki/Applications">applicaties</a>, zoals een tekstverwerker, fotobekijker, tekenprogramma, web browser en ook nog ruim 30 leuke spelletjes. KolibriOS heeft volledige ondersteuning voor de bestandssystemen FAT12/16/32 en kan de bestandssystemen NTFS, ISO9660, ext2/3 en 4 lezen. Er zijn <a href="http://wiki.kolibrios.org/wiki/Hardware_Support">drivers</a> geschreven voor populaire geluids-, netwerk- en grafische kaarten.</p>
 

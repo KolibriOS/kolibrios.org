@@ -3,40 +3,40 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Sitio oficial de KolibriOS</title>
-		<link rel="icon" type="image/x-icon" href="/favicon.ico">
+		<link rel="icon" type="image/x-icon" href="../favicon.ico">
 		<meta name="description" content="Sitio oficial de KolibriOS">
 		<meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source">
 		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" type="text/css" href="/style.css">
-		<script src='/script.js'></script>
+		<link rel="stylesheet" type="text/css" href="../style.css">
+		<script src='../script.js'></script>
 	</head>
 <body onkeydown='checkkey(event)'>
-	<div id="menu">
-		<a href="/es/index" class='a'>Kolibri</a>
-		<a href="/es/download" >Descargar</a>
-		<a href="/es/screen" >Capturas de pantalla</a>
+
+	<nav id="lang-dropdown">
+		<ul>
+			<li><a href='../en/index.htm'><img src='../i/fl/en.png' alt='en'/>English</a></li>
+			<li><a href='../de/index.htm'><img src='../i/fl/de.png' alt='de'/>Deutsch</a></li>
+			<li><a class='sel' href='../es/index.htm'><img src='../i/fl/es.png' alt='es'/>Español</a></li>
+			<li><a href='../fr/index.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a></li>
+			<li><a href='../it/index.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a></li>
+			<li><a href='../nl/index.htm'><img src='../i/fl/nl.png' alt='nl'/>Nederlands</a></li>
+			<li><a href='../ru/index.htm'><img src='../i/fl/ru.png' alt='ru'/>Русский</a></li>
+		</ul>
+    </div>
+
+	<nav id="menu">
+		<a href="../es/index.htm" class='a'>Kolibri</a>
+		<a href="../es/download.htm" >Descargar</a>
+		<a href="../es/screen.htm" >Capturas de pantalla</a>
 		<a href="http://board.kolibrios.org">Foro</a>
 		<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=es">Wiki</a>
 		<a href="http://websvn.kolibrios.org">Repositorio</a>
 		<a href="http://bugs.kolibrios.org" class="notrequired">Seguimiento de errores</a>
-		<button onclick="dropdown_show(this)" id="l"><img src="/i/fl/es.png" alt="es"></button>
-	</div>
-
-	<div id="lang-dropdown">
-		<ul>
-			<li><a href='/en/index'><img src='/i/fl/en.png' alt='en'/>English</a></li>
-			<li><a href='/de/index'><img src='/i/fl/de.png' alt='de'/>Deutsch</a></li>
-			<li><a class='sel' href='/es/index'><img src='/i/fl/es.png' alt='es'/>Español</a></li>
-			<li><a href='/fr/index'><img src='/i/fl/fr.png' alt='fr'/>Français</a></li>
-			<li><a href='/it/index'><img src='/i/fl/it.png' alt='it'/>Italiano</a></li>
-			<li><a href='/nl/index'><img src='/i/fl/nl.png' alt='nl'/>Nederlands</a></li>
-			<li><a href='/ru/index'><img src='/i/fl/ru.png' alt='ru'/>Русский</a></li>
-		</ul>
-    </div>
-
+		<button onclick="dropdown_show(this)" id="l"><img src="../i/fl/es.png" alt="es"></button>
+	</nav>
 
 	<div id="article" style="padding-bottom: 30px;">
-		<a href="/es/download">
+		<a href="../es/download.htm">
 			<img id="banner" class="big" src="/i/banners/es.png" alt="We got closer. KolibriOS is now avilable in Spanish!">
 		</a>
 		<br>

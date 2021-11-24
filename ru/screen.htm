@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Галерея скриншотов Kolibri</title>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
   <meta name="description" content="Галерея скриншотов Kolibri">
   <meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source">
   <meta name="viewport" content="width=device-width">
@@ -11,29 +11,29 @@
   <script src='../script.js'></script>
 </head>
 <body onkeydown='checkkey(event)'>
-  <div id="menu">
-    <a href="/ru/index">Колибри</a>
-    <a href="/ru/download">Скачать</a>
-    <a href="/ru/screen" class='a'>Скриншоты</a>
+
+	<nav id="lang-dropdown">
+		<ul>
+			<li><a href='../en/screen.htm'><img src='../i/fl/en.png' alt='en'/>English</a></li>
+			<li><a href='../de/screen.htm'><img src='../i/fl/de.png' alt='de'/>Deutsch</a></li>
+			<li><a href='../es/screen.htm'><img src='../i/fl/es.png' alt='es'/>Español</a></li>
+			<li><a href='../fr/screen.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a></li>
+			<li><a href='../it/screen.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a></li>
+			<li><a href='../nl/screen.htm'><img src='../i/fl/nl.png' alt='nl'/>Nederlands</a></li>
+			<li><a href='../ru/screen.htm' class='sel'><img src='../i/fl/ru.png' alt='ru'/>Русский</a></li>
+		</ul>
+	</nav>
+	
+  <nav id="menu">
+    <a href="../ru/index.htm">Колибри</a>
+    <a href="../ru/download.htm">Скачать</a>
+    <a href="../ru/screen.htm" class='a'>Скриншоты</a>
     <a href="http://board.kolibrios.org">Форум</a>
     <a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=ru">Вики</a>
     <a href="http://websvn.kolibrios.org">SVN</a>
     <a href="http://bugs.kolibrios.org" class="notrequired">Баг-трекер</a>
-    <button onclick="dropdown_show(this)" id="l"><img src="/i/fl/ru.png" alt="ru"></button>
-  </div>
-
-	<div id="lang-dropdown">
-		<ul>
-			<li><a href='/en/screen'><img src='/i/fl/en.png' alt='en'/>English</a></li>
-			<li><a href='/de/screen'><img src='/i/fl/de.png' alt='de'/>Deutsch</a></li>
-			<li><a href='/es/screen'><img src='/i/fl/es.png' alt='es'/>Español</a></li>
-			<li><a href='/fr/screen'><img src='/i/fl/fr.png' alt='fr'/>Français</a></li>
-			<li><a href='/it/screen'><img src='/i/fl/it.png' alt='it'/>Italiano</a></li>
-			<li><a href='/nl/screen'><img src='/i/fl/nl.png' alt='nl'/>Nederlands</a></li>
-			<li><a class='sel' href='/ru/screen'><img src='/i/fl/ru.png' alt='ru'/>Русский</a></li>
-		</ul>
-    </div>
-
+    <button onclick="dropdown_show(this)" id="l"><img src="../i/fl/ru.png" alt="ru"></button>
+  </nav>
 
 <div id="carousel"></div>
 

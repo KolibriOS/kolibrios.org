@@ -3,37 +3,37 @@
 <head>
   <meta charset="utf-8">
   <title>KolibriOS - официальный сайт</title>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
   <meta name="description" content="KolibriOS - официальный сайт">
   <meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" type="text/css" href="/style.css">
-  <script src='/script.js'></script>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <script src='../script.js'></script>
 </head>
 <body onkeydown='checkkey(event)'>
-  <div id="menu">
-    <a href="/ru/index" class='a'>Колибри</a>
-    <a href="/ru/download">Скачать</a>
-    <a href="/ru/screen">Скриншоты</a>
+
+	<nav id="lang-dropdown">
+		<ul>
+			<li><a href='../en/index.htm'><img src='../i/fl/en.png' alt='en'/>English</a></li>
+			<li><a href='../de/index.htm'><img src='../i/fl/de.png' alt='de'/>Deutsch</a></li>
+			<li><a href='../es/index.htm'><img src='../i/fl/es.png' alt='es'/>Español</a></li>
+			<li><a href='../fr/index.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a></li>
+			<li><a href='../it/index.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a></li>
+			<li><a href='../nl/index.htm'><img src='../i/fl/nl.png' alt='nl'/>Nederlands</a></li>
+			<li><a href='../ru/index.htm' class='sel'><img src='../i/fl/ru.png' alt='ru'/>Русский</a></li>
+		</ul>
+	</nav>
+
+  <nav id="menu">
+    <a href="../ru/index.htm" class='a'>Колибри</a>
+    <a href="../ru/download.htm">Скачать</a>
+    <a href="../ru/screen.htm">Скриншоты</a>
     <a href="http://board.kolibrios.org">Форум</a>
     <a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=ru">Вики</a>
     <a href="http://websvn.kolibrios.org">SVN</a>
     <a href="http://bugs.kolibrios.org" class="notrequired">Баг-трекер</a>
-    <button onclick="dropdown_show(this)" id="l"><img src="/i/fl/ru.png" alt="ru"></button>
-  </div>
-
-	<div id="lang-dropdown">
-		<ul>
-			<li><a href='/en/index'><img src='/i/fl/en.png' alt='en'/>English</a></li>
-			<li><a href='/de/index'><img src='/i/fl/de.png' alt='de'/>Deutsch</a></li>
-			<li><a href='/es/index'><img src='/i/fl/es.png' alt='es'/>Español</a></li>
-			<li><a href='/fr/index'><img src='/i/fl/fr.png' alt='fr'/>Français</a></li>
-			<li><a href='/it/index'><img src='/i/fl/it.png' alt='it'/>Italiano</a></li>
-			<li><a href='/nl/index'><img src='/i/fl/nl.png' alt='nl'/>Nederlands</a></li>
-			<li><a class='sel' href='/ru/index'><img src='/i/fl/ru.png' alt='ru'/>Русский</a></li>
-		</ul>
-    </div>
-
+    <button onclick="dropdown_show(this)" id="l"><img src="../i/fl/ru.png" alt="ru"></button>
+  </nav>
 
 	<div id="article" class="index_russian">
 		<a href="http://vk.com/kolibri_os" target="_blank">

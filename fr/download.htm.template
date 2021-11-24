@@ -3,36 +3,37 @@
 <head>
   <meta charset="utf-8">
   <title>Kolibri - Téléchargements</title>
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
   <meta name="description" content="Kolibri - Téléchargements">
   <meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" type="text/css" href="/style.css">
-  <script src='/script.js'></script>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <script src='../script.js'></script>
 </head>
 <body onkeydown='checkkey(event)'>
-	<div id="menu">
-		<a href="/fr/index" >Kolibri</a>
-		<a href="/fr/download" class='a'>Téléchargement</a>
-		<a href="/fr/screen" >Copies d'écran</a>
+
+	<nav id="lang-dropdown">
+		<ul>
+			<li><a href='../en/download.htm'><img src='../i/fl/en.png' alt='en'/>English</a></li>
+			<li><a href='../de/download.htm'><img src='../i/fl/de.png' alt='de'/>Deutsch</a></li>
+			<li><a href='../es/download.htm'><img src='../i/fl/es.png' alt='es'/>Español</a></li>
+			<li><a class='sel' href='../fr/download.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a></li>
+			<li><a href='../it/download.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a></li>
+			<li><a href='../nl/download.htm'><img src='../i/fl/nl.png' alt='nl'/>Nederlands</a></li>
+			<li><a href='../ru/download.htm'><img src='../i/fl/ru.png' alt='ru'/>Русский</a></li>
+		</ul>
+	</nav>
+
+	<nav id="menu">
+		<a href="../fr/index.htm" >Kolibri</a>
+		<a href="../fr/download.htm" class='a'>Téléchargement</a>
+		<a href="../fr/screen.htm" >Copies d'écran</a>
 		<a href="http://board.kolibrios.org">Forum</a>
 		<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=fr">Wiki</a>
 		<a href="http://websvn.kolibrios.org">SVN</a>
 		<a href="http://bugs.kolibrios.org" class="notrequired">Suivi des bogues</a>
-		<button onclick="dropdown_show(this)" id="l"><img src="/i/fl/fr.png" alt="fr"></button>
-	</div>
-
-	<div id="lang-dropdown">
-		<ul>
-			<li><a href='/en/download'><img src='/i/fl/en.png' alt='en'/>English</a></li>
-			<li><a href='/de/download'><img src='/i/fl/de.png' alt='de'/>Deutsch</a></li>
-			<li><a href='/es/download'><img src='/i/fl/es.png' alt='es'/>Español</a></li>
-			<li><a class='sel' href='/fr/download'><img src='/i/fl/fr.png' alt='fr'/>Français</a></li>
-			<li><a href='/it/download'><img src='/i/fl/it.png' alt='it'/>Italiano</a></li>
-			<li><a href='/nl/download'><img src='/i/fl/nl.png' alt='nl'/>Nederlands</a></li>
-			<li><a href='/ru/download'><img src='/i/fl/ru.png' alt='ru'/>Русский</a></li>
-		</ul>
-	</div>
+		<button onclick="dropdown_show(this)" id="l"><img src="../i/fl/fr.png" alt="fr"></button>
+	</nav>
 
 	<div id="article" class="download">
 	<h1>Kolibri - Téléchargements</h1>
