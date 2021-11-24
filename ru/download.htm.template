@@ -40,7 +40,7 @@
 		<table>
 			<tr>
 				<td width=38><img src="../i/i_cd.png" alt="cd"></td>
-				<td class="description_cell" width=100>Загрузочный компакт-диск LiveCD</td>
+				<td class="description_cell">Загрузочный компакт-диск LiveCD</td>
 				<td class="date_cell">$autobuild_date_ru</td>
 				<td>
 					<a href="//builds.kolibrios.org/eng/latest-iso.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_iso">English</a>
