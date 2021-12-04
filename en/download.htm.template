@@ -77,7 +77,7 @@
 				<td colspan="3">
 					<button class="help-button" onclick="alert('For a beginner, the LiveCD is best.\n\nCompared to a LiveCD, the advantage of a universal image is that you can save changes made in Kolibri.\n\nHybrid image includes support for UEFI technology, which is used to boot the system on new computers and laptops.');">Which to choose?</button>
 					<a href="//archive.kolibrios.org/en/">Kolibri previous releases</a>
-					<a href="//builds.kolibrios.org/">All image builds</a>
+					<a href="//builds.kolibrios.org/">All nightly builds</a>
 				</td>
 			</tr>
 		</table>		
