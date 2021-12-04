@@ -138,10 +138,10 @@ table {
 	margin-bottom: 30px;
 	}
 
-.download table a[href^="//archive"] {
+.download table [colspan="3"] a {
 	padding-bottom: 1px; 
 	border-bottom: 1px dashed #ccc;
-	margin-left:0;
+	margin-left: 10px;
 	text-align: right;
 	float: right;
 	line-height: 1.2;
