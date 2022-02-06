@@ -40,6 +40,17 @@
 	<h1>Kolibri Downloads</h1>
 		<table>
 			<tr>
+				<td width=38><img src="../i/i_floppy.png" alt="floppy"></td>
+				<td class="description_cell">Floppy disk image</td>
+				<td class="date_cell">$autobuild_date_ru</td>
+				<td>
+					<a href="//builds.kolibrios.org/eng/latest-img.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_img">English</a>
+					<a href="//builds.kolibrios.org/rus/latest-img.7z" title="rev. $autobuild_rev_rus, $autobuild_size_rus_img">Русский</a>
+					<a href="//builds.kolibrios.org/it/latest-img.7z" title="rev. $autobuild_rev_it, $autobuild_size_it_img">Italiano</a>
+					<a href="//builds.kolibrios.org/sp/latest-img.7z" title="rev. $autobuild_rev_sp, $autobuild_size_sp_img">Español</a>
+				</td>
+			</tr>
+			<tr>
 				<td width=38><img src="../i/i_cd.png" alt="cd"></td>
 				<td class="description_cell">LiveCD image</td>
 				<td class="date_cell">$autobuild_date_ru</td>
@@ -51,7 +62,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td width=38><img src="../i/i_floppy.png" alt="floppy"></td>
+				<td width=38><img src="../i/i_uni.png" alt="universal"></td>
 				<td class="description_cell">Universal image Flash/HDD</td>
 				<td class="date_cell">$autobuild_date_ru</td>
 				<td>

@@ -40,7 +40,7 @@
 		<table>
 			<tr>
 				<td width=38><img src="../i/i_floppy.png" alt="floppy"></td>
-				<td class="description_cell">Образ Дискеты 1.44 МБ</td>
+				<td class="description_cell">Образ дискеты</td>
 				<td class="date_cell">$autobuild_date_ru</td>
 				<td>
 					<a href="//builds.kolibrios.org/eng/latest-img.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_img">English</a>
