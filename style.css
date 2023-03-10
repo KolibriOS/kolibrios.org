@@ -23,9 +23,10 @@ body {
 	background: #222325;
 	background: rgba(0,0,0, .8);
 	background-image: linear-gradient(90deg,#222325,#3b3c3f,#222325);
+	background-image: linear-gradient(90deg,rgb(33 35 38 / 40%),rgb(59 60 63 / 80%),rgb(34 35 37 / 40%));
+	backdrop-filter: saturate(180%) blur(4px);
 	z-index:9000;
 	cursor: default;
-	/*backdrop-filter: saturate(180%) blur(20px);*/
 	}
 
 #menu > * {
@@ -41,7 +42,7 @@ body {
 	color: white;
 	}
 
-.lang-dropdown img {
+#lang-dropdown img {
 	width:16px;
 	height:11px;
 	}
@@ -242,6 +243,7 @@ td {
     text-align: center;
     background: #333333;
     background: #333333DD;
+    backdrop-filter: blur(2px);
     z-index: 10;
     color: #fff;
     text-shadow: 1px 1px 0 #111111;

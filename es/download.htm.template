@@ -96,6 +96,6 @@
 		<p>Licencia <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>.</p>
 
 	</div>
-  <div id="footer">&copy; 2004<span>&ndash;</span>2022 KolibriOS Team</div>
+  <div id="footer">&copy; 2004<script>document.write("&thinsp;&ndash;&thinsp;" + new Date().getFullYear())</script> KolibriOS Team</div>
 </body>
 </html>

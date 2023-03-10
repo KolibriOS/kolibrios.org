@@ -13,7 +13,7 @@
 	content: '';
 	display: block;
 	position: absolute;
-	border: 10px solid #333;
+	border: 11px solid #333;
 	border-left: 10px solid rgba(255, 255, 255, 0);
 	border-right: 10px solid rgba(255, 255, 255, 0);
 	border-top: 0px solid rgba(255, 255, 255, 0);

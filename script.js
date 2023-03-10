@@ -5,7 +5,7 @@ var LAST_IMG_ID = 6;
 var current = LAST_IMG_ID;
 
 window.onload = function() {
-	next();
+	if (document.getElementById("carousel")) next();
 }
 
 function checkkey(e)
