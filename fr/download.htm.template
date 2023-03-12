@@ -41,7 +41,7 @@
 			<tr>
 				<td width=38><img src="../i/i_floppy.png" alt="floppy"></td>
 				<td class="description_cell">Image de disquette</td>
-				<td class="date_cell">$autobuild_date_fr</td>
+				<td class="date_cell">$autobuild_date_en</td>
 				<td>
 					<a href="//builds.kolibrios.org/eng/latest-img.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_img">English</a>
 					<a href="//builds.kolibrios.org/rus/latest-img.7z" title="rev. $autobuild_rev_rus, $autobuild_size_rus_img">Русский</a>
@@ -52,7 +52,7 @@
 			<tr>
 				<td width=38><img src="../i/i_cd.png" alt="cd"></td>
 				<td class="description_cell">Image CD autonome « Live »</td>
-				<td class="date_cell">$autobuild_date_fr</td>
+				<td class="date_cell">$autobuild_date_en</td>
 				<td>
 					<a href="//builds.kolibrios.org/eng/latest-iso.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_iso">English</a>
 					<a href="//builds.kolibrios.org/rus/latest-iso.7z" title="rev. $autobuild_rev_rus, $autobuild_size_rus_iso">Русский</a>
@@ -63,7 +63,7 @@
 			<tr>
 				<td width=38><img src="../i/i_uni.png" alt="universal"></td>
 				<td class="description_cell">Image universelle pour mémoire flash et disque dur</td>
-				<td class="date_cell">$autobuild_date_fr</td>
+				<td class="date_cell">$autobuild_date_en</td>
 				<td>
 					<a href="//builds.kolibrios.org/eng/latest-distr.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_distr">English</a>
 					<a href="//builds.kolibrios.org/rus/latest-distr.7z" title="rev. $autobuild_rev_rus, $autobuild_size_rus_distr">Русский</a>
@@ -74,7 +74,7 @@
 			<tr>
 				<<td width=38><img src="../i/i_uefi.png" alt="uefi"></td>
 				<td class="description_cell">Image hybride UEFI/BIOS pour Flash/HDD</td>
-				<td class="date_cell">$autobuild_date_fr</td>
+				<td class="date_cell">$autobuild_date_en</td>
 				<td>
 					<a href="//builds.kolibrios.org/eng/latest-raw.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_raw">English</a>
 					<a href="//builds.kolibrios.org/rus/latest-raw.7z" title="rev. $autobuild_rev_rus, $autobuild_size_rus_raw">Русский</a>
