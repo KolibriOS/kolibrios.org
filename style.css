@@ -6,10 +6,10 @@ html {
 
 body {
 	color: #333;
-	background: #F4F5F5;
 	line-height: 2em;
-	font-size: 12pt;
 	font-family: "Source Sans Pro", "Open Sans", sans-serif;
+	background: #e1e2e2;
+	background: url(i/bg.png) repeat fixed 0 0;
 }
 
 #menu {
@@ -20,45 +20,52 @@ body {
 	text-align: center;
 	padding: 7px 0;
 	background: #222325;
-	background: rgba(0,0,0, .7);
-	background-image: linear-gradient(90deg,#222325,#3b3c3f,#222325);
-    background-image: linear-gradient(90deg,rgb(33 35 38 / 80%),rgb(59 60 63 / 50%),rgb(34 35 37 / 80%));
-    backdrop-filter: saturate(180%) blur(6px);
+	background: rgb(0 0 0 / 59%);
+	background-image: linear-gradient(90deg,rgb(33 35 38 / 80%),rgb(59 60 63 / 50%),rgb(34 35 37 / 80%));
+	background-image: linear-gradient(90deg,rgb(0 103 255 / 53%),rgb(255 0 182 / 45%));
+	backdrop-filter: saturate(180%) blur(6px);
 	z-index:9000;
 	cursor: default;
-	text-shadow: 1px 1px #000;
+	text-shadow: 2px 2px 2px #00000063;
+	border-bottom: 4px solid #caddb5ff;
 }
 
 #menu > * {
-	color: #a7a7a7;;
+	color: #ffffff;;
 	text-decoration: none;
 	margin: 0 1%;
-	font-size: 1rem;
+	font-size: 0.97rem;
 	cursor: pointer;
 	transition: color 0.15s ease;
 }
 
 #menu a:hover, #menu a.a { 
-	color: white;
+	color: #ffe36a;
+}
+
+#menu img {
+	filter: drop-shadow(1px 2px 3px #0002);
 }
 
 #article, #banner {
-	border-radius: 8px;
-	box-shadow: rgb(27 20 65 / 10%) 0px 10px 20px 0px;
-	border: none;
+	border-radius: 5px;
+	box-shadow: rgb(28 26 40 / 20%) 2px 6px 20px -2px;
+	border: 1px solid #dbd7dd;
+	border: 1px solid #c0b9c491;
 	/*
 	box-shadow: 0 3px 8px -6px rgba(0,0,0,.1);
 	border: 1px solid rgba(0,0,0,.14);
 	*/
-}
+;}
 
 #article {
 	max-width: 910px;
 	margin: auto;
-	margin-top: 78px;
+	margin-top: 75px;
 	text-align: justify;
 	padding: 15px 35px;
 	background: #fff;
+	background: rgba(254, 255, 255, .7);
 }
 
 #banner {
@@ -70,13 +77,15 @@ body {
 	max-width: 100%;
 	max-height: 100%;
 	width: 900px;
-	transition: border 0.5s ease;
+	transition: background 0.5s ease;
 	border: 1px solid rgba(0,0,0,.14);
 	box-shadow: none;
+	background: #f4e8d7;
 }
 
 #banner:hover {
-	border: 1px solid rgba(0,0,0,.34);
+/*	border: 1px solid rgba(0,0,0,.34);*/
+	background: lightblue;
 }
 
 #banner.big {
@@ -146,6 +155,7 @@ a:hover {
 	box-shadow: 0 0 5px #000;
 	box-shadow: 0 0 10px rgba(0,0,0,0.4);
 	overflow: hidden;
+	background: #333;
 	background: #333E;
     backdrop-filter: saturate(180%) blur(6px);
 }
@@ -163,13 +173,18 @@ a:hover {
 }
 
 #lang-dropdown > ul > li a:hover {
-	border-bottom: 1px solid rgba(0, 0, 0, 0.32);
+	border-bottom: 1px solid #34312eff;
+	border-top:1px solid #4c4c4cff;
 	background: #444;
-    background: linear-gradient(89.98deg, #c20d2c7d .39%, #3928c78a 99.99%);
+    background: linear-gradient(328deg, #c20d2c7d, #3928c78a);
 }
 
 #lang-dropdown > ul > li a.sel {
 	color: #888 !important;
+}
+#lang-dropdown > ul > li a.sel img {
+	color: #888 !important;
+	filter: brightness(0.5);
 }
 
 #lang-dropdown > ul > li a > img {
@@ -179,6 +194,7 @@ a:hover {
 	margin-top: -3px;
 	width:16px;
 	height:11px;
+	filter: drop-shadow(1px 2px 2px #0003);
 }
 
 #lang-dropdown > ul > li:first-child a {
