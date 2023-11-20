@@ -30,7 +30,7 @@
 		<a href="../nl/screen.htm">Schermopnames</a>
 		<a href="http://board.kolibrios.org">Forum</a>
 		<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=nl">Wiki</a>
-		<a href="http://websvn.kolibrios.org">Broncode en extra programma's</a>
+		<a href="http://websvn.kolibrios.org">SVN</a>
 		<a href="http://bugs.kolibrios.org" class="notrequired">Bug Tracker</a>
 		<button onclick="dropdown_show(this)" id="l"><img src="../i/fl/nl.png" alt="nl"></button>
 	</nav>
