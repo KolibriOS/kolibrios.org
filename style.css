@@ -115,6 +115,9 @@ h1 {
 	text-align: center;
 	color: #848585;
 	text-shadow: 1px 1px 0 #fff;
+	background: no-repeat center url(i/logo.png);
+	background-position-y: 60px;
+	padding-bottom: 100px;
 }
 
 a {
