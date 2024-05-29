@@ -43,10 +43,10 @@
 				<td class="description_cell">Diskette-image</td>
 				<td class="date_cell">$autobuild_date_en</td>
 				<td>
-					<a href="//builds.kolibrios.org/eng/latest-img.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_img">English</a>
-					<a href="//builds.kolibrios.org/rus/latest-img.7z" title="rev. $autobuild_rev_rus, $autobuild_size_rus_img">Русский</a>
-					<a href="//builds.kolibrios.org/it/latest-img.7z" title="rev. $autobuild_rev_it, $autobuild_size_it_img">Italiano</a>
-					<a href="//builds.kolibrios.org/sp/latest-img.7z" title="rev. $autobuild_rev_sp, $autobuild_size_sp_img">Español</a>
+					<a href="//builds.kolibrios.org/en_US/latest-img.7z" title="rev. $autobuild_rev_en_US, $autobuild_size_eng_img">English</a>
+					<a href="//builds.kolibrios.org/ru_RU/latest-img.7z" title="rev. $autobuild_rev_ru_RU, $autobuild_size_rus_img">Русский</a>
+					<a href="//builds.kolibrios.org/it_IT/latest-img.7z" title="rev. $autobuild_rev_it_IT, $autobuild_size_it_img">Italiano</a>
+					<a href="//builds.kolibrios.org/es_ES/latest-img.7z" title="rev. $autobuild_rev_es_ES, $autobuild_size_sp_img">Español</a>
 				</td>
 			</tr>
 			<tr>
@@ -54,10 +54,10 @@
 				<td class="description_cell">CD-versie (live-CD)</td>
 				<td class="date_cell">$autobuild_date_en</td>
 				<td>
-					<a href="//builds.kolibrios.org/eng/latest-iso.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_iso">English</a>
-					<a href="//builds.kolibrios.org/rus/latest-iso.7z" title="rev. $autobuild_rev_rus, $autobuild_size_rus_iso">Русский</a>
-					<a href="//builds.kolibrios.org/it/latest-iso.7z" title="rev. $autobuild_rev_it, $autobuild_size_it_iso">Italiano</a>
-					<a href="//builds.kolibrios.org/sp/latest-iso.7z" title="rev. $autobuild_rev_sp, $autobuild_size_sp_iso">Español</a>
+					<a href="//builds.kolibrios.org/en_US/latest-iso.7z" title="rev. $autobuild_rev_en_US, $autobuild_size_eng_iso">English</a>
+					<a href="//builds.kolibrios.org/ru_RU/latest-iso.7z" title="rev. $autobuild_rev_ru_RU, $autobuild_size_rus_iso">Русский</a>
+					<a href="//builds.kolibrios.org/it_IT/latest-iso.7z" title="rev. $autobuild_rev_it_IT, $autobuild_size_it_iso">Italiano</a>
+					<a href="//builds.kolibrios.org/es_ES/latest-iso.7z" title="rev. $autobuild_rev_es_ES, $autobuild_size_sp_iso">Español</a>
 				</td>
 			</tr>
 			<tr>
@@ -65,10 +65,10 @@
 				<td class="description_cell">Universele afbeelding Flash/HDD</td>
 				<td class="date_cell">$autobuild_date_en</td>
 				<td>
-					<a href="//builds.kolibrios.org/eng/latest-distr.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_distr">English</a>
-					<a href="//builds.kolibrios.org/rus/latest-distr.7z" title="rev. $autobuild_rev_rus, $autobuild_size_rus_distr">Русский</a>
-					<a href="//builds.kolibrios.org/it/latest-distr.7z" title="rev. $autobuild_rev_it, $autobuild_size_it_distr">Italiano</a>
-					<a href="//builds.kolibrios.org/sp/latest-distr.7z" title="rev. $autobuild_rev_sp, $autobuild_size_sp_distr">Español</a>
+					<a href="//builds.kolibrios.org/en_US/latest-distr.7z" title="rev. $autobuild_rev_en_US, $autobuild_size_eng_distr">English</a>
+					<a href="//builds.kolibrios.org/ru_RU/latest-distr.7z" title="rev. $autobuild_rev_ru_RU, $autobuild_size_rus_distr">Русский</a>
+					<a href="//builds.kolibrios.org/it_IT/latest-distr.7z" title="rev. $autobuild_rev_it_IT, $autobuild_size_it_distr">Italiano</a>
+					<a href="//builds.kolibrios.org/es_ES/latest-distr.7z" title="rev. $autobuild_rev_es_ES, $autobuild_size_sp_distr">Español</a>
 				</td>
 			</tr>
 			<tr>
@@ -76,10 +76,10 @@
 				<td class="description_cell">Hybride UEFI/BIOS-image voor Flash/HDD</td>
 				<td class="date_cell">$autobuild_date_en</td>
 				<td>
-					<a href="//builds.kolibrios.org/eng/latest-raw.7z" title="rev. $autobuild_rev_eng, $autobuild_size_eng_raw">English</a>
-					<a href="//builds.kolibrios.org/rus/latest-raw.7z" title="rev. $autobuild_rev_rus, $autobuild_size_rus_raw">Русский</a>
-					<a href="//builds.kolibrios.org/it/latest-raw.7z" title="rev. $autobuild_rev_it, $autobuild_size_it_raw">Italiano</a>
-					<a href="//builds.kolibrios.org/sp/latest-raw.7z" title="rev. $autobuild_rev_sp, $autobuild_size_sp_raw">Español</a>
+					<a href="//builds.kolibrios.org/en_US/latest-raw.7z" title="rev. $autobuild_rev_en_US, $autobuild_size_eng_raw">English</a>
+					<a href="//builds.kolibrios.org/ru_RU/latest-raw.7z" title="rev. $autobuild_rev_ru_RU, $autobuild_size_rus_raw">Русский</a>
+					<a href="//builds.kolibrios.org/it_IT/latest-raw.7z" title="rev. $autobuild_rev_it_IT, $autobuild_size_it_raw">Italiano</a>
+					<a href="//builds.kolibrios.org/es_ES/latest-raw.7z" title="rev. $autobuild_rev_es_ES, $autobuild_size_sp_raw">Español</a>
 				</td>
 			</tr>
 			<tr>
