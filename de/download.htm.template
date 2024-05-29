@@ -45,7 +45,7 @@
 				<td>
 					<a href="//builds.kolibrios.org/en_US/latest-img.7z" title="rev. $autobuild_rev_en_US, $autobuild_size_en_US_img">English</a>
 					<a href="//builds.kolibrios.org/ru_RU/latest-img.7z" title="rev. $autobuild_rev_ru_RU, $autobuild_size_ru_RU_img">Русский</a>
-					<a href="//builds.kolibrios.org/it_IT/latest-img.7z" title="rev. $autobuild_rev_it_IT_IT, $autobuild_size_it_IT_img">Italiano</a>
+					<a href="//builds.kolibrios.org/it_IT/latest-img.7z" title="rev. $autobuild_rev_it_IT, $autobuild_size_it_IT_img">Italiano</a>
 					<a href="//builds.kolibrios.org/es_ES/latest-img.7z" title="rev. $autobuild_rev_es_ES, $autobuild_size_es_ES_img">Español</a>
 				</td>
 			</tr>
@@ -56,7 +56,7 @@
 				<td>
 					<a href="//builds.kolibrios.org/en_US/latest-iso.7z" title="rev. $autobuild_rev_en_US, $autobuild_size_en_US_iso">English</a>
 					<a href="//builds.kolibrios.org/ru_RU/latest-iso.7z" title="rev. $autobuild_rev_ru_RU, $autobuild_size_ru_RU_iso">Русский</a>
-					<a href="//builds.kolibrios.org/it_IT/latest-iso.7z" title="rev. $autobuild_rev_it_IT_IT, $autobuild_size_it_IT_iso">Italiano</a>
+					<a href="//builds.kolibrios.org/it_IT/latest-iso.7z" title="rev. $autobuild_rev_it_IT, $autobuild_size_it_IT_iso">Italiano</a>
 					<a href="//builds.kolibrios.org/es_ES/latest-iso.7z" title="rev. $autobuild_rev_es_ES, $autobuild_size_es_ES_iso">Español</a>
 				</td>
 			</tr>
