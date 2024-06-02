@@ -30,7 +30,7 @@
 	<a href="../ru/screen.htm">Скриншоты</a>
 	<a href="http://board.kolibrios.org">Форум</a>
 	<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=ru">Вики</a>
-	<a href="http://websvn.kolibrios.org">SVN</a>
+	<a href="https://git.kolibrios.org">Gitea</a>
 	<a href="http://bugs.kolibrios.org" class="notrequired">Баг-трекер</a>
 	<button onclick="dropdown_show(this)" id="l"><img src="../i/fl/ru.png" alt="ru"></button>
   </nav>
@@ -95,7 +95,7 @@
 		<p>На этой странице представлены ночные сборки дистрибутива &mdash; это означает, что они всегда 
    		содержат самые последние изменения в системе и потому могут быть нестабильны. Колибри распространяется
    		на условиях <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>, её исходники
-   		доступны на нашем <a href='svn://kolibrios.org'>SVN</a> сервере.<br>
+   		доступны на нашем <a href='https://git.kolibrios.org'>GIT</a> сервере.<br>
    		Успеха и процветания.</p>
 
 	</div>

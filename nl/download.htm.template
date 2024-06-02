@@ -30,7 +30,7 @@
 		<a href="../nl/screen.htm">Schermopnames</a>
 		<a href="http://board.kolibrios.org">Forum</a>
 		<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=nl">Wiki</a>
-		<a href="http://websvn.kolibrios.org">SVN</a>
+		<a href="https://git.kolibrios.org">Gitea</a>
 		<a href="http://bugs.kolibrios.org" class="notrequired">Bug Tracker</a>
 		<button onclick="dropdown_show(this)" id="l"><img src="../i/fl/nl.png" alt="nl"></button>
 	</nav>
@@ -95,7 +95,7 @@
 		<p>Hier kunt u de versies downloaden die 's nachts gebouwd zijn. Deze bevatten de nieuwste snufjes en kunnen daardoor instabiel zijn.
   			Alle bestanden zijn gecomprimeerd met het programma <a href='http://www.7-zip.org' target='_blank'>7zip</a>.
  			KolibriOS is vrijgegeven onder een <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a> licentie,
-  			de broncode kunt u downloaden via onze <a href='svn://kolibrios.org'>SVN-server</a>.
+  			de broncode kunt u downloaden via onze <a href='https://git.kolibrios.org'>GIT-server</a>.
   		</p>
 
 	</div>

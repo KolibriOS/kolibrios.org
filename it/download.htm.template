@@ -30,7 +30,7 @@
 		<a href="../it/screen.htm" >Screenshot</a>
 		<a href="http://board.kolibrios.org">Forum</a>
 		<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=it">Wiki</a>
-		<a href="http://websvn.kolibrios.org">Repository SVN</a>
+		<a href="https://git.kolibrios.org">Repository GIT</a>
 		<a href="http://bugs.kolibrios.org" class="notrequired">Bug tracker</a>
 		<button onclick="dropdown_show(this)" id="l"><img src="../i/fl/it.png" alt="it"></button>
 	</nav>
@@ -95,7 +95,7 @@
 		<p>Da questa pagina è possibile scaricare le nightly builds di KolibriOS. Si tratta delle ultime versioni disponibili e contengono i cambiamenti più
   recenti, per questo motivo possono risultare instabili. Tutti i file sono compressi con <a href='http://www.7-zip.org' target='_blank'>7-zip</a>.
   KolibriOS è un sistema operativo distributio sotto la licenza <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>,
-  il codice è disponibile sul server <a href='svn://kolibrios.org'>SVN</a>.</p>
+  il codice è disponibile sul server <a href='https://git.kolibrios.org'>GIT</a>.</p>
 
 	</div>
   <div id="footer">&copy; 2004<script>document.write("&thinsp;&ndash;&thinsp;" + new Date().getFullYear())</script>  Il team di KolibriOS</div>
