@@ -5,7 +5,7 @@
 	<title>Скачать дистрибутив KolibriOS</title>
 	<link rel="icon" type="image/x-icon" href="../favicon.ico">
 	<meta name="description" content="Страница закачек KolibriOS">
-	<meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source">
+	<meta name="keywords" content="kolibri, kolibrios, колибри, колибриос, colibri, operating system, assembler, калибри, fasm, alternate, open source">
 	<meta name="viewport" content="width=device-width">
   <link rel="stylesheet" type="text/css" href="../style.css">
   <script src='../script.js'></script>
@@ -25,7 +25,7 @@
 	</div>
 	
   <nav id="menu">
-	<a href="../ru/index.htm">Колибри</a>
+	<a href="../ru/index.htm">КолибриОС</a>
 	<a href="../ru/download.htm" class='a'>Скачать</a>
 	<a href="../ru/screen.htm">Скриншоты</a>
 	<a href="http://board.kolibrios.org">Форум</a>
@@ -85,7 +85,7 @@
 			<tr>
 				<td><div></div></td>
 				<td colspan="3">
-					<button class="help-button" onclick="alert('Для новичка лучше всего подойдёт LiveCD.\n\nПо сравнению с LiveCD преимущество универсального образа в том, что можно сохранять изменения, сделанные в Колибри.\n\nГибридный образ имеет в своём составе поддержку технологии UEFI, которая используется для загрузки системы на новых компьютерах и ноутбуках.');">Какой выбрать?</button>
+					<button class="help-button" onclick="alert('Для новичка лучше всего подойдёт LiveCD.\n\nПо сравнению с LiveCD преимущество универсального образа в том, что можно сохранять изменения, сделанные в КолибриОС.\n\nГибридный образ имеет в своём составе поддержку технологии UEFI, которая используется для загрузки системы на новых компьютерах и ноутбуках.');">Какой выбрать?</button>
 					<a href="//archive.kolibrios.org/ru/">Архив старых версий</a>
 					<a href="//builds.kolibrios.org/">Все ночные сборки</a>
 				</td>
@@ -93,12 +93,12 @@
 		</table>		
 
 		<p>На этой странице представлены ночные сборки дистрибутива &mdash; это означает, что они всегда 
-   		содержат самые последние изменения в системе и потому могут быть нестабильны. Колибри распространяется
+   		содержат самые последние изменения в системе и потому могут быть нестабильны. КолибриОС распространяется
    		на условиях <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>, её исходники
    		доступны на нашем <a href='https://git.kolibrios.org'>GIT</a> сервере.<br>
    		Успеха и процветания.</p>
 
 	</div>
-	<div id="footer">&copy; 2004<script>document.write("&thinsp;&ndash;&thinsp;" + new Date().getFullYear())</script> команда Колибри</div>
+	<div id="footer">&copy; 2004<script>document.write("&thinsp;&ndash;&thinsp;" + new Date().getFullYear())</script> команда КолибриОС</div>
 </body>
 </html>

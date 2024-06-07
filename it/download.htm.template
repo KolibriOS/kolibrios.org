@@ -2,10 +2,10 @@
 <html lang="it" onmouseup="dropdown_hide()">
 <head>
   <meta charset="utf-8">
-  <title>Kolibri Downloads</title>
+  <title>KolibriOS Downloads</title>
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
-  <meta name="description" content="Kolibri Downloads">
-  <meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source">
+  <meta name="description" content="KolibriOS Downloads">
+  <meta name="keywords" content="kolibri, kolibrios, колибри, колибриос, colibri, operating system, assembler, калибри, fasm, alternate, open source">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" type="text/css" href="../style.css">
   <script src='../script.js'></script>
@@ -25,7 +25,7 @@
 	</div>
 	
 	<nav id="menu">
-		<a href="../it/index.htm" >Kolibri</a>
+		<a href="../it/index.htm" >KolibriOS</a>
 		<a href="../it/download.htm" class='a'>Download</a>
 		<a href="../it/screen.htm" >Screenshot</a>
 		<a href="http://board.kolibrios.org">Forum</a>
@@ -36,7 +36,7 @@
 	</nav>
 
 	<div id="article" class="download">
-	<h1>Kolibri Downloads</h1>
+	<h1>KolibriOS Downloads</h1>
 		<table>
 			<tr>
 				<td width=38><img src="../i/i_floppy.png" alt="floppy"></td>
@@ -85,7 +85,7 @@
 			<tr>
 				<td><div></div></td>
 				<td colspan="3">
-					<button class="help-button" onclick="alert('For a beginner, the LiveCD is best.\n\nCompared to a LiveCD, the advantage of a universal image is that you can save changes made in Kolibri.\n\nHybrid image includes support for UEFI technology, which is used to boot the system on new computers and laptops. Beta version.');">Quale scegliere?</button>
+					<button class="help-button" onclick="alert('For a beginner, the LiveCD is best.\n\nCompared to a LiveCD, the advantage of a universal image is that you can save changes made in KolibriOS.\n\nHybrid image includes support for UEFI technology, which is used to boot the system on new computers and laptops. Beta version.');">Quale scegliere?</button>
 					<a href="//archive.kolibrios.org/it_IT/">Versioni precedenti di KolibriOS</a>
 					<a href="//builds.kolibrios.org/">Tutte le immagini</a>
 				</td>

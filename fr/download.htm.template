@@ -2,10 +2,10 @@
 <html lang="fr" onmouseup="dropdown_hide()">
 <head>
   <meta charset="utf-8">
-  <title>Kolibri - Téléchargements</title>
+  <title>KolibriOS - Téléchargements</title>
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
-  <meta name="description" content="Kolibri - Téléchargements">
-  <meta name="keywords" content="kolibri, kolibrios, колибри, colibri, operating system, assembler, калибри, fasm, alternate, open source">
+  <meta name="description" content="KolibriOS - Téléchargements">
+  <meta name="keywords" content="kolibri, kolibrios, колибри, колибриос, colibri, operating system, assembler, калибри, fasm, alternate, open source">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" type="text/css" href="../style.css">
   <script src='../script.js'></script>
@@ -25,7 +25,7 @@
 	</div>
 
 	<nav id="menu">
-		<a href="../fr/index.htm" >Kolibri</a>
+		<a href="../fr/index.htm" >KolibriOS</a>
 		<a href="../fr/download.htm" class='a'>Téléchargement</a>
 		<a href="../fr/screen.htm" >Copies d'écran</a>
 		<a href="http://board.kolibrios.org">Forum</a>
@@ -36,7 +36,7 @@
 	</nav>
 
 	<div id="article" class="download">
-	<h1>Kolibri - Téléchargements</h1>
+	<h1>KolibriOS - Téléchargements</h1>
 		<table>
 			<tr>
 				<td width=38><img src="../i/i_floppy.png" alt="floppy"></td>
@@ -85,8 +85,8 @@
 			<tr>
 				<td><div></div></td>
 				<td colspan="3">
-					<button class="help-button" onclick="alert('For a beginner, the LiveCD is best.\n\nCompared to a LiveCD, the advantage of a universal image is that you can save changes made in Kolibri.\n\nHybrid image includes support for UEFI technology, which is used to boot the system on new computers and laptops.');">Lequel choisir ?</button>
-					<a href="//archive.kolibrios.org/fr/">Versions antérieures de Kolibri</a>
+					<button class="help-button" onclick="alert('For a beginner, the LiveCD is best.\n\nCompared to a LiveCD, the advantage of a universal image is that you can save changes made in KolibriOS.\n\nHybrid image includes support for UEFI technology, which is used to boot the system on new computers and laptops.');">Lequel choisir ?</button>
+					<a href="//archive.kolibrios.org/fr/">Versions antérieures de KolibriOS</a>
 					<a href="//builds.kolibrios.org/">Toutes les images</a>
 				</td>
 			</tr>
