@@ -30,7 +30,7 @@
 		<a href="../en/screen.htm">Screenshots</a>
 		<a href="http://board.kolibrios.org">Forum</a>
 		<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=en">Wiki</a>
-		<a href="https://git.kolibrios.org">GIT</a>
+		<a href="https://git.kolibrios.org">Git</a>
 		<button onclick="dropdown_show(this)" id="l"><img src="../i/fl/en.png" alt="en"></button>
 	</nav>
 
@@ -90,7 +90,7 @@
 
 		<p>On this page you can download the nightly builds distribution &mdash; which means that they always contain the most recent changes in the system and can therefore be unstable. All files are compressed with <a href='http://www.7-zip.org' target='_blank'>7zip</a>.
 		KolibriOS is distributed under under <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>
-		license, its source code is available on our <a href='https://git.kolibrios.org'>GIT server</a>.
+		license, its source code is available on our <a href='https://git.kolibrios.org'>Git server</a>.
 		</p>
 
 	</div>

@@ -30,7 +30,7 @@
 		<a href="../fr/screen.htm" >Copies d'écran</a>
 		<a href="http://board.kolibrios.org">Forum</a>
 		<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=fr">Wiki</a>
-		<a href="https://git.kolibrios.org">GIT</a>
+		<a href="https://git.kolibrios.org">Git</a>
 		<button onclick="dropdown_show(this)" id="l"><img src="../i/fl/fr.png" alt="fr"></button>
 	</nav>
 
@@ -90,7 +90,7 @@
 		<p>Sur cette page, vous pouvez télécharger les distributions compilées chaque nuit - incluant donc les mises à jours les plus récentes du système, 
 	éventuellement instables. Tous les fichiers sont compressés avec <a href='http://www.7-zip.org' target='_blank'>7zip</a>.
 	KolibriOS est distribué sous licence <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPL v2</a> , son code source est disponible
-	sur notre serveur <a href='https://git.kolibrios.org'>GIT</a>.</p>
+	sur notre serveur <a href='https://git.kolibrios.org'>Git</a>.</p>
 
 	</div>
   <div id="footer">&copy; 2004<script>document.write("&thinsp;&ndash;&thinsp;" + new Date().getFullYear())</script> l'équipe KolibriOS</div>
