@@ -14,7 +14,7 @@
 
 	<div id="lang-dropdown">
 		<div>
-			<font bg=#FF9800>href='../en/download.htm'><img src='../i/fl/en.png' alt='en'/>English</a></font>
+			<font bg=#FF9800><a class='sel' href='../en/download.htm'><img src='../i/fl/en.png' alt='en'/>English</a></font>
 			<a href='../de/download.htm'><img src='../i/fl/de.png' alt='de'/>Deutsch</a>
 			<a href='../es/download.htm'><img src='../i/fl/es.png' alt='es'/>Español</a>
 			<a href='../fr/download.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a>
@@ -23,7 +23,7 @@
 			<a href='../ru/download.htm'><img src='../i/fl/ru.png' alt='ru'/>Русский</a>
 		</div>
 	</div>
-	
+
 	<nav id="menu">
 		<a href="../en/index.htm">KolibriOS</a>
 		<a href="../en/download.htm" class='a'>Download</a>

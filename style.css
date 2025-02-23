@@ -55,7 +55,7 @@ body {
 #article {
 	max-width: 910px;
 	margin: auto;
-	margin-top: 35px;
+	margin-top: 30px;
 	text-align: justify;
 	padding: 20px 35px 35px;
 	background: #fff;
@@ -155,7 +155,7 @@ a:hover {
     backdrop-filter: saturate(180%) blur(6px);
 }
 
-#lang-dropdown > div > a {
+#lang-dropdown > div a {
 	display: block;
 	padding: 0 50px 0 20px;
 	font-size: 0.8em;
@@ -167,22 +167,22 @@ a:hover {
 	text-shadow: 1px 1px #000;
 }
 
-#lang-dropdown > div > a:hover {
+#lang-dropdown > div a:hover {
 	border-bottom: 1px solid #34312eff;
 	border-top:1px solid #4c4c4cff;
 	background: #444;
     background: linear-gradient(328deg, #c20d2c7d, #3928c78a);
 }
 
-#lang-dropdown > div > a.sel {
+#lang-dropdown > div a.sel {
 	color: #888 !important;
 }
-#lang-dropdown > div > a.sel img {
+#lang-dropdown > div a.sel img {
 	color: #888 !important;
 	filter: brightness(0.5);
 }
 
-#lang-dropdown > div > a > img {
+#lang-dropdown > div a img {
 	display: inline-block;
 	vertical-align: middle;
 	margin-right: 10px;
@@ -192,11 +192,11 @@ a:hover {
 	filter: drop-shadow(1px 2px 2px #0003);
 }
 
-#lang-dropdown > div > a:first-child {
+#lang-dropdown > div a:first-child {
 	border-top: none;
 }
 
-#lang-dropdown > div > a:last-child {
+#lang-dropdown > div a:last-child {
 	border-bottom: none;
 }
 

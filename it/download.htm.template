@@ -18,12 +18,12 @@
 			<a href='../de/download.htm'><img src='../i/fl/de.png' alt='de'/>Deutsch</a>
 			<a href='../es/download.htm'><img src='../i/fl/es.png' alt='es'/>Español</a>
 			<a href='../fr/download.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a>
-			<font bg=#FF9800>href='../it/download.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a></font>
+			<font bg=#FF9800><a class='sel' href='../it/download.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a></font>
 			<a href='../nl/download.htm'><img src='../i/fl/nl.png' alt='nl'/>Nederlands</a>
 			<a href='../ru/download.htm'><img src='../i/fl/ru.png' alt='ru'/>Русский</a>
 		</div>
 	</div>
-	
+
 	<nav id="menu">
 		<a href="../it/index.htm" >KolibriOS</a>
 		<a href="../it/download.htm" class='a'>Download</a>

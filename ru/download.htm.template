@@ -20,7 +20,7 @@
 			<a href='../fr/download.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a>
 			<a href='../it/download.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a>
 			<a href='../nl/download.htm'><img src='../i/fl/nl.png' alt='nl'/>Nederlands</a>
-			<font bg=#FF9800>href='../ru/download.htm'><img src='../i/fl/ru.png' alt='ru'/>Русский</a></font>
+			<font bg=#FF9800><a class='sel' href='../ru/download.htm'><img src='../i/fl/ru.png' alt='ru'/>Русский</a></font>
 		</div>
 	</div>
 	
