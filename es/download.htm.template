@@ -31,7 +31,6 @@
 		<a href="http://board.kolibrios.org">Foro</a>
 		<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=es">Wiki</a>
 		<a href="https://git.kolibrios.org">Repositorio</a>
-		<a href="http://bugs.kolibrios.org" class="notrequired">Seguimiento de errores</a>
 		<button onclick="dropdown_show(this)" id="l"><img src="../i/fl/es.png" alt="es"></button>
 	</nav>
 
@@ -46,7 +45,6 @@
 				<td>
 					<a href="//builds.kolibrios.org/en_US/latest-img.7z" title="ver. $autobuild_cmtid_en_US, $autobuild_size_en_US_img">English</a>
 					<a href="//builds.kolibrios.org/ru_RU/latest-img.7z" title="ver. $autobuild_cmtid_ru_RU, $autobuild_size_ru_RU_img">Русский</a>
-					<a href="//builds.kolibrios.org/it_IT/latest-img.7z" title="ver. $autobuild_cmtid_it_IT, $autobuild_size_it_IT_img">Italiano</a>
 					<a href="//builds.kolibrios.org/es_ES/latest-img.7z" title="ver. $autobuild_cmtid_es_ES, $autobuild_size_es_ES_img">Español</a>
 				</td>
 			</tr>
@@ -57,7 +55,6 @@
 				<td>
 					<a href="//builds.kolibrios.org/en_US/latest-iso.7z" title="ver. $autobuild_cmtid_en_US, $autobuild_size_en_US_iso">English</a>
 					<a href="//builds.kolibrios.org/ru_RU/latest-iso.7z" title="ver. $autobuild_cmtid_ru_RU, $autobuild_size_ru_RU_iso">Русский</a>
-					<a href="//builds.kolibrios.org/it_IT/latest-iso.7z" title="ver. $autobuild_cmtid_it_IT, $autobuild_size_it_IT_iso">Italiano</a>
 					<a href="//builds.kolibrios.org/es_ES/latest-iso.7z" title="ver. $autobuild_cmtid_es_ES, $autobuild_size_es_ES_iso">Español</a>
 				</td>
 			</tr>
@@ -68,7 +65,6 @@
 				<td>
 					<a href="//builds.kolibrios.org/en_US/latest-distr.7z" title="ver. $autobuild_cmtid_en_US, $autobuild_size_en_US_distr">English</a>
 					<a href="//builds.kolibrios.org/ru_RU/latest-distr.7z" title="ver. $autobuild_cmtid_ru_RU, $autobuild_size_ru_RU_distr">Русский</a>
-					<a href="//builds.kolibrios.org/it_IT/latest-distr.7z" title="ver. $autobuild_cmtid_it_IT, $autobuild_size_it_IT_distr">Italiano</a>
 					<a href="//builds.kolibrios.org/es_ES/latest-distr.7z" title="ver. $autobuild_cmtid_es_ES, $autobuild_size_es_ES_distr">Español</a>
 				</td>
 			</tr>
@@ -79,7 +75,6 @@
 				<td>
 					<a href="//builds.kolibrios.org/en_US/latest-raw.7z" title="ver. $autobuild_cmtid_en_US, $autobuild_size_en_US_raw">English</a>
 					<a href="//builds.kolibrios.org/ru_RU/latest-raw.7z" title="ver. $autobuild_cmtid_ru_RU, $autobuild_size_ru_RU_raw">Русский</a>
-					<a href="//builds.kolibrios.org/it_IT/latest-raw.7z" title="ver. $autobuild_cmtid_it_IT, $autobuild_size_it_IT_raw">Italiano</a>
 					<a href="//builds.kolibrios.org/es_ES/latest-raw.7z" title="ver. $autobuild_cmtid_es_ES, $autobuild_size_es_ES_raw">Español</a>
 				</td>
 			</tr>
