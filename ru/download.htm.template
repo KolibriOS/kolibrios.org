@@ -26,7 +26,7 @@
 	
   <nav id="menu">
 	<a href="../ru/index.htm">КолибриОС</a>
-	<a href="../ru/download.htm" class='a'>Скачать</a>
+	<a href="../ru/download.htm" class='a'><font bg=lightblue>Скачать</font></a>
 	<a href="http://board.kolibrios.org">Форум</a>
 	<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=ru">Вики</a>
 	<a href="https://git.kolibrios.org">Git</a>

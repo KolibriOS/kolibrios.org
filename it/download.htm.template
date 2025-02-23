@@ -26,7 +26,7 @@
 
 	<nav id="menu">
 		<a href="../it/index.htm" >KolibriOS</a>
-		<a href="../it/download.htm" class='a'>Download</a>
+		<a href="../it/download.htm" class='a'><font bg=lightblue>Download</font></a>
 		<a href="http://board.kolibrios.org">Forum</a>
 		<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=it">Wiki</a>
 		<a href="https://git.kolibrios.org">Git</a>
