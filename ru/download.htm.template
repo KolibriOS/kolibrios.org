@@ -13,21 +13,20 @@
 <body onkeydown='checkkey(event)'>
 
 	<div id="lang-dropdown">
-		<ul>
-			<li><a href='../en/download.htm'><img src='../i/fl/en.png' alt='en'/>English</a></li>
-			<li><a href='../de/download.htm'><img src='../i/fl/de.png' alt='de'/>Deutsch</a></li>
-			<li><a href='../es/download.htm'><img src='../i/fl/es.png' alt='es'/>Español</a></li>
-			<li><a href='../fr/download.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a></li>
-			<li><a href='../it/download.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a></li>
-			<li><a href='../nl/download.htm'><img src='../i/fl/nl.png' alt='nl'/>Nederlands</a></li>
-			<li><a href='../ru/download.htm' class='sel'><img src='../i/fl/ru.png' alt='ru'/>Русский</a></li>
-		</ul>
+		<div>
+			<a href='../en/download.htm'><img src='../i/fl/en.png' alt='en'/>English</a>
+			<a href='../de/download.htm'><img src='../i/fl/de.png' alt='de'/>Deutsch</a>
+			<a href='../es/download.htm'><img src='../i/fl/es.png' alt='es'/>Español</a>
+			<a href='../fr/download.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a>
+			<a href='../it/download.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a>
+			<a href='../nl/download.htm'><img src='../i/fl/nl.png' alt='nl'/>Nederlands</a>
+			<font bg=#FF9800>href='../ru/download.htm'><img src='../i/fl/ru.png' alt='ru'/>Русский</a></font>
+		</div>
 	</div>
 	
   <nav id="menu">
 	<a href="../ru/index.htm">КолибриОС</a>
 	<a href="../ru/download.htm" class='a'>Скачать</a>
-	<a href="../ru/screen.htm">Скриншоты</a>
 	<a href="http://board.kolibrios.org">Форум</a>
 	<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=ru">Вики</a>
 	<a href="https://git.kolibrios.org">Git</a>
@@ -35,7 +34,7 @@
   </nav>
 
 	<div id="article" class="download">
-	<h1>Скачать KolibriOS</h1>
+		<h1>Скачать KolibriOS</h1>
 		<table>
 			<tr>
 				<td width=38><img src="../i/i_floppy.png" alt="floppy"></td>
@@ -90,8 +89,20 @@
 		<p>На этой странице представлены ночные сборки дистрибутива &mdash; это означает, что они всегда 
    		содержат самые последние изменения в системе и потому могут быть нестабильны. КолибриОС распространяется
    		на условиях <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>, её исходники
-   		доступны на нашем <a href='https://git.kolibrios.org'>Git сервере</a>.<br>
-   		Успеха и процветания.</p>
+   		доступны на нашем <a href='https://git.kolibrios.org'>Git сервере</a>.<br></p>
+
+   		<h1>Скриншоты</h1>
+
+		<div id="screen" onclick="next()">
+			<div id="show" >
+				<img id='slide1' src='../i/slaid/slaid1.png' alt="Чистый стол KolibriOS" class='visible'>
+				<img id='slide2' src='../i/slaid/slaid2.png' alt="Демки">
+				<img id='slide3' src='../i/slaid/slaid3.png' alt="Файловые менеджеры">
+				<img id='slide4' src='../i/slaid/slaid4.png' alt="Сетевые приложения">
+				<img id='slide5' src='../i/slaid/slaid5.png' alt="Игры">
+				<img id='slide6' src='../i/slaid/slaid6.png' alt="Средства разработчика">
+			</div>
+		</div>
 
 	</div>
 	<div id="footer">&copy; 2004<script>document.write("&thinsp;&ndash;&thinsp;" + new Date().getFullYear())</script> команда КолибриОС</div>

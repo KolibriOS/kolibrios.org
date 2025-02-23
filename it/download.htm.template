@@ -13,21 +13,20 @@
 <body onkeydown='checkkey(event)'>
 
 	<div id="lang-dropdown">
-		<ul>
-			<li><a href='../en/download.htm'><img src='../i/fl/en.png' alt='en'/>English</a></li>
-			<li><a href='../de/download.htm'><img src='../i/fl/de.png' alt='de'/>Deutsch</a></li>
-			<li><a href='../es/download.htm'><img src='../i/fl/es.png' alt='es'/>Español</a></li>
-			<li><a href='../fr/download.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a></li>
-			<li><a class='sel' href='../it/download.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a></li>
-			<li><a href='../nl/download.htm'><img src='../i/fl/nl.png' alt='nl'/>Nederlands</a></li>
-			<li><a href='../ru/download.htm'><img src='../i/fl/ru.png' alt='ru'/>Русский</a></li>
-		</ul>
+		<div>
+			<a href='../en/download.htm'><img src='../i/fl/en.png' alt='en'/>English</a>
+			<a href='../de/download.htm'><img src='../i/fl/de.png' alt='de'/>Deutsch</a>
+			<a href='../es/download.htm'><img src='../i/fl/es.png' alt='es'/>Español</a>
+			<a href='../fr/download.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a>
+			<font bg=#FF9800>href='../it/download.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a></font>
+			<a href='../nl/download.htm'><img src='../i/fl/nl.png' alt='nl'/>Nederlands</a>
+			<a href='../ru/download.htm'><img src='../i/fl/ru.png' alt='ru'/>Русский</a>
+		</div>
 	</div>
 	
 	<nav id="menu">
 		<a href="../it/index.htm" >KolibriOS</a>
 		<a href="../it/download.htm" class='a'>Download</a>
-		<a href="../it/screen.htm" >Screenshot</a>
 		<a href="http://board.kolibrios.org">Forum</a>
 		<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=it">Wiki</a>
 		<a href="https://git.kolibrios.org">Git</a>
@@ -86,6 +85,19 @@
 				</td>
 			</tr>
 		</table>	
+
+
+		<h1>Screenshot</h1>
+		<div id="screen">
+			<div id="show" onclick="next()">
+				<img id='slide1' src='../i/slaid/slaid1.png' alt="KolibriOS empty desktop" class='visible'>
+				<img id='slide2' src='../i/slaid/slaid2.png' alt="Demos">
+				<img id='slide3' src='../i/slaid/slaid3.png' alt="File managers">
+				<img id='slide4' src='../i/slaid/slaid4.png' alt="Network programs">
+				<img id='slide5' src='../i/slaid/slaid5.png' alt="Games">
+				<img id='slide6' src='../i/slaid/slaid6.png' alt="Developer and debug tools">
+			</div>
+		</div>
 
 		<p>Da questa pagina è possibile scaricare le nightly builds di KolibriOS. Si tratta delle ultime versioni disponibili e contengono i cambiamenti più
   recenti, per questo motivo possono risultare instabili. Tutti i file sono compressi con <a href='http://www.7-zip.org' target='_blank'>7-zip</a>.

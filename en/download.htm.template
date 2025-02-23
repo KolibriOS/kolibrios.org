@@ -13,21 +13,20 @@
 <body onkeydown='checkkey(event)'>
 
 	<div id="lang-dropdown">
-		<ul>
-			<li><a class='sel' href='../en/download.htm'><img src='../i/fl/en.png' alt='en'/>English</a></li>
-			<li><a href='../de/download.htm'><img src='../i/fl/de.png' alt='de'/>Deutsch</a></li>
-			<li><a href='../es/download.htm'><img src='../i/fl/es.png' alt='es'/>Español</a></li>
-			<li><a href='../fr/download.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a></li>
-			<li><a href='../it/download.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a></li>
-			<li><a href='../nl/download.htm'><img src='../i/fl/nl.png' alt='nl'/>Nederlands</a></li>
-			<li><a href='../ru/download.htm'><img src='../i/fl/ru.png' alt='ru'/>Русский</a></li>
-		</ul>
+		<div>
+			<font bg=#FF9800>href='../en/download.htm'><img src='../i/fl/en.png' alt='en'/>English</a></font>
+			<a href='../de/download.htm'><img src='../i/fl/de.png' alt='de'/>Deutsch</a>
+			<a href='../es/download.htm'><img src='../i/fl/es.png' alt='es'/>Español</a>
+			<a href='../fr/download.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a>
+			<a href='../it/download.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a>
+			<a href='../nl/download.htm'><img src='../i/fl/nl.png' alt='nl'/>Nederlands</a>
+			<a href='../ru/download.htm'><img src='../i/fl/ru.png' alt='ru'/>Русский</a>
+		</div>
 	</div>
 	
 	<nav id="menu">
 		<a href="../en/index.htm">KolibriOS</a>
 		<a href="../en/download.htm" class='a'>Download</a>
-		<a href="../en/screen.htm">Screenshots</a>
 		<a href="http://board.kolibrios.org">Forum</a>
 		<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=en">Wiki</a>
 		<a href="https://git.kolibrios.org">Git</a>
@@ -36,7 +35,7 @@
 
 
 	<div id="article" class="download">
-	<h1>KolibriOS Downloads</h1>
+		<h1>KolibriOS Downloads</h1>
 		<table>
 			<tr>
 				<td width=38><img src="../i/i_floppy.png" alt="floppy"></td>
@@ -92,6 +91,18 @@
 		KolibriOS is distributed under under <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>
 		license, its source code is available on our <a href='https://git.kolibrios.org'>Git server</a>.
 		</p>
+
+		<h1>Screenshots</h1>
+		<div id="screen">
+			<div id="show" onclick="next()">
+				<img id='slide1' src='../i/slaid/slaid1.png' alt="KolibriOS empty desktop" class='visible'>
+				<img id='slide2' src='../i/slaid/slaid2.png' alt="Demos">
+				<img id='slide3' src='../i/slaid/slaid3.png' alt="File managers">
+				<img id='slide4' src='../i/slaid/slaid4.png' alt="Network programs">
+				<img id='slide5' src='../i/slaid/slaid5.png' alt="Games">
+				<img id='slide6' src='../i/slaid/slaid6.png' alt="Developer and debug tools">
+			</div>
+		</div>
 
 	</div>
   <div id="footer">&copy; 2004<script>document.write("&thinsp;&ndash;&thinsp;" + new Date().getFullYear())</script> KolibriOS Team</div>

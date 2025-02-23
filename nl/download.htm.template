@@ -13,21 +13,20 @@
 <body onkeydown='checkkey(event)'>
 
 	<div id="lang-dropdown">
-		<ul>
-			<li><a href='../en/download.htm'><img src='../i/fl/en.png' alt='en'/>English</a></li>
-			<li><a href='../de/download.htm'><img src='../i/fl/de.png' alt='de'/>Deutsch</a></li>
-			<li><a href='../es/download.htm'><img src='../i/fl/es.png' alt='es'/>Español</a></li>
-			<li><a href='../fr/download.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a></li>
-			<li><a href='../it/download.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a></li>
-			<li><a href='../nl/download.htm' class='sel'><img src='../i/fl/nl.png' alt='nl'/>Nederlands</a></li>
-			<li><a href='../ru/download.htm'><img src='../i/fl/ru.png' alt='ru'/>Русский</a></li>
-		</ul>
+		<div>
+			<a href='../en/download.htm'><img src='../i/fl/en.png' alt='en'/>English</a>
+			<a href='../de/download.htm'><img src='../i/fl/de.png' alt='de'/>Deutsch</a>
+			<a href='../es/download.htm'><img src='../i/fl/es.png' alt='es'/>Español</a>
+			<a href='../fr/download.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a>
+			<a href='../it/download.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a>
+			<font bg=#FF9800>href='../nl/download.htm'><img src='../i/fl/nl.png' alt='nl'/>Nederlands</a></font>
+			<a href='../ru/download.htm'><img src='../i/fl/ru.png' alt='ru'/>Русский</a>
+		</div>
 	</div>
 	
 	<nav id="menu">
 		<a href="../nl/index.htm">KolibriOS</a>
 		<a href="../nl/download.htm" class='a'>Download</a>
-		<a href="../nl/screen.htm">Schermopnames</a>
 		<a href="http://board.kolibrios.org">Forum</a>
 		<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=nl">Wiki</a>
 		<a href="https://git.kolibrios.org">Git</a>
@@ -92,6 +91,18 @@
  			KolibriOS is vrijgegeven onder een <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a> licentie,
   			de broncode kunt u downloaden via onze <a href='https://git.kolibrios.org'>Git-server</a>.
   		</p>
+
+ 		<h1>Schermopnames</h1>
+		<div id="screen">
+			<div id="show" onclick="next()">
+				<img id='slide1' src='../i/slaid/slaid1.png' alt="KolibriOS empty desktop" class='visible'>
+				<img id='slide2' src='../i/slaid/slaid2.png' alt="Demos">
+				<img id='slide3' src='../i/slaid/slaid3.png' alt="File managers">
+				<img id='slide4' src='../i/slaid/slaid4.png' alt="Network programs">
+				<img id='slide5' src='../i/slaid/slaid5.png' alt="Games">
+				<img id='slide6' src='../i/slaid/slaid6.png' alt="Developer and debug tools">
+			</div>
+		</div>
 
 	</div>
   <div id="footer">&copy; 2004<script>document.write("&thinsp;&ndash;&thinsp;" + new Date().getFullYear())</script> KolibriOS Team</div>
