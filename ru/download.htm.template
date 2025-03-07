@@ -77,7 +77,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td><div></div></td>
+				
 				<td colspan="3">
 					<button class="help-button" onclick="alert('Для новичка лучше всего подойдёт LiveCD.\n\nПо сравнению с LiveCD преимущество универсального образа в том, что можно сохранять изменения, сделанные в КолибриОС.\n\nГибридный образ имеет в своём составе поддержку технологии UEFI, которая используется для загрузки системы на новых компьютерах и ноутбуках.');">Какой выбрать?</button>
 					<a href="//archive.kolibrios.org/ru/">Архив старых версий</a>
@@ -105,6 +105,6 @@
 		</div>
 
 	</div>
-	<div id="footer">&copy; 2004<script>document.write("&thinsp;&ndash;&thinsp;" + new Date().getFullYear())</script> команда КолибриОС</div>
+	<div id="footer"></div>
 </body>
 </html>

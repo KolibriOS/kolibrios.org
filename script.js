@@ -42,12 +42,12 @@ function dropdown_show(obj)
 	}
 	ddown = document.getElementById("lang-dropdown");
 	ddown.style.display = "block";
-	ddown.style.left    = (x - 72) + "px";
+	ddown.style.left    = (x - 64) + "px";
 	if (ddown.offsetLeft + ddown.offsetWidth +10 > document.body.offsetWidth) 
 	{
-		ddown.style.left = document.body.offsetWidth - ddown.offsetWidth - 82 + "px";
+		ddown.style.left = document.body.offsetWidth - ddown.offsetWidth - 20 + "px";
 	}
-	ddown.style.top     = (y + 48) + "px";
+	ddown.style.top     = (y + 42) + "px";
 	op = 0;
 	appear(1);	
 }

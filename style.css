@@ -6,7 +6,7 @@ html {
 
 body {
 	color: #333;
-	line-height: 2em;
+	line-height: 1.6em;
 	font-family: "Source Sans Pro", "Open Sans", sans-serif;
 	background: #e1e2e2;
 	background: url(i/bg.png) repeat fixed 0 0;
@@ -46,8 +46,8 @@ body {
 }
 
 #article, #banner {
-	border-radius: 5px;
-	box-shadow: rgb(28 26 40 / 20%) 2px 6px 20px -2px;
+	border-radius: 3px;
+	box-shadow: rgb(28 26 40 / 12%) 0px 4px 5px -2px;
 	border: 1px solid #dbd7dd;
 	border: 1px solid #c0b9c491;
 ;}
@@ -59,7 +59,7 @@ body {
 	text-align: justify;
 	padding: 20px 35px 35px;
 	background: #fff;
-	background: rgba(254, 255, 255, .7);
+	background: rgba(254, 255, 255, 1);
 }
 
 #banner {
@@ -72,8 +72,8 @@ body {
 	width: 900px;
 	border: 1px solid rgba(0,0,0,.14);
 	box-shadow: none;
-	transition: outline 0.5s ease;
-	outline: 5px solid rgb(227 227 227);
+	transition: outline 0.3s ease;
+	outline: 3px solid transparent;
 }
 
 #banner:hover {
@@ -87,6 +87,7 @@ body {
 
 #article.index_russian > p {
 	text-indent: 25px;
+	padding-top: 10px;
 }
 
 strong {
@@ -107,9 +108,29 @@ h1 {
 	color: #848585;
 	text-shadow: 1px 1px 0 #fff;
 	background: no-repeat center url(i/logo.png);
-	background-position-y: 60px;
-	padding-bottom: 100px;
+	background-position-y: 20px;
+	padding-bottom: 20px;
+	background-size: 65px;
 }
+
+#footer::before, #footer::after {
+	display: block;
+    text-align: center;
+    width: 100%;
+    color: rgb(132, 133, 133);
+    text-shadow: rgb(255, 255, 255) 1px 1px 0px;	
+    font-size: 90%;
+}
+
+#footer::before {
+    content: "KolibriOS Team with Love and Passion";
+    margin-top: 65px;
+}
+#footer::after {
+    content: "© 2004 – 2025";
+    margin-top: -8px;
+}
+
 
 a {
 	color: #1F1F1F;
@@ -145,7 +166,7 @@ a:hover {
 
 #lang-dropdown > div {
 	display: block;
-	border-radius: 5px;
+	border-radius: 3px;
 	border: 1px solid #333;
 	box-shadow: 0 0 5px #000;
 	box-shadow: 0 0 10px rgba(0,0,0,0.4);
@@ -157,9 +178,9 @@ a:hover {
 
 #lang-dropdown > div a {
 	display: block;
-	padding: 0 50px 0 20px;
+	padding: 0 40px 0 16px;
 	font-size: 0.8em;
-	line-height: 3;
+	line-height: 2.6;
 	border-top: 1px solid rgba(255, 255, 255, 0.06);
 	border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 	text-decoration: none;
@@ -292,7 +313,7 @@ td {
 	border: 1px solid #182028;
 	display: block;
 	position: relative;
-	border-radius: 5px;
+	border-radius: 3px;
 	overflow: hidden;
 }
 

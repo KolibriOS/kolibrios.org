@@ -78,7 +78,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td><div></div></td>
+				<td width=38>&nbsp;</td>
 				<td colspan="3">
 					<button class="help-button" onclick="alert('Para un principiante, el LiveCD es lo mejor.\n\nEn comparación con un LiveCD, la ventaja de una imagen genérica es que puede guardar los cambios realizados en KolibriOS.\n\nLa imagen híbrida incluye soporte para la tecnología UEFI, que se utiliza para iniciar el sistema en computadoras y laptops nuevas.');">¿Cuál elegir?</button>
 					<a href="//archive.kolibrios.org/es/">Versiones anteriores de KolibriOS</a>
@@ -102,6 +102,6 @@
 		</div>
 
 	</div>
-  <div id="footer">&copy; 2004<script>document.write("&thinsp;&ndash;&thinsp;" + new Date().getFullYear())</script> KolibriOS Team</div>
+  	<div id="footer"></div>
 </body>
 </html>
