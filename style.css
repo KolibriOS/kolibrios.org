@@ -144,10 +144,39 @@ body {
     margin: 4px 4px 1.25em;
     outline: 4px solid transparent;
     transition: outline 0.3s ease;
+    padding: 1em;
+    text-decoration: none;
 }
 
 #banner:hover {
     outline-color: lightblue;
+}
+
+#banner td {
+    text-align: center;
+    vertical-align: center;
+}
+
+#banner img {
+    height: 7em;
+}
+
+#banner h1 {
+    margin-top: 0em;
+    color: #609A21;
+    font-size: 2.5em;
+    margin: 0 0 16px;
+}
+
+#banner p {
+    margin: 0em;
+}
+
+#banner .p-link {
+    margin-top: 16px;
+    color: #609A21;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 h1 {
@@ -168,10 +197,30 @@ p {
     line-height: 1.5;
 }
 
+.p-socials {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.p-socials a {
+    margin: 1em 1em;
+    text-decoration: none;
+}
+
+.p-socials br {
+    margin: 0em 0em 1em;
+    display: none;
+}
+
+.p-socials img {
+    height: 1em;
+    margin-right: 0.5em;
+    margin-bottom: -0.15em;
+}
+
 .p-subscription
 {
     text-align: center;
-    margin-bottom: 0px;
 }
 
 /*  DOWNLOADS  */
@@ -329,6 +378,7 @@ iframe {
 #footer img
 {
     margin-bottom: 0.5em;
+    height: 7em;
 }
 
 #footer p
@@ -351,6 +401,24 @@ iframe {
         max-width: calc(100% - 2px);
         margin: 1px 0 1em;
         outline: 1px solid rgb(227 227 227);;
+    }
+
+    #banner img {
+        display: none;
+    }
+
+    #banner h1 {
+        font-size: 1.5em;
+        margin-bottom: 0;
+    }
+
+    #banner p, #banner .p-link {
+        margin-top: 0.5em;
+    }
+
+    .p-socials br {
+        display: block;
+        height: 1em;
     }
 
     #menu>* {
