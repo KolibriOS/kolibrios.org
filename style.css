@@ -230,6 +230,18 @@ table {
     border-spacing: 0;
 }
 
+table a {
+    padding-bottom: 1px;
+    border-bottom: 1px solid;
+    text-decoration: none;
+    color: #0472D8
+}
+
+table a:hover
+{
+    color: #0053B9;
+}
+
 tr {
     vertical-align: middle;
 }
@@ -259,6 +271,15 @@ td img {
     width: 40%;
 }
 
+.td-description .beta {
+    border: 1px solid grey;
+    color: grey;
+    font-size: 0.75em;
+    font-weight: bold;
+    border-radius: 0.25em;
+    padding: 0.25em;
+}
+
 .td-date {
     text-align: right;
     padding-right: 2em;
@@ -268,16 +289,8 @@ td img {
     text-align: right;
 }
 
-table a {
-    padding-bottom: 1px;
-    border-bottom: 1px solid;
-    text-decoration: none;
-    color: #0472D8
-}
-
-table a:hover
-{
-    color: #0053B9;
+.td-languages a {
+    margin-left: 1em;
 }
 
 hr {
@@ -416,9 +429,9 @@ iframe {
         margin-top: 0.5em;
     }
 
-    .p-socials br {
+    .p-socials a {
         display: block;
-        height: 1em;
+        margin: 1em 0 0;
     }
 
     #menu>* {
@@ -430,8 +443,13 @@ iframe {
     }
 
     .td-date {
+        display: none;
         padding-right: 1em;
         padding-left: 1em;
+    }
+
+    .td-languages a {
+        margin-left: 1em;
     }
 
     #footer {
