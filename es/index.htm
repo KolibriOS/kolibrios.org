@@ -1,49 +1,106 @@
 <!doctype html>
 <html lang="es" onmouseup="dropdown_hide()">
-	<head>
-		<meta charset="utf-8">
-		<title>Sitio oficial de KolibriOS</title>
-		<link rel="icon" type="image/x-icon" href="../favicon.ico">
-		<meta name="description" content="Sitio oficial de KolibriOS">
-		<meta name="keywords" content="kolibri, kolibrios, колибри, колибриос, colibri, operating system, assembler, калибри, fasm, alternate, open source">
-		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" type="text/css" href="../style.css">
-		<script src='../script.js'></script>
-	</head>
-<body onkeydown='checkkey(event)'>
 
-	<div id="lang-dropdown">
-		<div>
-			<a href='../en/index.htm'><img src='../i/fl/en.png' alt='en'/>English</a>
-			<a href='../de/index.htm'><img src='../i/fl/de.png' alt='de'/>Deutsch</a>
-			<font bg=#FF9800><a class='sel' href='../es/index.htm'><img src='../i/fl/es.png' alt='es'/>Español</a></font>
-			<a href='../fr/index.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a>
-			<a href='../it/index.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a>
-			<a href='../nl/index.htm'><img src='../i/fl/nl.png' alt='nl'/>Nederlands</a>
-			<a href='../ru/index.htm'><img src='../i/fl/ru.png' alt='ru'/>Русский</a>
-		</div>
-	</div>
+<head>
+    <meta charset="utf-8">
+    <title>KolibriOS</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <meta name="description" content="Sitio oficial de KolibriOS">
+    <meta name="keywords"
+        content="kolibri, kolibrios, колибри, колибриос, colibri, operating system, assembler, калибри, fasm, alternate, open source">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script src="../script.js"></script>
+</head>
 
-	<nav id="menu">
-		<a href="../es/index.htm" class='a'><font bg=lightblue>KolibriOS</font></a>
-		<a href="../es/download.htm" >Descargar</a>
-		<a href="http://board.kolibrios.org">Foro</a>
-		<a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=es">Wiki</a>
-		<a href="https://git.kolibrios.org">Git</a>
-		<button onclick="dropdown_show(this)" id="l"><img src="../i/fl/es.png" alt="es"></button>
-	</nav>
+<body onkeydown="checkkey(event)">
+    <div id="lang-dropdown">
+        <div>
+            <a href="../en/index.htm"><img src="../i/fl/en.png" alt="en" />English</a>
+            <a href="../de/index.htm"><img src="../i/fl/de.png" alt="de" />Deutsch</a>
+            <font bg="lightblue">
+                <a class="a-sel" href="../es/index.htm"><img src="../i/fl/es.png" alt="es" />Español</a>
+            </font>
+            <a href="../fr/index.htm"><img src="../i/fl/fr.png" alt="fr" />Français</a>
+            <a href="../it/index.htm"><img src="../i/fl/it.png" alt="it" />Italiano</a>
+            <a href="../nl/index.htm"><img src="../i/fl/nl.png" alt="nl" />Nederlands</a>
+            <a href="../ru/index.htm"><img src="../i/fl/ru.png" alt="ru" />Русский</a>
+        </div>
+    </div>
 
-	<div id="article" style="padding-bottom: 30px;">
-		<a href="../es/download.htm">
-			<img id="banner" class="big" src="../i/banners/es.png" alt="We got closer. KolibriOS is now avilable in Spanish!">
-		</a>
-		<br>
-		<p><strong>KolibriOS</strong> es un pequeño sistema operativo poderoso y rápido. Sólamente requiere unos pocos megabytes de espacio en disco y 8MB de memoria RAM para funcionar. KolibriOS incluye varias aplicaciones: procesador de textos, visor de imágenes, editor gráfico, navegador web y más de 30 juegos. El soporte total para FAT12/16/32 está implementado, como también el soporte de sólo lectura para NTFS, ISO9660 y Ext2/3/4. Hay <a href="http://wiki.kolibrios.org/wiki/Hardware_Support">controladores</a> escritos para las tarjetas más populares de sonido, red y video.</p>
-		
-		<p style="padding: 15px 0;">¿Alguna vez soñaste con un sistema que demorara menos de 10 segundos en cargar la interfaz gráfica luego del encendido, en un <link "$100 PC">PC de 100 dólares</link>? ¿Aplicaciones que inician inmediatamente luego de cliquear un icono, sin un molesto cursor con forma de reloj de arena?
-		¡Con KolibriOS es posible porque su núcleo y controladores están escritos enteramente en el lenguaje ensamblador <a href="http://www.flatassembler.net" target="_blank">FASM</a>! Prueba KolibriOS y comparalo con pesos pesados como Windows y Linux.</p>
+    <nav id="menu">
+        <a href="../es/index.htm" class="a-sel">
+            <font bg="lightblue">KolibriOS</font>
+        </a>
+        <a href="../es/download.htm">Descargar</a>
+        <a href="http://board.kolibrios.org">Foro</a>
+        <a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=es">Wiki</a>
+        <a href="https://git.kolibrios.org">Git</a>
+        <button onclick="dropdown_show(this)" id="lang-butt">
+            <img src="../i/fl/es.png" alt="es">
+        </button>
+    </nav>
 
-		<p><b>KolibriOS</b> empezó en 2004 usando como base el código de MenuetOS, pero desde entonces su desarrollo es independiente. Todo nuestro código es abierto, con la mayoría del código liberado bajo la licencia <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">GPLv2</a>. Apreciamos mucho tus <a href="http://board.kolibrios.org/viewforum.php?f=50">comentarios</a> y tu <a href="http://wiki.kolibrios.org/wiki/Kolibri_tomorrow">ayuda</a> es muy bienvenida.</p>
-	</div>
-  	<div id="footer"></div>
+    <div id="article">
+        <a href="../es/download.htm">
+            <img id="banner" class="big" src="../i/banners/es.png"
+                alt="We got closer. KolibriOS is now avilable in Spanish!">
+        </a>
+
+        <p>
+            <b>KolibriOS</b> es un sistema operativo extraordinariamente compacto y 
+            extremadamente rápido, diseñado pensando en sus necesidades. 
+            Ocupa sólo unos pocos megabytes de espacio en disco y sólo 12 MB de RAM, 
+            lo que le proporciona mayor velocidad y eficacia para las tareas cotidianas. 
+            Disfruta de un completo conjunto de aplicaciones integradas, como un 
+            procesador de textos, un visor de imágenes, un editor gráfico, un navegador
+            web y más de 30 divertidos juegos, para que puedas trabajar, 
+            crear y jugar sin complicaciones.
+        </p>
+
+        <iframe src="https://www.youtube.com/embed/SATYQyIcimM" allowfullscreen="true"></iframe>
+
+        <p>
+            ¿Ha soñado alguna vez con un sistema que esté listo para funcionar en sólo 
+            unos segundos desde el encendido, permitiéndole saltar directamente a lo que 
+            importa sin esperas? Eso es exactamente lo que hace <b>KolibriOS</b>. Todas las 
+            aplicaciones se abren al instante al hacer clic, ofreciendo una experiencia 
+            fluida y sin frustraciones que te permite centrarte en tus proyectos y en tu 
+            tiempo libre. Experimenta cómo el rápido arranque y la capacidad de respuesta 
+            de <b>KolibriOS</b> pueden transformar tu informática diaria, convirtiéndolo en una 
+            refrescante alternativa a sistemas más engorrosos.
+        </p>
+
+        <p>
+            Nacido de su herencia MenuetOS en 2004 y perfeccionado a través del desarrollo 
+            independiente, KolibriOS es ahora totalmente de código abierto, con la mayor 
+            parte de nuestro código liberado bajo licencia
+            <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">GPLv2</a>
+            Agradecemos enormemente tus inestimables
+            <a href="http://board.kolibrios.org">comentarios</a> y contribuciones a 
+            través de la 
+            <a href="http://wiki.kolibrios.org/wiki/Kolibri_tomorrow">ayuda</a>.
+            Únete a una comunidad en la que tus opiniones ayudan a dar forma a un sistema 
+            creado para usuarios reales como tú.
+        </p>
+
+        <p class="p-subscription">
+            <b>
+                ¡Esperamos que lo disfrutes!<br />
+                Equipo KolibriOS
+            </b>
+        </p>
+    </div>
+
+    <div id="footer">
+        <img src="../i/logo.png" />
+        <p>
+            &copy; 2004
+            <script>document.write("&thinsp;&ndash;&thinsp;" + new Date().getFullYear());</script>
+            <br />
+            Equipo KolibriOS
+        </p>
+    </div>
+</body>
+
 </html>

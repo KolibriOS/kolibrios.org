@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="it" onmouseup="dropdown_hide()">
+
+<head>
+    <meta charset="utf-8">
+    <title>KolibriOS Downloads</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <meta name="description" content="KolibriOS - Scaricare">
+    <meta name="keywords"
+        content="kolibri, kolibrios, колибри, колибриос, colibri, operating system, assembler, калибри, fasm, alternate, open source">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script src="../script.js"></script>
+</head>
+
+<body onkeydown="checkkey(event)">
+
+    <div id="lang-dropdown">
+        <div>
+            <a href="../en/download.htm"><img src="../i/fl/en.png" alt="en" />English</a>
+            <a href="../de/download.htm"><img src="../i/fl/de.png" alt="de" />Deutsch</a>
+            <a href="../es/download.htm"><img src="../i/fl/es.png" alt="es" />Español</a>
+            <a href="../fr/download.htm"><img src="../i/fl/fr.png" alt="fr" />Français</a>
+            <font bg="lightblue">
+                <a class="a-sel" href="../it/download.htm"><img src="../i/fl/it.png" alt="it" />Italiano</a>
+            </font>
+            <a href="../nl/download.htm"><img src="../i/fl/nl.png" alt="nl" />Nederlands</a>
+            <a href="../ru/download.htm"><img src="../i/fl/ru.png" alt="ru" />Русский</a>
+        </div>
+    </div>
+
+    <nav id="menu">
+        <a href="../it/index.htm">KolibriOS</a>
+        <a href="../it/download.htm" class="a-sel">
+            <font bg="lightblue">Scaricare</font>
+        </a>
+        <a href="http://board.kolibrios.org">Forum</a>
+        <a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=it">Wiki</a>
+        <a href="https://git.kolibrios.org">Git</a>
+        <button onclick="dropdown_show(this)" id="lang-butt">
+            <img src="../i/fl/it.png" alt="it">
+        </button>
+    </nav>
+
+    <div id="article">
+        <h1>Downloads</h1>
+        <table>
+            <tr class="tr-margin-bot">
+                <td class="td-image"><img src="../i/i_floppy.png" alt="dischetto"></td>
+                <td class="td-description">Immagine su dischetto</td>
+                <td class="td-date">$autobuild_date_en</td>
+                <td class="td-languages">
+                    <a href="//builds.kolibrios.org/en_US/latest-img.7z"
+                        title="ver. $autobuild_cmtid_en_US, $autobuild_size_en_US_img">English</a>
+                    <a href="//builds.kolibrios.org/ru_RU/latest-img.7z"
+                        title="ver. $autobuild_cmtid_ru_RU, $autobuild_size_ru_RU_img">Русский</a>
+                    <a href="//builds.kolibrios.org/es_ES/latest-img.7z"
+                        title="ver. $autobuild_cmtid_es_ES, $autobuild_size_es_ES_img">Español</a>
+                </td>
+            </tr>
+            <tr class="tr-margin-bot">
+                <td class="td-image"><img src="../i/i_cd.png" alt="cd"></td>
+                <td class="td-description">Immagine LiveCD</td>
+                <td class="td-date">$autobuild_date_en</td>
+                <td class="td-languages">
+                    <a href="//builds.kolibrios.org/en_US/latest-iso.7z"
+                        title="ver. $autobuild_cmtid_en_US, $autobuild_size_en_US_iso">English</a>
+                    <a href="//builds.kolibrios.org/ru_RU/latest-iso.7z"
+                        title="ver. $autobuild_cmtid_ru_RU, $autobuild_size_ru_RU_iso">Русский</a>
+                    <a href="//builds.kolibrios.org/es_ES/latest-iso.7z"
+                        title="ver. $autobuild_cmtid_es_ES, $autobuild_size_es_ES_iso">Español</a>
+                </td>
+            </tr>
+            <tr class="tr-margin-bot">
+                <td class="td-image"><img src="../i/i_uni.png" alt="universale"></td>
+                <td class="td-description">Immagine universale Flash/<acronym title="Caricamento di più sistemi operativi su un PC">MultiBoot</acronym></td>
+                <td class="td-date">$autobuild_date_en</td>
+                <td class="td-languages">
+                    <a href="//builds.kolibrios.org/en_US/latest-distr.7z"
+                        title="ver. $autobuild_cmtid_en_US, $autobuild_size_en_US_distr">English</a>
+                    <a href="//builds.kolibrios.org/ru_RU/latest-distr.7z"
+                        title="ver. $autobuild_cmtid_ru_RU, $autobuild_size_ru_RU_distr">Русский</a>
+                    <a href="//builds.kolibrios.org/es_ES/latest-distr.7z"
+                        title="ver. $autobuild_cmtid_es_ES, $autobuild_size_es_ES_distr">Español</a>
+                </td>
+            </tr>
+            <tr class="tr-margin-bot">
+                <td class="td-image"><img src="../i/i_uefi.png" alt="uefi"></td>
+                <td class="td-description"><span class="beta">Immagine ibrida UEFI/BIOS</span></td>
+                <td class="td-date">$autobuild_date_en</td>
+                <td class="td-languages">
+                    <a href="//builds.kolibrios.org/en_US/latest-raw.7z"
+                        title="ver. $autobuild_cmtid_en_US, $autobuild_size_en_US_raw">English</a>
+                    <a href="//builds.kolibrios.org/ru_RU/latest-raw.7z"
+                        title="ver. $autobuild_cmtid_ru_RU, $autobuild_size_ru_RU_raw">Русский</a>
+                    <a href="//builds.kolibrios.org/es_ES/latest-raw.7z"
+                        title="ver. $autobuild_cmtid_es_ES, $autobuild_size_es_ES_raw">Español</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <hr />
+                </td>
+            </tr>
+            <tr class="tr-margin-top">
+                <td  class="td-description" colspan="2">
+                    <div role="button" class="help-button" 
+                        onclick="alert('Per un principiante, il LiveCD è la soluzione migliore.\n\nRispetto a un LiveCD, il vantaggio di un`immagine universale è che è possibile salvare le modifiche apportate in KolibriOS.\n\nL`immagine ibrida include il supporto per la tecnologia UEFI, utilizzata per avviare il sistema su nuovi computer e portatili.');">
+                        Quale scegliere?
+                    </div>
+                <td class="td-date">
+                    <a href="//archive.kolibrios.org/it/">Uscite precedenti</a>
+                </td>
+                <td class="td-languages">
+                    <a href="//builds.kolibrios.org/">Tutte le build notturne</a>
+                </td>
+            </tr>
+        </table>
+
+        <p>
+            <b>KolibriOS</b> è un sistema operativo open-source, scritto in linguaggio 
+            assembly 
+            <a href="https://flatassembler.net/">FASM</a> e distribuito sotto licenza 
+            <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">GPLv2</a>. 
+            Il suo codice sorgente completo è disponibile pubblicamente, consentendo a 
+            chiunque di esplorare, modificare e contribuire al suo sviluppo tramite il 
+            nostro <a href="https://git.kolibrios.org">server Git</a>.
+        </p>
+
+        <p>
+            Scaricando e utilizzando le build notturne di <b>KolibriOS</b>, si entra a 
+            far parte di una vivace comunità dedicata all'innovazione, alle prestazioni 
+            e al calcolo leggero. Apprezziamo il vostro supporto e siamo lieti di 
+            ricevere qualsiasi feedback per aiutarci a perfezionare e migliorare 
+            ulteriormente il sistema.
+        </p>
+
+        <h1>Screenshot</h1>
+        <div id="screen">
+            <div id="show" onclick="next()">
+                <img id="slide1" src="../i/slaid/slaid1.png" alt="Il desktop di KolibriOS" class="visible">
+                <img id="slide2" src="../i/slaid/slaid2.png" alt="Demo">
+                <img id="slide3" src="../i/slaid/slaid3.png" alt="Gestori di file">
+                <img id="slide4" src="../i/slaid/slaid4.png" alt="Programmi di rete">
+                <img id="slide5" src="../i/slaid/slaid5.png" alt="Giochi">
+                <img id="slide6" src="../i/slaid/slaid6.png" alt="Strumenti per sviluppatori e debug">
+            </div>
+        </div>
+
+        <div id="carousel"></div>
+        <div id="dots"></div>
+
+    </div>
+
+    <div id="footer">
+        <img src="../i/logo.png" />
+        <p>
+            &copy; 2004<script>document.write("&thinsp;&ndash;&thinsp;" + new Date().getFullYear());</script>
+            <br />
+            Team KolibriOS
+        </p>
+    </div>
+
+</body>
+
+</html>
