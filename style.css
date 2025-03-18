@@ -65,7 +65,7 @@ body {
 
 #lang-dropdown>div {
     display: block;
-    border-radius: 5px;
+    border-radius: 3px;
     border: 1px solid #333;
     box-shadow: 0 0 5px #000;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
@@ -77,7 +77,7 @@ body {
 
 #lang-dropdown>div a {
     display: block;
-    padding: 0 50px 0 20px;
+    padding: 0 3em 0 1em;
     line-height: 2.5;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     border-bottom: 1px solid rgba(0, 0, 0, 0.07);
@@ -123,10 +123,10 @@ body {
 /*  ARTICLE  */
 
 #article {
-    background: rgba(254, 255, 255, 0.7);
+    background: rgba(254, 255, 255, 1);
     border: 1px solid #c0b9c491;
     border-radius: 4px;
-    box-shadow: rgb(28 26 40 / 20%) 2px 6px 20px -2px;
+    box-shadow: rgb(28 26 40 / 12%) 0px 4px 4px -2px;
     margin: 2em auto;
     max-width: 910px;
     padding: 2em;
@@ -141,8 +141,8 @@ body {
     box-shadow: none;
     display: block;
     margin: 4px 4px 1.25em;
-    outline: 4px solid rgb(227 227 227);
-    transition: outline 0.5s ease;
+    outline: 4px solid transparent;
+    transition: outline 0.3s ease;
 }
 
 #banner:hover {
@@ -317,6 +317,12 @@ iframe {
     margin: 2em auto;
     text-align: center;
     color: #848585;
+    display: block;
+    text-align: center;
+    width: 100%;
+    color: rgb(132, 133, 133);
+    text-shadow: rgb(255, 255, 255) 1px 1px 0px;
+    font-size: 90%;
 }
 
 #footer img
@@ -327,6 +333,7 @@ iframe {
 #footer p
 {
     margin: 0;
+    
 }
 
 /*  ADAPTIVE LAYOUT  */
