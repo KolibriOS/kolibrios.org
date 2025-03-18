@@ -1,50 +1,109 @@
 <!doctype html>
 <html lang="ru" onmouseup="dropdown_hide()">
+
 <head>
-  <meta charset="utf-8">
-  <title>KolibriOS - официальный сайт</title>
-  <link rel="icon" type="image/x-icon" href="../favicon.ico">
-  <meta name="description" content="KolibriOS - официальный сайт">
-  <meta name="keywords" content="kolibri, kolibrios, колибри, колибриос, colibri, operating system, assembler, калибри, fasm, alternate, open source">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" type="text/css" href="../style.css">
-  <script src='../script.js'></script>
+    <meta charset="utf-8">
+    <title>KolibriOS</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <meta name="description" content="Официальный сайт KolibriOS">
+    <meta name="keywords"
+        content="kolibri, kolibrios, колибри, колибриос, colibri, operating system, assembler, калибри, fasm, alternate, open source">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script src="../script.js"></script>
 </head>
-<body onkeydown='checkkey(event)'>
 
-	<div id="lang-dropdown">
-		<div>
-			<a href='../en/index.htm'><img src='../i/fl/en.png' alt='en'/>English</a>
-			<a href='../de/index.htm'><img src='../i/fl/de.png' alt='de'/>Deutsch</a>
-			<a href='../es/index.htm'><img src='../i/fl/es.png' alt='es'/>Español</a>
-			<a href='../fr/index.htm'><img src='../i/fl/fr.png' alt='fr'/>Français</a>
-			<a href='../it/index.htm'><img src='../i/fl/it.png' alt='it'/>Italiano</a>
-			<a href='../nl/index.htm'><img src='../i/fl/nl.png' alt='nl'/>Nederlands</a>
-			<font bg=#FF9800><a class='sel' href='../ru/index.htm'><img src='../i/fl/ru.png' alt='ru'/>Русский</a></font>
-		</div>
-	</div>
+<body onkeydown="checkkey(event)">
 
-  <nav id="menu">
-    <a href="../ru/index.htm" class='a'><font bg=lightblue>КолибриОС</font></a>
-    <a href="../ru/download.htm">Скачать</a>
-    <a href="http://board.kolibrios.org">Форум</a>
-    <a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=ru">Вики</a>
-    <a href="https://git.kolibrios.org">Git</a>
-    <button onclick="dropdown_show(this)" id="l"><img src="../i/fl/ru.png" alt="ru"></button>
-  </nav>
+    <div id="lang-dropdown">
+        <div>
+            <a href="../en/index.htm"><img src="../i/fl/en.png" alt="en" />English</a>
+            <a href="../de/index.htm"><img src="../i/fl/de.png" alt="de" />Deutsch</a>
+            <a href="../es/index.htm"><img src="../i/fl/es.png" alt="es" />Español</a>
+            <a href="../fr/index.htm"><img src="../i/fl/fr.png" alt="fr" />Français</a>
+            <a href="../it/index.htm"><img src="../i/fl/it.png" alt="it" />Italiano</a>
+            <a href="../nl/index.htm"><img src="../i/fl/nl.png" alt="nl" />Nederlands</a>
+            <font bg="lightblue">
+                <a class="a-sel" href="../ru/index.htm">
+                    <img src="../i/fl/ru.png" alt="ru" />Русский
+                </a>
+            </font>
+        </div>
+    </div>
 
-	<div id="article" class="index_russian">
-		<a href="https://t.me/kolibrios_news" target="_blank">
-			<img id="banner" src="../i/banners/ru.png" alt="Наша группа в Telegram. Подписывайтесь!">
-		</a>
-		<br>
-		<p><strong>KolibriOS</strong> &mdash; очень миниатюрная и невероятно быстрая операционная система. Её основной дистрибутив имеет размер 1,44&nbsp;Мб &mdash; и это при том, что содержит набор драйверов, браузер, несколько текстовых и графических редакторов, просмотрщиков, плееров, более 30 игр и другие программы. Встроена поддержка чтения и записи для файловых систем FAT12/16/32, NTFS, Ext2/3/4, только для чтения доступны XFS и ISO&nbsp;9660.</p>
-		<p>Такая скорость и компактность достигается благодаря тому, что ядро и большинство программ написаны на ассемблере <a href="https://flatassembler.net/" target="_blank">FASM</a>, тем самым максимально оптимизированы под процессоры х86. Для запуска достаточно всего 8 мегабайт оперативной памяти. Мечтали вы когда-нибудь о том, чтобы приложения запускались мгновенно, сразу после нажатия на иконку? Без крутящихся часиков и кружков. Просто сразу. Попробуйте KolibriOS и сравните её с такими тяжеловесами, как Windows и Linux.</p>
-		<p>KolibriOS отделилась от MenuetOS в 2004 году, и с тех пор разрабатывается интернациональным сообществом программистов. Ведётся работа по облегчению жизни разработчиков и пользователей. Ваши отзывы очень полезны, хотя помощь, конечно же, еще полезнее.</p>
-		<br>
-		Надеемся, Вам понравится,<br>
-		команда КолибриОС.
-	</div>
-  <div id="footer">&copy; 2004<script>document.write("&thinsp;&ndash;&thinsp;" + new Date().getFullYear())</script> команда КолибриОС</div>
+    <nav id="menu">
+        <a href="../ru/index.htm" class="a-sel">
+            <font bg="lightblue">КолибриОС</font>
+        </a>
+        <a href="../ru/download.htm">Скачать</a>
+        <a href="http://board.kolibrios.org">Форум</a>
+        <a href="http://wiki.kolibrios.org/index.php?title=Main_Page&amp;setlang=ru">Вики</a>
+        <a href="https://git.kolibrios.org">Git</a>
+        <button onclick="dropdown_show(this)" id="lang-butt">
+            <img src="../i/fl/ru.png" alt="ru">
+        </button>
+    </nav>
+
+    <div id="article">
+
+        <a href="https://t.me/kolibrios_news" target="_blank" id="banner">
+            <img id="banner" src="../i/banners/ru.png" alt="Наша группа в Telegram. Подписывайтесь!">
+        </a>
+
+        <p>
+            <b>KolibriOS</b> — это поразительно компактная, но молниеносно быстрая 
+            операционная система, созданная с учётом ваших потребностей. Она занимает 
+            всего несколько мегабайт дискового пространства и использует всего 12 МБ 
+            оперативной памяти, что обеспечивает высокую скорость и эффективность для 
+            повседневных задач. Наслаждайтесь полным набором встроенных приложений — 
+            таких как текстовый редактор, просмотрщик изображений, графический редактор, 
+            веб-браузер и более 30 увлекательных игр — чтобы вы могли работать, творить 
+            и играть без лишних хлопот.
+        </p>
+
+        <iframe src="https://www.youtube.com/embed/SATYQyIcimM" allowfullscreen="true"></iframe>
+
+        <p>
+            Вы когда-нибудь мечтали о системе, которая готова к работе всего за несколько 
+            секунд после включения, позволяя сразу перейти к тому, что действительно важно, 
+            без ожидания? Именно это и делает <b>KolibriOS</b>! Каждое приложение открывается 
+            мгновенно при нажатии, обеспечивая плавный опыт без малейшего ожидания, 
+            который позволяет сосредоточиться на ваших проектах и отдыхе. Ощутите, как 
+            быстрая загрузка и отзывчивость <b>KolibriOS</b> могут преобразить ваше 
+            повседневное использование компьютера, делая её свежей альтернативой более 
+            громоздким системам.
+        </p>
+
+        <p>
+            Отделившаяся от MenuetOS в 2004 году и усовершенствованная благодаря 
+            независимой разработке, <b>KolibriOS</b> теперь является полностью 
+            open-source, причем большая часть нашего кода выпущена под лицензией 
+            <a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">GPLv2</a>. 
+            Мы также высоко ценим ваши искренние
+            <a href="http://board.kolibrios.org">отзывы</a> и вклад через 
+            <a href="http://wiki.kolibrios.org/wiki/Kolibri_tomorrow">помощь</a>. 
+            Присоединяйтесь к сообществу, где ваши идеи помогают формировать систему, 
+            созданную для реальных пользователей, таких как вы.
+        </p>
+
+        <p class="p-subscription">
+            <b>
+                Надеемся, вам понравится!<br />
+                Команда КолибриОС
+            </b>
+        </p>
+
+    </div>
+
+    <div id="footer">
+        <img src="../i/logo.png" />
+        <p>
+            &copy; 2004<script>document.write("&thinsp;&ndash;&thinsp;" + new Date().getFullYear());</script>
+            <br />
+            Команда КолибриОС
+        </p>
+    </div>
+
 </body>
+
 </html>
