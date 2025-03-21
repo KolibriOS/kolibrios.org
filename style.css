@@ -176,7 +176,10 @@ body {
     margin-top: 16px;
     color: #609A21;
     font-weight: bold;
-    text-decoration: underline;
+}
+
+#banner a {
+    color: #609A21;
 }
 
 h1 {

@@ -133,7 +133,7 @@
 
         <div id="screen" onclick="next()">
             <div id="show">
-                <img id="slide1" src="../i/slaid/slaid1.png" alt="Рабочий стол KolibriOS" class="visible">
+                <img id="slide1" src="../i/slaid/slaid1.png" alt="Рабочий стол КолибриОС" class="visible">
                 <img id="slide2" src="../i/slaid/slaid2.png" alt="Демки">
                 <img id="slide3" src="../i/slaid/slaid3.png" alt="Файловые менеджеры">
                 <img id="slide4" src="../i/slaid/slaid4.png" alt="Сетевые приложения">
