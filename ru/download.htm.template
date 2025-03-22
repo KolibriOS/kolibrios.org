@@ -23,7 +23,7 @@
             <a href="../fr/download.htm"><img src="../i/fl/fr.png" alt="fr" />Français</a>
             <a href="../it/download.htm"><img src="../i/fl/it.png" alt="it" />Italiano</a>
             <a href="../nl/download.htm"><img src="../i/fl/nl.png" alt="nl" />Nederlands</a>
-            <font bg="lightblue">
+            <font bg="#90EE90">
                 <a class="a-sel" href="../ru/download.htm"><img src="../i/fl/ru.png" alt="ru" />Русский</a>
             </font>
         </div>
@@ -46,7 +46,7 @@
         <h1>Загрузка</h1>
         <table>
             <tr class="tr-margin-bot">
-                <td class="td-image"><img src="../i/i_floppy.png" alt="floppy"></td>
+                <td class="td-image" width="40"><img src="../i/i_floppy.png" alt="floppy"></td>
                 <td class="td-description">Образ дискеты</td>
                 <td class="td-date">$autobuild_date_ru</td>
                 <td class="td-languages">
@@ -59,7 +59,7 @@
                 </td>
             </tr>
             <tr class="tr-margin-bot">
-                <td class="td-image"><img src="../i/i_cd.png" alt="cd"></td>
+                <td class="td-image" width="40"><img src="../i/i_cd.png" alt="cd"></td>
                 <td class="td-description">Образ LiveCD</td>
                 <td class="td-date">$autobuild_date_ru</td>
                 <td class="td-languages">
@@ -72,7 +72,7 @@
                 </td>
             </tr>
             <tr class="tr-margin-bot">
-                <td class="td-image"><img src="../i/i_uni.png" alt="universal"></td>
+                <td class="td-image" width="40"><img src="../i/i_uni.png" alt="universal"></td>
                 <td class="td-description">Универсальный образ Flash/<acronym title="Загрузка несколько операционных систем на одном компьютере">Multi-boot</acronym></td>
                 <td class="td-date">$autobuild_date_ru</td>
                 <td class="td-languages">
@@ -85,7 +85,7 @@
                 </td>
             </tr>
             <tr class="tr-margin-bot">
-                <td class="td-image"><img src="../i/i_uefi.png" alt="uefi"></td>
+                <td class="td-image" width="40"><img src="../i/i_uefi.png" alt="uefi"></td>
                 <td class="td-description">Гибридный UEFI/BIOS образ <span class="beta">БЕТА</span></td>
                 <td class="td-date">$autobuild_date_ru</td>
                 <td class="td-languages">

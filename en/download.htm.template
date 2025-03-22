@@ -17,7 +17,7 @@
 
     <div id="lang-dropdown">
         <div>
-            <font bg="lightblue">
+            <font bg="#90EE90">
                 <a class="a-sel" href="../en/download.htm"><img src="../i/fl/en.png" alt="en" />English</a>
             </font>
             <a href="../de/download.htm"><img src="../i/fl/de.png" alt="de" />Deutsch</a>
@@ -46,7 +46,7 @@
         <h1>Downloads</h1>
         <table>
             <tr class="tr-margin-bot">
-                <td class="td-image"><img src="../i/i_floppy.png" alt="floppy"></td>
+                <td class="td-image" width="40"><img src="../i/i_floppy.png" alt="floppy"></td>
                 <td class="td-description">Floppy disk image</td>
                 <td class="td-date">$autobuild_date_en</td>
                 <td class="td-languages">
@@ -59,7 +59,7 @@
                 </td>
             </tr>
             <tr class="tr-margin-bot">
-                <td class="td-image"><img src="../i/i_cd.png" alt="cd"></td>
+                <td class="td-image" width="40"><img src="../i/i_cd.png" alt="cd"></td>
                 <td class="td-description">LiveCD image</td>
                 <td class="td-date">$autobuild_date_en</td>
                 <td class="td-languages">
@@ -72,7 +72,7 @@
                 </td>
             </tr>
             <tr class="tr-margin-bot">
-                <td class="td-image"><img src="../i/i_uni.png" alt="universal"></td>
+                <td class="td-image" width="40"><img src="../i/i_uni.png" alt="universal"></td>
                 <td class="td-description">Universal Flash/<acronym title="Loading multiple operating systems on one PC">Multi-boot</acronym> image</td>
                 <td class="td-date">$autobuild_date_en</td>
                 <td class="td-languages">
@@ -85,7 +85,7 @@
                 </td>
             </tr>
             <tr class="tr-margin-bot">
-                <td class="td-image"><img src="../i/i_uefi.png" alt="uefi"></td>
+                <td class="td-image" width="40"><img src="../i/i_uefi.png" alt="uefi"></td>
                 <td class="td-description">Hybrid UEFI/BIOS image <span class="beta">BETA</span></td>
                 <td class="td-date">$autobuild_date_en</td>
                 <td class="td-languages">

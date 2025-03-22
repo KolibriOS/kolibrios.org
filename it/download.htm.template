@@ -21,7 +21,7 @@
             <a href="../de/download.htm"><img src="../i/fl/de.png" alt="de" />Deutsch</a>
             <a href="../es/download.htm"><img src="../i/fl/es.png" alt="es" />Español</a>
             <a href="../fr/download.htm"><img src="../i/fl/fr.png" alt="fr" />Français</a>
-            <font bg="lightblue">
+            <font bg="#90EE90">
                 <a class="a-sel" href="../it/download.htm"><img src="../i/fl/it.png" alt="it" />Italiano</a>
             </font>
             <a href="../nl/download.htm"><img src="../i/fl/nl.png" alt="nl" />Nederlands</a>
@@ -46,7 +46,7 @@
         <h1>Downloads</h1>
         <table>
             <tr class="tr-margin-bot">
-                <td class="td-image"><img src="../i/i_floppy.png" alt="dischetto"></td>
+                <td class="td-image" width="40"><img src="../i/i_floppy.png" alt="dischetto"></td>
                 <td class="td-description">Immagine su dischetto</td>
                 <td class="td-date">$autobuild_date_en</td>
                 <td class="td-languages">
@@ -59,7 +59,7 @@
                 </td>
             </tr>
             <tr class="tr-margin-bot">
-                <td class="td-image"><img src="../i/i_cd.png" alt="cd"></td>
+                <td class="td-image" width="40"><img src="../i/i_cd.png" alt="cd"></td>
                 <td class="td-description">Immagine LiveCD</td>
                 <td class="td-date">$autobuild_date_en</td>
                 <td class="td-languages">
@@ -72,7 +72,7 @@
                 </td>
             </tr>
             <tr class="tr-margin-bot">
-                <td class="td-image"><img src="../i/i_uni.png" alt="universale"></td>
+                <td class="td-image" width="40"><img src="../i/i_uni.png" alt="universale"></td>
                 <td class="td-description">Immagine universale Flash/<acronym title="Caricamento di più sistemi operativi su un PC">MultiBoot</acronym></td>
                 <td class="td-date">$autobuild_date_en</td>
                 <td class="td-languages">
@@ -85,7 +85,7 @@
                 </td>
             </tr>
             <tr class="tr-margin-bot">
-                <td class="td-image"><img src="../i/i_uefi.png" alt="uefi"></td>
+                <td class="td-image" width="40"><img src="../i/i_uefi.png" alt="uefi"></td>
                 <td class="td-description">Immagine ibrida UEFI/BIOS <span class="beta">BETA</span></td>
                 <td class="td-date">$autobuild_date_en</td>
                 <td class="td-languages">
