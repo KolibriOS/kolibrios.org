@@ -1,0 +1,65 @@
+{% extends 'tmpl/index.htm' %}
+
+{% block content %}
+        <a id="banner" href="https://git.kolibrios.org" target="_blank">
+            <table>
+                <tr>
+                    <td valign="top" width="128">
+                        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Banner Image" />
+                    </td>
+                    <td valign="top">
+                        <h1>KolibriOS moved to Git!</h1>
+                        <p>
+                            Check our new developers-friendly infrastructure
+                        </p>
+                        <p class="p-link">
+                            <a href="https://git.kolibrios.org">https://git.kolibrios.org</a>
+                        </p>
+                    </td>
+                    <td valign="top" width="128">
+                        <img src="{{ url_for('static', filename='img/icons/gitea.png') }}" alt="Banner Image" />
+                    </td>
+                </tr>
+            </table>
+        </a>
+
+        <p>
+            <b>KolibriOS</b> is a tiny yet incredibly powerful and fast operating system.
+            It requires only a few megabyte disk space and 12 MB of RAM to run,
+            but features a rich set of applications that include word processor, image
+            viewer, graphical editor, web browser and over 30 exciting games.
+            It also has full FAT12/16/32 support is implemented, as well as read-only
+            support for NTFS, exFAT, ISO9660 and Ext2/3/4 and boasts an extensive set of
+            <a href="http://wiki.kolibrios.org/wiki/Hardware_Support">drivers</a>
+            for popular sound, network and graphics cards.
+        </p>
+
+        <iframe src="https://www.youtube.com/embed/SATYQyIcimM" allowfullscreen="true"></iframe>
+
+        <p>
+            Have you ever dreamed of a system that boots in less than few seconds from
+            power-on to working GUI? About applications that start instantly, immediately
+            after clicking an icon, without annoying hourglass pointers?
+            This speed is achieved since the core parts of <b>KolibriOS</b>
+            (kernel and drivers) are written entirely in
+            <a href="http://www.flatassembler.net" target="_blank">FASM</a>
+            assembly language!
+            Try <b>KolibriOS</b> and compare it with such heavyweights as Windows and Linux.
+        </p>
+
+        <p>
+            <b>KolibriOS</b> has forked off from MenuetOS in 2004, and is run under
+            independent development since then.
+            Your <a href="http://board.kolibrios.org">feedback</a> is very much
+            appreciated, and your
+            <a href="https://git.kolibrios.org/KolibriOS/kolibrios">help</a>
+            is even more welcome.
+        </p>
+
+        <p class="p-subscription">
+            <b>
+                We hope you will enjoy it!<br />
+                KolibriOS Team
+            </b>
+        </p>
+{% endblock %}

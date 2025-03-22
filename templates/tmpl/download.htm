@@ -20,7 +20,7 @@
             ) %}
             <tr class="tr-margin-bot">
                 <td class="td-image" width="40"><img src="{{ url_for('static', filename='img/icons/i_%s.png' % alt) }}" alt="{{ alt }}"></td>
-                <td class="td-description">{{ locale[lang]['%s-descr' % s] }}</td>
+                <td class="td-description">{{ locale[lang]['%s-descr' % ext] }}</td>
                 <td class="td-date">$autobuild_date_ru</td>
                 <td class="td-languages">
                     {% for l, lang in (
@@ -43,26 +43,24 @@
                 <td class="td-description" colspan="2">
                     <div role="button" class="help-button"
                         onclick="alert('{{ locale[lang]['download_help']}}');">
-                        Какой выбрать?
+                        {{ locale[lang]['download_choice'] }}
                     </div>
                 <td class="td-date">
-                    <a href="//archive.kolibrios.org/ru/">Предыдущие выпуски</a>
+                    <a href="//archive.kolibrios.org/ru/">{{ locale[lang]['prev_rev'] }}</a>
                 </td>
                 <td class="td-languages">
-                    <a href="//builds.kolibrios.org/">Все ночные сборки</a>
+                    <a href="//builds.kolibrios.org/">{{ locale[lang]['all_rev'] }}</a>
                 </td>
             </tr>
         </table>
 
         <p>
-            На этой странице вы можете скачать ночные сборки дистрибутива. 
-            Это означает, что они всегда содержат последние изменения в системе и, 
-            следовательно, могут быть нестабильными. Все файлы сжаты с помощью 
+            {{ locale[lang]['download_description[0]'] }}
             <a href='http://www.7-zip.org' target='_blank'>7zip</a>.
-            <b>КолибриОС</b> распространяется под лицензией 
+            <b>{{ locale[lang]['kolibrios'] }}</b> {{ locale[lang]['download_description[1]'] }} 
             <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>, 
-            а исходный код доступен на нашем 
-            <a href='https://git.kolibrios.org'>Git-сервере</a>.
+            {{ locale[lang]['download_description[2]'] }}
+            <a href='https://git.kolibrios.org'>{{ locale[lang]['download_description[3]'] }}</a>.
         </p>
         
 
@@ -83,15 +81,7 @@
         <div id="dots"></div>
     </div>
 
-    <div id="footer">
-        <img src="{{ url_for('static', filename='img/logo.png') }}" />
-        <p>
-            &copy; 2004<script>document.write("&thinsp;&ndash;&thinsp;" + new Date().getFullYear());</script>
-            <br />
-            Команда КолибриОС
-        </p>
-    </div>
-
+    {% include 'tmpl/_footer.htm' %}
 </body>
 
 </html>
