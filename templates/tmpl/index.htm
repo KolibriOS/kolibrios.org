@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="{{ lang }}" onmouseup="dropdown_hide()">
+
+{% include 'tmpl/_header.htm' %}
+
+<body onkeydown="checkkey(event)">
+
+    {% include 'tmpl/_lang-dropdown.htm' %}
+
+    {% include 'tmpl/_menu.htm' %}
+
+    <div id="article">
+    {% block content %}{% endblock %}
+
+    {% include 'tmpl/_socials.htm' %}
+    </div>
+
+    <div id="footer">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" />
+        <p>
+            &copy; 2004-{{ year }} <br />
+            {{ locale[lang]['team'] }}
+        </p>
+    </div>
+
+</body>
+
+</html>

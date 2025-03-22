@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="{{ lang }}" onmouseup="dropdown_hide()">
+
+{% include 'tmpl/_header.htm' %}
+
+<body onkeydown="checkkey(event)">
+
+    {% include 'tmpl/_lang-dropdown.htm' %}
+
+    {% include 'tmpl/_menu.htm' %}
+
+    <div id="article">
+        <h1>{{ locale[lang]['downloading'] }}</h1>
+        <table>
+            {% for ext, alt in (
+                ('img', 'floppy'),
+                ('iso', 'cd'),
+                ('distr', 'universal'),
+                ('raw', 'uefi')
+            ) %}
+            <tr class="tr-margin-bot">
+                <td class="td-image" width="40"><img src="{{ url_for('static', filename='img/icons/i_%s.png' % alt) }}" alt="{{ alt }}"></td>
+                <td class="td-description">{{ locale[lang]['%s-descr' % s] }}</td>
+                <td class="td-date">$autobuild_date_ru</td>
+                <td class="td-languages">
+                    {% for l, lang in (
+                        ('en_US', 'English'),
+                        ('ru_RU', 'Русский'),
+                        ('es_ES', 'Español')
+                    ) %}
+                    <a href="//builds.kolibrios.org/{{ l }}/latest-{{ ext }}.7z"
+                        title="ver. $autobuild_cmtid_{{ l }}, $autobuild_size_{{ l }}_{{ ext }}">{{ lang }}</a>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="4">
+                    <hr />
+                </td>
+            </tr>
+            <tr class="tr-margin-top">
+                <td class="td-description" colspan="2">
+                    <div role="button" class="help-button"
+                        onclick="alert('{{ locale[lang]['download_help']}}');">
+                        Какой выбрать?
+                    </div>
+                <td class="td-date">
+                    <a href="//archive.kolibrios.org/ru/">Предыдущие выпуски</a>
+                </td>
+                <td class="td-languages">
+                    <a href="//builds.kolibrios.org/">Все ночные сборки</a>
+                </td>
+            </tr>
+        </table>
+
+        <p>
+            На этой странице вы можете скачать ночные сборки дистрибутива. 
+            Это означает, что они всегда содержат последние изменения в системе и, 
+            следовательно, могут быть нестабильными. Все файлы сжаты с помощью 
+            <a href='http://www.7-zip.org' target='_blank'>7zip</a>.
+            <b>КолибриОС</b> распространяется под лицензией 
+            <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>, 
+            а исходный код доступен на нашем 
+            <a href='https://git.kolibrios.org'>Git-сервере</a>.
+        </p>
+        
+
+        <h1>{{ locale[lang]['screenshots'] }}</h1>
+
+        <div id="screen" onclick="next()">
+            <div id="show">
+            {% for i in range(1, 7) %}
+                <img
+                    id="slide{{ i }}"
+                    src="{{ url_for('static', filename='img/screenshots/%d.png' % i ) }}"
+                    {% if i == 1 %}class="visible"{% endif %}
+                    alt="{{ locale['%s.screenshots' % lang]['%d' % i] }}" >
+            {% endfor %}
+            </div>
+        </div>
+        <div id="carousel"></div>
+        <div id="dots"></div>
+    </div>
+
+    <div id="footer">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" />
+        <p>
+            &copy; 2004<script>document.write("&thinsp;&ndash;&thinsp;" + new Date().getFullYear());</script>
+            <br />
+            Команда КолибриОС
+        </p>
+    </div>
+
+</body>
+
+</html>
