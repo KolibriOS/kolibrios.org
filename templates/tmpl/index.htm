@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="{{ lang }}" onmouseup="dropdown_hide()">
+
+{% include 'tmpl/_header.htm' %}
+
+<body onkeydown="checkkey(event)">
+
+    {% include 'tmpl/_lang-dropdown.htm' %}
+
+    {% include 'tmpl/_menu.htm' %}
+
+    <div id="article">
+    {% block content %}{% endblock %}
+
+    {% include 'tmpl/_socials.htm' %}
+    </div>
+
+    {% include 'tmpl/_footer.htm' %}
+</body>
+
+</html>

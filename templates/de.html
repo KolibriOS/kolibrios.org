@@ -1,0 +1,48 @@
+{% extends 'tmpl/index.htm' %}
+
+{% block content %}
+        {% include 'tmpl/_git.htm' %}
+
+        <p>
+            <b>KolibriOS</b> ist ein winziges, aber unglaublich leistungsstarkes und 
+            schnelles Betriebssystem. Es benötigt nur wenige Megabyte Festplattenspeicher 
+            und 12 MB RAM zum Laufen, bietet jedoch eine umfangreiche Sammlung von 
+            Anwendungen,  darunter Textverarbeitung, Bildbetrachter,grafischer Editor, 
+            Webbrowser und über 30 spannende Spiele.
+            Es unterstützt zudem vollständig FAT12/16/32 und implementiert 
+            schreibgeschützte Unterstützung für NTFS, exFAT, ISO9660 sowie Ext2/3/4, 
+            und verfügt über eine umfangreiche Sammlung von
+            <a href="http://wiki.kolibrios.org/wiki/Hardware_Support">Treibern</a>
+            für beliebte Sound-, Netzwerk- und Grafikkarten.
+        </p>
+
+        <iframe src="https://www.youtube.com/embed/SATYQyIcimM" allowfullscreen="true"></iframe>
+
+        <p>
+            Haben Sie schon einmal von einem System geträumt, das in weniger als wenigen 
+            Sekunden vom Einschalten bis zu einer funktionierenden GUI bootet? 
+            Anwendungen, die sofort starten, direkt nach dem Klicken auf ein Symbol, 
+            ohne lästige Sanduhrzeiger? Diese Geschwindigkeit wird erreicht, da die 
+            Kernkomponenten von <b>KolibriOS</b> (Kernel und Treiber)
+            vollständig in der Assemblersprache
+            <a href="http://www.flatassembler.net" target="_blank">FASM</a> geschrieben 
+            sind!
+            Probieren Sie <b>KolibriOS</b> aus und vergleichen Sie es mit Schwergewichten 
+            wie Windows und Linux.
+        </p>
+        
+        <p>
+            <b>KolibriOS</b> hat sich 2004 von MenuetOS abgespalten und wird seitdem 
+            unabhängig entwickelt.
+            Ihr <a href="http://board.kolibrios.org">Feedback</a> wird sehr geschätzt,
+            und Ihre <a href="https://git.kolibrios.org/KolibriOS/kolibrios">Hilfe</a> 
+            ist noch mehr willkommen.
+        </p>
+
+        <p class="p-subscription">
+            <b>
+                Wir hoffen, es gefällt Ihnen!<br />
+                Ihr KolibriOS-Team
+            </b>
+        </p>
+{% endblock %}
