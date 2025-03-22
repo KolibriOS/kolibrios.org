@@ -1,27 +1,7 @@
 {% extends 'tmpl/index.htm' %}
 
 {% block content %}
-        <a id="banner" href="https://git.kolibrios.org" target="_blank">
-            <table>
-                <tr>
-                    <td valign="top" width="128">
-                        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Banner Image" />
-                    </td>
-                    <td valign="top">
-                        <h1>КолибриОС перешла на Git!</h1>
-                        <p>
-                            Ознакомьтесь с нашей новой, удобной для разработчиков инфраструктурой
-                        </p>
-                        <p class="p-link">
-                            <a href="https://git.kolibrios.org">https://git.kolibrios.org</a>
-                        </p>
-                    </td>
-                    <td valign="top" width="128">
-                        <img src="{{ url_for('static', filename='img/icons/gitea.png') }}" alt="Banner Image" />
-                    </td>
-                </tr>
-            </table>
-        </a>
+        {% include 'tmpl/_git.htm' %}
 
         <p>
             <b>КолибриОС</b> — это крошечная, но невероятно мощная и быстрая операционная 
