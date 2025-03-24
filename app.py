@@ -1,12 +1,18 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request, url_for, redirect
 from datetime import date
 from configparser import ConfigParser
 
 locale = ConfigParser()
-locale.read('locale.ini')
+with open('locale.ini', encoding='utf-8') as f:
+    locale.read_file(f)
+
 app = Flask(__name__)
 
 print(locale)
+
+@app.route("/")
+def home():
+    return redirect(url_for("index", lang="en"))
 
 @app.route("/<lang>")
 def index(lang):
@@ -16,4 +22,5 @@ def index(lang):
 def download_page(lang):
     return render_template('tmpl/download.htm', locale=locale, lang=lang)
 
-app.run(host="0.0.0.0", debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", debug=True)
