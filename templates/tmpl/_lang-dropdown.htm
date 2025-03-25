@@ -11,13 +11,13 @@
       {%- if request.view_args['lang'] == l %}
 			
 			<font bg=#FF9800>
-				<a class='a-sel' href="{{ url_for(request.url_rule.endpoint, lang=l) }}">
+				<a class='a-sel' href="{{ url_for(request.url_rule.endpoint, lang = l) }}">
 					<img src="{{ url_for('static', filename='img/flags/%s.png' % l) }}" alt='{{ l }}'/>
 					{{ lang }}
 				</a>
 			</font>
       {%- else %}
-			<a href="{{ url_for(request.url_rule.endpoint, lang=l) }}"><img src="{{ url_for('static', filename='img/flags/%s.png' % l) }}" alt='de'/>{{ lang }}</a>
+			<a href="{{ url_for(request.url_rule.endpoint, lang = l) }}"><img src="{{ url_for('static', filename='img/flags/%s.png' % l) }}" alt='de'/>{{ lang }}</a>
       {%- endif %}
 			{%- endfor %}
 		</div>
