@@ -10,7 +10,7 @@
     {% include 'tmpl/_menu.htm' %}
 
     <div id="article">
-        <h1>{{ locale[lang]['downloading'] }}</h1>
+        <h1>{{ locale['downloads']['header'] }}</h1>
         <table>
             {% for ext, alt in (
                 ('img', 'floppy'),
@@ -20,7 +20,7 @@
             ) %}
             <tr class="tr-margin-bot">
                 <td class="td-image" width="40"><img src="{{ url_for('static', filename='img/icons/i_%s.png' % alt) }}" alt="{{ alt }}"></td>
-                <td class="td-description">{{ locale[lang]['%s-descr' % ext] }}</td>
+                <td class="td-description">{{ locale['downloads']['%s-descr' % ext] }}</td>
                 <td class="td-date">$autobuild_date_ru</td>
                 <td class="td-languages">
                     {% for l, lang in (
@@ -42,29 +42,29 @@
             <tr class="tr-margin-top">
                 <td class="td-description" colspan="2">
                     <div role="button" class="help-button"
-                        onclick="alert('{{ locale[lang]['download_help']}}');">
-                        {{ locale[lang]['download_choice'] }}
+                        onclick="alert('{{ locale.downloads.download_help }}');">
+                        {{ locale['downloads']['download_choice'] }}
                     </div>
                 <td class="td-date">
-                    <a href="//archive.kolibrios.org/ru/">{{ locale[lang]['prev_rev'] }}</a>
+                    <a href="//archive.kolibrios.org/ru/">{{ locale['downloads']['prev_rev'] }}</a>
                 </td>
                 <td class="td-languages">
-                    <a href="//builds.kolibrios.org/">{{ locale[lang]['all_rev'] }}</a>
+                    <a href="//builds.kolibrios.org/">{{ locale['downloads']['all_rev'] }}</a>
                 </td>
             </tr>
         </table>
 
         <p>
-            {{ locale[lang]['download_description[0]'] }}
+            {{ locale['downloads']['download_description[0]'] }}
             <a href='http://www.7-zip.org' target='_blank'>7zip</a>.
-            <b>{{ locale[lang]['kolibrios'] }}</b> {{ locale[lang]['download_description[1]'] }} 
+            <b>{{ locale['downloads']['kolibrios'] }}</b> {{ locale['downloads']['download_description[1]'] }} 
             <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>, 
-            {{ locale[lang]['download_description[2]'] }}
-            <a href='https://git.kolibrios.org'>{{ locale[lang]['download_description[3]'] }}</a>.
+            {{ locale['downloads']['download_description[2]'] }}
+            <a href='https://git.kolibrios.org'>{{ locale['downloads']['download_description[3]'] }}</a>.
         </p>
         
 
-        <h1>{{ locale[lang]['screenshots'] }}</h1>
+        <h1>{{ locale['screenshots']['header'] }}</h1>
 
         <div id="screen" onclick="next()">
             <div id="show">
@@ -73,7 +73,7 @@
                     id="slide{{ i }}"
                     src="{{ url_for('static', filename='img/screenshots/%d.png' % i ) }}"
                     {% if i == 1 %}class="visible"{% endif %}
-                    alt="{{ locale['%s.screenshots' % lang]['%d' % i] }}" >
+                    alt="{{ locale['screenshots']['%d' % i] }}" >
             {% endfor %}
             </div>
         </div>
