@@ -1,8 +1,8 @@
 <head>
     <meta charset="utf-8">
-    <title>{{ locale['%s.title' % lang][request.url_rule.endpoint] }}</title>
+    <title>{{ locale['header'][request.url_rule.endpoint] }}</title>
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <meta name="description" content="{{ locale[lang]['description'] }}">
+    <meta name="description" content="{{ locale['header']['description'] }}">
     <meta name="keywords"
         content="kolibri, kolibrios, колибри, колибриос, colibri, operating system, assembler, калибри, fasm, alternate, open source">
     <meta name="viewport" content="width=device-width">

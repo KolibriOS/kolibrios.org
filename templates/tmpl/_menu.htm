@@ -1,10 +1,10 @@
     <nav id="menu">
         <a href="{{ url_for('index', lang=lang) }}" class="a-sel">
-            <font bg="lightblue">{{ locale[lang]['kolibrios'] }}</font>
+            <font bg="lightblue">{{ locale['menu']['kolibrios'] }}</font>
         </a>
-        <a href="{{ url_for('download_page', lang=lang) }}">{{ locale[lang]['download'] }}</a>
-        <a href="https://board.kolibrios.org">{{ locale[lang]['forum'] }}</a>
-        <a href="https://wiki.kolibrios.org/wiki/Main_Page/{{ lang }}">{{ locale[lang]['wiki'] }}</a>
+        <a href="{{ url_for('download_page', lang=lang) }}">{{ locale['menu']['download'] }}</a>
+        <a href="https://board.kolibrios.org">{{ locale['menu']['forum'] }}</a>
+        <a href="https://wiki.kolibrios.org/wiki/Main_Page/{{ lang }}">{{ locale['menu']['wiki'] }}</a>
         <a href="https://git.kolibrios.org">Git</a>
         <button onclick="dropdown_show(this)" id="lang-butt">
             <img src="{{ url_for('static', filename='img/flags/%s.png' % lang) }}" alt="{{ lang }}">
