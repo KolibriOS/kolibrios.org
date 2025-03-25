@@ -1,10 +1,21 @@
+# Editors
 .idea/
 .vscode/
+
+# Python
 .venv*/
 venv*/
 __pycache__/
 dist/
+
+# Unit tests
 .coverage*
 htmlcov/
 .tox/
+
+# Docs
 docs/_build/
+
+# Our's
+Dockerfile
+.env
