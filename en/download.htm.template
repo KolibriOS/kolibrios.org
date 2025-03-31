@@ -148,7 +148,7 @@
         <img src="../i/logo.png" />
         <p>
             &copy; 2004<script>document.write("&thinsp;&ndash;&thinsp;" + new Date().getFullYear());</script>
-            <br />
+            <br>
             KolibriOS Team
         </p>
     </div>
