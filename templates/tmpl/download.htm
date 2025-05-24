@@ -19,9 +19,18 @@
                 ('raw', 'uefi')
             ) %}
             <tr class="tr-margin-bot">
-                <td class="td-image" width="40"><img src="{{ url_for('static', filename='img/icons/i_%s.png' % alt) }}" alt="{{ alt }}"></td>
-                <td class="td-description">{{ locale['downloads']['%s-descr' % ext] }}</td>
-                <td class="td-date">$autobuild_date_ru</td>
+                <td class="td-image" width="40">
+                    <img src="{{ url_for('static', filename='img/icons/i_%s.png' % alt) }}" alt="{{ alt }}">
+                </td>
+                <td class="td-description">
+                    {{ locale['downloads']['%s-descr' % ext] }} 
+                    {% if ext == 'raw' %}
+                        <span class="beta">BETA</span>
+                    {% endif %}
+                </td>
+                <td class="td-date">
+                    $autobuild_date_ru
+                </td>
                 <td class="td-languages">
                     {% for l, lang in (
                         ('en_US', 'English'),
@@ -57,7 +66,7 @@
         <p>
             {{ locale['downloads']['download_description[0]'] }}
             <a href='http://www.7-zip.org' target='_blank'>7zip</a>.
-            <b>{{ locale['downloads']['kolibrios'] }}</b> {{ locale['downloads']['download_description[1]'] }} 
+            <b>{{ locale['title']['index'] }}</b> {{ locale['downloads']['download_description[1]'] }} 
             <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>, 
             {{ locale['downloads']['download_description[2]'] }}
             <a href='https://git.kolibrios.org'>{{ locale['downloads']['download_description[3]'] }}</a>.

@@ -1,0 +1,48 @@
+{% extends 'tmpl/index.htm' %}
+
+{% block content %}
+    {% include 'tmpl/_git.htm' %}
+
+    <p>
+        <b>KolibriOS</b> è un sistema operativo minuscolo, 
+        ma incredibilmente potente e veloce, per PC compatibili con x86.
+        Per funzionare richiede solo pochi megabyte di spazio su disco, 
+        un processore i586 e 12 MB di RAM.
+        Nonostante le dimensioni ridotte, include un ricco set di applicazioni come 
+        editor di testo, visualizzatore di immagini, editor grafico, 
+        browser web e oltre 30 giochi entusiasmanti.
+        Supporta completamente i file system FAT12/16/32, 
+        e permette la lettura di NTFS, exFAT, ISO9660 ed Ext2/3/4,
+        oltre a offrire un ampio set di 
+        <a href="http://wiki.kolibrios.org/wiki/Hardware_Support">driver</a>
+        per schede audio, di rete e grafiche più diffuse.
+    </p>
+
+    <iframe src="https://www.youtube.com/embed/SATYQyIcimM" allowfullscreen="true"></iframe>
+
+    <p>
+        Hai mai sognato un sistema che si avvia in pochi secondi, dall'accensione 
+        fino a una GUI funzionante? Applicazioni che partono immediatamente, subito 
+        dopo aver cliccato su un'icona, senza quei fastidiosi cursori a clessidra?
+        Questa velocità si ottiene poiché le parti fondamentali di <b>KolibriOS</b> 
+        (kernel e driver) sono scritte interamente in linguaggio assembly
+        <a href="http://www.flatassembler.net" target="_blank">FASM</a>!
+        Prova <b>KolibriOS</b> e confrontalo con colossi come Windows e Linux.
+    </p>
+
+    <p>
+        <b>KolibriOS</b> si è staccato da MenuetOS nel 2004 ed è in sviluppo 
+        indipendente da allora. 
+        Il tuo <a href="http://board.kolibrios.org">feedback</a> è molto apprezzato,
+        e il tuo <a href="https://git.kolibrios.org/KolibriOS/kolibrios">aiuto</a> 
+        è ancora più benvenuto.
+    </p>
+
+    <p class="p-subscription">
+        <b>
+            Ci auguriamo che vi piaccia!<br />
+            Squadra KolibriOS
+        </b>
+    </p>
+
+{% endblock %}
