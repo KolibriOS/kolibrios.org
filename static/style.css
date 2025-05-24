@@ -63,10 +63,10 @@ body {
     margin-left: -6px;
 }
 
-#lang-dropdown>div {
+#lang-dropdown > div {
     display: block;
     margin-left: 4px;
-    border-radius: 3px;
+    border-radius: 4px;
     border: 1px solid #333;
     box-shadow: 0 0 5px #000;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
@@ -76,7 +76,7 @@ body {
     backdrop-filter: saturate(180%) blur(6px);
 }
 
-#lang-dropdown>div a {
+#lang-dropdown > div a {
     display: block;
     padding: 0 3em 0 1em;
     font-size: 90%;
@@ -87,23 +87,23 @@ body {
     color: #fff !important;
 }
 
-#lang-dropdown>div a:hover {
+#lang-dropdown > div a:hover {
     border-bottom: 1px solid #34312eff;
     border-top: 1px solid #4c4c4cff;
     background: #444;
     background: linear-gradient(328deg, #c20d2c7d, #3928c78a);
 }
 
-#lang-dropdown>div a.a-sel {
+#lang-dropdown > div a.a-sel {
     color: #888 !important;
 }
 
-#lang-dropdown>div a.a-sel img {
+#lang-dropdown > div a.a-sel img {
     color: #888 !important;
     filter: brightness(0.5);
 }
 
-#lang-dropdown>div a img {
+#lang-dropdown > div a img {
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px;
@@ -137,19 +137,17 @@ body {
 
 #banner {
     box-sizing: border-box;
-    border: 1px solid #00000020;
     border-radius: 4px;
-    box-shadow: none;
+    box-shadow: inset 0 0 0 1px #00000020;
+    transition: box-shadow 0.3s ease;
     display: block;
-    margin: 4px 4px 1.25em;
-    outline: 4px solid transparent;
-    transition: outline 0.3s ease;
-    padding: 1em;
+    margin: 0px 0px 1em;
+    padding: 1.25em;
     text-decoration: none;
 }
 
 #banner:hover {
-    outline-color: lightblue;
+    box-shadow: inset 0 0 0 4px #609A21AA;
 }
 
 #banner td {
@@ -292,8 +290,10 @@ td img {
     text-align: right;
 }
 
-.td-languages a {
+.td-languages a + a {
+    display: inline;
     margin-left: 1em;
+    margin-top: 0em;
 }
 
 hr {
@@ -419,7 +419,8 @@ iframe {
         outline: 1px solid rgb(227 227 227);;
     }
 
-    #banner img {
+    #banner table td:first-child,
+    #banner table td:last-child {
         display: none;
     }
 
@@ -451,8 +452,11 @@ iframe {
         padding-left: 1em;
     }
 
-    .td-languages a {
-        margin-left: 1em;
+    .td-languages a + a {
+        display: inline-block;
+        white-space: nowrap;
+        margin-top: 0.5em;
+        margin-left: 0em;
     }
 
     #footer {

@@ -1,24 +1,24 @@
-	<div id="lang-dropdown">
-		<div>
-      {%- for l, lang in (
-        ("en", "English"),
-        ("es", "Español"),
-        ("de", "Deutsch"),
-        ("fr", "Français"),
-        ("nl", "Nederlands"),
-        ("ru", "Русский")
-      ) %}
-      {%- if request.view_args['lang'] == l %}
-			
-			<font bg=#FF9800>
-				<a class='a-sel' href="{{ url_for(request.url_rule.endpoint, lang = l) }}">
-					<img src="{{ url_for('static', filename='img/flags/%s.png' % l) }}" alt='{{ l }}'/>
-					{{ lang }}
-				</a>
-			</font>
-      {%- else %}
-			<a href="{{ url_for(request.url_rule.endpoint, lang = l) }}"><img src="{{ url_for('static', filename='img/flags/%s.png' % l) }}" alt='de'/>{{ lang }}</a>
-      {%- endif %}
-			{%- endfor %}
-		</div>
-	</div>
+<div id="lang-dropdown">
+    <div>
+    {%- for l, lang in (
+    ("en", "English"),
+    ("ru", "Русский"),
+    ("es", "Español"),
+    ("fr", "Français"),
+    ("de", "Deutsch"),
+    ("it", "Italiano"),
+    ("nl", "Nederlands")
+    ) %}
+    {%- if request.view_args['lang'] == l %}
+        <font bg=#FF9800>
+            <a class='a-sel' href="{{ url_for(request.url_rule.endpoint, lang = l) }}">
+                <img src="{{ url_for('static', filename='img/flags/%s.png' % l) }}" alt='{{ l }}'/>
+                {{ lang }}
+            </a>
+        </font>
+    {%- else %}
+        <a href="{{ url_for(request.url_rule.endpoint, lang = l) }}"><img src="{{ url_for('static', filename='img/flags/%s.png' % l) }}" alt='de'/>{{ lang }}</a>
+    {%- endif %}
+        {%- endfor %}
+    </div>
+</div>
