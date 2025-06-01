@@ -12,13 +12,16 @@ from flask import (
     url_for,
 )
 
+
 cp = ConfigParser()
 app = Flask(__name__)
 
 
 def load_all_locales():
-    locales = {}
-    locales_dir = "locales"
+
+    locales_list = []
+    locales_dict = {}
+    locales_dir  = "locales"
 
     for filename in listdir(locales_dir):
         if filename.endswith(".ini"):
@@ -26,12 +29,17 @@ def load_all_locales():
             cp = ConfigParser()
             with open(path.join(locales_dir, filename), encoding="utf-8") as f:
                 cp.read_file(f)
-            locales[lang] = {section: dict(cp[section]) for section in cp.sections()}
-    
-    return locales
+            locales_dict[lang] = {section: dict(cp[section]) for section in cp.sections()}
+
+    for code, data in locales_dict.items():
+        full_name = data.get("title", {}).get("language", code)
+        locales_list.append({"code": code, "name": full_name})
+
+    print(locales_list)
+    return locales_list, locales_dict
 
 
-locales = load_all_locales()
+locales_list, locales_dict = load_all_locales()
 
 
 @app.route("/favicon.ico")
@@ -51,30 +59,32 @@ def home():
 @app.route("/<lang>")
 def index(lang):
 
-    if lang not in locales:
+    if lang not in locales_dict:
         abort(404)
 
     return render_template(
         f"{lang}.html",
-        locale=locales[lang],
-        lang=lang,
-        year=date.today().year,
-        current=request.endpoint,
+        loc_list = locales_list,
+        locale   = locales_dict[lang],
+        lang     = lang,
+        year     = date.today().year,
+        current  = request.endpoint,
     )
 
 
 @app.route("/<lang>/download")
 def download_page(lang):
 
-    if lang not in locales:
+    if lang not in locales_dict:
         abort(404)
 
     return render_template(
         "tmpl/download.htm",
-        locale=locales[lang],
-        lang=lang,
-        year=date.today().year,
-        current=request.endpoint,
+        loc_list = locales_list,
+        locale   = locales_dict[lang],
+        lang     = lang,
+        year     = date.today().year,
+        current  = request.endpoint,
     )
 
 
