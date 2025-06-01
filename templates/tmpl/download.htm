@@ -82,7 +82,8 @@
                     id="slide{{ i }}"
                     src="{{ url_for('static', filename='img/screenshots/%d.png' % i ) }}"
                     {% if i == 1 %}class="visible"{% endif %}
-                    alt="{{ locale['screenshots']['%d' % i] }}" >
+                    alt="{{ locale['screenshots']['%d' % i] }}"
+                >
             {% endfor %}
             </div>
         </div>
