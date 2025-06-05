@@ -23,6 +23,7 @@ def load_all_locales():
     locales_dict = {}
     locales_dir  = "locales"
 
+    # ---------- load every .ini file ----------
     for filename in listdir(locales_dir):
         if filename.endswith(".ini"):
             lang = path.splitext(filename)[0]
@@ -31,11 +32,23 @@ def load_all_locales():
                 cp.read_file(f)
             locales_dict[lang] = {section: dict(cp[section]) for section in cp.sections()}
 
+    # ---------- turn it into a list ----------
     for code, data in locales_dict.items():
         full_name = data.get("title", {}).get("language", code)
         locales_list.append({"code": code, "name": full_name})
 
-    print(locales_list)
+    # ---------- hand-sort: en → ru → es → everything else (alphabetical) ----------
+    priority = ["en", "ru", "es"]
+    locales_list.sort(
+        key=lambda loc: (
+            0,
+            priority.index(loc["code"])
+        ) if loc["code"] in priority else (
+            1,
+            loc["code"]
+        )
+    )
+
     return locales_list, locales_dict
 
 
@@ -63,7 +76,7 @@ def index(lang):
         abort(404)
 
     return render_template(
-        f"{lang}.html",
+        "index.html",
         loc_list = locales_list,
         locale   = locales_dict[lang],
         lang     = lang,
@@ -79,7 +92,7 @@ def download_page(lang):
         abort(404)
 
     return render_template(
-        "tmpl/download.htm",
+        "download.html",
         loc_list = locales_list,
         locale   = locales_dict[lang],
         lang     = lang,
