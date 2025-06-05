@@ -10,9 +10,11 @@
     {% include 'tmpl/_menu.htm' %}
 
     <div id="article">
-    {% block content %}{% endblock %}
+        {% include 'tmpl/_git.htm' %}
+        
+        {% include 'tmpl/_article.htm' %}
 
-    {% include 'tmpl/_socials.htm' %}
+        {% include 'tmpl/_socials.htm' %}
     </div>
 
     {% include 'tmpl/_footer.htm' %}
