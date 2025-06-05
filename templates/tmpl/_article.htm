@@ -1,0 +1,43 @@
+<p>
+    <b>{{ locale['menu']['kolibrios'] }}</b>
+    {{ locale['article']['p1[0]'] }}
+    <a href="http://wiki.kolibrios.org/wiki/Hardware_Support">
+        {{- locale['article']['p1[1]'] -}}
+    </a>
+    {{ locale['article']['p1[2]'] }}
+</p>
+
+<iframe src="https://www.youtube.com/embed/IEi25wYyj20" allowfullscreen="true"></iframe>
+
+<p>
+    {{ locale['article']['p2[0]'] }}
+    <b>{{ locale['menu']['kolibrios'] }}</b>
+    {{ locale['article']['p2[1]'] }}
+    <a href="http://www.flatassembler.net" target="_blank">FASM</a>
+    {%- set extra = locale.article.get('p2[11]', '').strip() -%}
+    {%- if extra -%} {{ " " + extra }} {%- endif -%}! 
+    {{ locale.article['p2[2]'] }}
+    <b>{{ locale['menu']['kolibrios'] }}</b>
+    {{ locale['article']['p2[3]'] }}
+</p>
+
+<p>
+    <b>{{ locale['menu']['kolibrios'] }}</b>
+    {{ locale['article']['p3[0]'] }}
+    <a href="http://board.kolibrios.org">
+        {{- locale['article']['p3[1]'] -}}
+    </a>
+    {{ locale['article']['p3[2]'] }}
+    <a href="https://git.kolibrios.org/KolibriOS/kolibrios">
+        {{- locale['article']['p3[3]'] -}}
+    </a>
+    {{ locale['article']['p3[4]'] }}
+</p>
+
+<p class="p-subscription">
+    <b>
+        {{ locale['article']['p_subscription[0]'] }}
+        <br/>
+        {{ locale['article']['p_subscription[1]'] }}
+    </b>
+</p>
