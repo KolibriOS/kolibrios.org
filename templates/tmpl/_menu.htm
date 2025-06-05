@@ -7,8 +7,8 @@
         {% endif %}
     </a>
     
-    <a href="{{ url_for('download_page', lang=lang) }}" class="{% if current == 'download_page' %}a-sel{% endif %}">
-        {% if current == 'download_page' %}
+    <a href="{{ url_for('download', lang=lang) }}" class="{% if current == 'download' %}a-sel{% endif %}">
+        {% if current == 'download' %}
             <font bg="lightblue">{{ locale['menu']['download'] }}</font>
         {% else %}
             {{ locale['menu']['download'] }}
