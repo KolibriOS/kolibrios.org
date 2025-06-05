@@ -86,7 +86,7 @@ def index(lang):
 
 
 @app.route("/<lang>/download")
-def download_page(lang):
+def download(lang):
 
     if lang not in locales_dict:
         abort(404)
