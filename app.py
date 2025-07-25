@@ -4,7 +4,6 @@ from configparser import ConfigParser
 
 from flask import (
     Flask,
-    abort,
     redirect,
     render_template,
     request,
@@ -18,87 +17,76 @@ app = Flask(__name__)
 
 
 def load_all_locales():
-
     locales_list = []
     locales_dict = {}
-    locales_dir  = "locales"
+    locales_dir = "locales"
 
-    # ---------- load every .ini file ----------
     for filename in listdir(locales_dir):
         if filename.endswith(".ini"):
             lang = path.splitext(filename)[0]
-            cp = ConfigParser()
             with open(path.join(locales_dir, filename), encoding="utf-8") as f:
                 cp.read_file(f)
-            locales_dict[lang] = {section: dict(cp[section]) for section in cp.sections()}
+            locales_dict[lang] = {
+                section: dict(cp[section]) for section in cp.sections()
+            }
 
-    # ---------- turn it into a list ----------
     for code, data in locales_dict.items():
         full_name = data.get("title", {}).get("language", code)
         locales_list.append({"code": code, "name": full_name})
 
-    # ---------- hand-sort: en → ru → es → everything else (alphabetical) ----------
     priority = ["en", "ru", "es"]
     locales_list.sort(
-        key=lambda loc: (
-            0,
-            priority.index(loc["code"])
-        ) if loc["code"] in priority else (
-            1,
-            loc["code"]
-        )
+        key=lambda loc: (0, priority.index(loc["code"]))
+        if loc["code"] in priority
+        else (1, loc["code"])
     )
 
-    return locales_list, locales_dict
+    locales_code = [loc["code"] for loc in locales_list]
+
+    return locales_list, locales_dict, locales_code
 
 
-locales_list, locales_dict = load_all_locales()
+locales_list, locales_dict, locales_code = load_all_locales()
+
+
+def get_best_lang():
+    return request.accept_languages.best_match(locales_code) or "en"
+
+
+def render_localized_template(lang, template_name):
+    if lang not in locales_dict:
+        return redirect(url_for("index", lang=get_best_lang()))
+
+    return render_template(
+        template_name,
+        loc_list=locales_list,
+        locale=locales_dict[lang],
+        lang=lang,
+        year=date.today().year,
+        current=request.endpoint,
+    )
 
 
 @app.route("/favicon.ico")
 def favicon():
     return send_from_directory(
-        app.static_folder,
-        "favicon.ico",
-        mimetype="image/vnd.microsoft.icon"
+        app.static_folder, "favicon.ico", mimetype="image/vnd.microsoft.icon"
     )
 
 
 @app.route("/")
 def home():
-    return redirect(url_for("index", lang="en"))
+    return redirect(url_for("index", lang=get_best_lang()))
 
 
 @app.route("/<lang>")
 def index(lang):
-
-    if lang not in locales_dict:
-        abort(404)
-
-    return render_template(
-        "index.html",
-        loc_list = locales_list,
-        locale   = locales_dict[lang],
-        lang     = lang,
-        year     = date.today().year,
-        current  = request.endpoint,
-    )
+    return render_localized_template(lang, "index.html")
 
 
 @app.route("/<lang>/download")
 def download(lang):
-
-    if lang not in locales_dict:
-        abort(404)
-
-    return render_template(
-        "download.html",
-        loc_list = locales_list,
-        locale   = locales_dict[lang],
-        lang     = lang,
-        year     = date.today().year,
-        current  = request.endpoint,
-    )
+    return render_localized_template(lang, "download.html")
 
 
 if __name__ == "__main__":
