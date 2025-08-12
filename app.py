@@ -7,7 +7,6 @@ from flask import (
     redirect,
     render_template,
     request,
-    send_from_directory,
     url_for,
     Response
 )
@@ -16,7 +15,6 @@ from flask import (
 # ---------- APP CONFIG ------------------------------------------------------
 
 
-cp = ConfigParser()
 app = Flask(__name__)
 
 
@@ -24,6 +22,7 @@ app = Flask(__name__)
 
 
 def load_all_locales():
+    cp = ConfigParser()
     locales_list = []
     locales_dict = {}
     locales_dir = "locales"
@@ -78,13 +77,6 @@ def render_localized_template(lang, template_name):
 
 
 # ---------- MAIN PAGES ------------------------------------------------------
-
-
-@app.route("/favicon.ico")
-def favicon():
-    return send_from_directory(
-        app.static_folder, "favicon.ico", mimetype="image/vnd.microsoft.icon"
-    )
 
 
 @app.route("/")
