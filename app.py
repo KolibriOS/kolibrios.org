@@ -1,4 +1,4 @@
-from os import path, listdir
+from os import path, listdir, system
 from datetime import date
 from configparser import ConfigParser
 
@@ -17,6 +17,9 @@ from flask import (
 
 
 app = Flask(__name__)
+
+if app.debug:
+    system("sass static/style.scss static/style.css")
 
 
 # ---------- LOCALES FUNCTIONS -----------------------------------------------
