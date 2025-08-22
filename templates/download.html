@@ -10,7 +10,7 @@
     {% include 'tmpl/_menu.htm' %}
 
     <div id="article">
-        <h1>{{ locale['downloads']['header'] }}</h1>
+        <h1>{{ _('downloads:header') }}</h1>
         <table>
             {% for ext, alt in (
                 ('img', 'floppy'),
@@ -23,7 +23,7 @@
                     <img src="{{ url_for('static', filename='img/icons/i_%s.png' % alt) }}" alt="{{ alt }}">
                 </td>
                 <td class="td-description">
-                    {{ locale['downloads']['%s-descr' % ext] }} 
+                    {{ _('downloads:%s-descr' % ext) }}
                     {% if ext == 'raw' %}
                         <span class="beta">BETA</span>
                     {% endif %}
@@ -51,28 +51,28 @@
             <tr class="tr-margin-top">
                 <td class="td-description" colspan="2">
                     <div role="button" class="help-button"
-                        onclick="alert('{{ locale.downloads.download_help }}');">
-                        {{ locale['downloads']['download_choice'] }}
+                        onclick="alert('{{ _('downloads:download_help') }}');">
+                        {{ _('downloads:download_choice') }}
                     </div>
                 <td class="td-date">
-                    <a href="//archive.kolibrios.org/ru/">{{ locale['downloads']['prev_rev'] }}</a>
+                    <a href="//archive.kolibrios.org/ru/">{{ _('downloads:prev_rev') }}</a>
                 </td>
                 <td class="td-languages">
-                    <a href="//builds.kolibrios.org/">{{ locale['downloads']['all_rev'] }}</a>
+                    <a href="//builds.kolibrios.org/">{{ _('downloads:all_rev') }}</a>
                 </td>
             </tr>
         </table>
 
         <p>
-            {{ locale['downloads']['download_description[0]'] }}
+            {{ _('downloads:download_description[0]') }}
             <a href='http://www.7-zip.org' target='_blank'>7zip</a>.
-            <b>{{ locale['title']['index'] }}</b> {{ locale['downloads']['download_description[1]'] }} 
-            <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>, 
-            {{ locale['downloads']['download_description[2]'] }}
-            <a href='https://git.kolibrios.org'>{{ locale['downloads']['download_description[3]'] }}</a>.
+            <b>{{ _('title:index') }}</b> {{ _('downloads:download_description[1]') }}
+            <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>,
+            {{ _('downloads:download_description[2]') }}
+            <a href='https://git.kolibrios.org'>{{ _('downloads:download_description[3]') }}</a>.
         </p>
 
-        <h1>{{ locale['screenshots']['header'] }}</h1>
+        <h1>{{ _('screenshots:header') }}</h1>
 
         <div id="screen" onclick="next()">
             <div id="show">
@@ -81,7 +81,7 @@
                     id="slide{{ i }}"
                     src="{{ url_for('static', filename='img/screenshots/%d.png' % i ) }}"
                     {% if i == 1 %}class="visible"{% endif %}
-                    alt="{{ locale['screenshots']['%d' % i] }}"
+                    alt="{{ _('screenshots:%d' % i) }}"
                 >
             {% endfor %}
             </div>

@@ -1,8 +1,7 @@
 <div id="lang-dropdown">
     <div>
-    {%- for lang_item in loc_list %}
-        {% set lang_code = lang_item.code %}
-        {% set lang_name = lang_item.name %}
+    {%- for lang_code in g.locales_name.keys() %}
+        {% set lang_name = g.locales_name[lang_code] %}
         {%- if request.view_args["lang"] == lang_code %}
             <font bg=#FF9800>
                 <a class="a-sel" href="{{ url_for(request.url_rule.endpoint, lang=lang_code) }}">
