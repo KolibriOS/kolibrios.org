@@ -8,6 +8,7 @@ from flask import (
     render_template,
     request,
     url_for,
+    g,
     Response
 )
 
@@ -22,37 +23,34 @@ app = Flask(__name__)
 
 
 def load_all_locales():
-    cp = ConfigParser()
-    locales_list = []
-    locales_dict = {}
+    translations = {}
     locales_dir = "locales"
+
+    locales_code_default = ('en', 'ru', 'es')
+    locales_code_extra = []
+    locales_code = ()
 
     for filename in listdir(locales_dir):
         if filename.endswith(".ini"):
+            cp = ConfigParser()
             lang = path.splitext(filename)[0]
             with open(path.join(locales_dir, filename), encoding="utf-8") as f:
                 cp.read_file(f)
-            locales_dict[lang] = {
+
+            if lang not in locales_code_default:
+                locales_code_extra.append(lang)
+
+            translations[lang] = {
                 section: dict(cp[section]) for section in cp.sections()
             }
 
-    for code, data in locales_dict.items():
-        full_name = data.get("title", {}).get("language", code)
-        locales_list.append({"code": code, "name": full_name})
+    locales_code = locales_code_default + tuple(sorted(locales_code_extra))
+    locales_name = {l: translations[l]['title']['language'] for l in locales_code}
 
-    priority = ["en", "ru", "es"]
-    locales_list.sort(
-        key=lambda loc: (0, priority.index(loc["code"]))
-        if loc["code"] in priority
-        else (1, loc["code"])
-    )
-
-    locales_code = [loc["code"] for loc in locales_list]
-
-    return locales_list, locales_dict, locales_code
+    return translations, locales_name, locales_code
 
 
-locales_list, locales_dict, locales_code = load_all_locales()
+translations, locales_name, locales_code = load_all_locales()
 
 
 # ---------- HELPER FUNCTIONS ------------------------------------------------
@@ -63,17 +61,38 @@ def get_best_lang():
 
 
 def render_localized_template(lang, template_name):
-    if lang not in locales_dict:
+    if lang not in locales_code:
         return redirect(url_for("index", lang=get_best_lang()))
 
     return render_template(
         template_name,
-        loc_list=locales_list,
-        locale=locales_dict[lang],
-        lang=lang,
         year=date.today().year,
-        current=request.endpoint,
     )
+
+
+@app.before_request
+def before_request():
+    if args := request.view_args:
+        g.locale = args.get('lang', 'en')
+        g.translations = translations.get(g.locale, get_best_lang())
+        g.locales_name = locales_name
+
+
+@app.context_processor
+def inject_translations():
+    def translate(text, **kwargs):
+        section, key = text.split(":", 1)
+
+        template = g.translations \
+            .get(section, {}) \
+            .get(key, f"${section}: {key}$")
+
+        try:
+            return template.format(**kwargs)
+        except:
+            return template
+
+    return {'_': translate}
 
 
 # ---------- MAIN PAGES ------------------------------------------------------
