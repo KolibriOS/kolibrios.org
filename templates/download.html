@@ -64,12 +64,15 @@
         </table>
 
         <p>
-            {{ _('downloads:download_description[0]') }}
-            <a href='http://www.7-zip.org' target='_blank'>7zip</a>.
-            <b>{{ _('title:index') }}</b> {{ _('downloads:download_description[1]') }}
-            <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>,
-            {{ _('downloads:download_description[2]') }}
-            <a href='https://git.kolibrios.org'>{{ _('downloads:download_description[3]') }}</a>.
+            {{ _(
+                'downloads:download_description',
+                kolibrios="<b>{0}</b>"
+                    .format(_('title:index')),
+                zip="<a href='http://www.7-zip.org' target='_blank'>7zip</a>",
+                gpl="<a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>",
+                git="<a href='https://git.kolibrios.org'>{0}</a>"
+                    .format(_('downloads:git-server'))
+            ) | safe }}
         </p>
 
         <h1>{{ _('screenshots:header') }}</h1>

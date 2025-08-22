@@ -1,41 +1,40 @@
 <p>
-    <b>{{ _('menu:kolibrios') }}</b>
-    {{ _('article:p1[0]') }}
-    <a href="http://wiki.kolibrios.org/wiki/Hardware_Support">
-        {{- _('article:p1[1]') -}}
-    </a>
-    {{ _('article:p1[2]') }}
+    {{ _(
+        'article:p1',
+        kolibrios="<b>{0}</b>"
+            .format(_('menu:kolibrios')),
+        drivers="<a href='http://wiki.kolibrios.org/wiki/Hardware_Support'>{0}</a>"
+            .format(_('article:drivers'))
+    ) | safe }}
 </p>
 
 <iframe src="https://www.youtube.com/embed/IEi25wYyj20" allowfullscreen="true"></iframe>
 
 <p>
-    {{ _('article:p2[0]') }}
-    <b>{{ _('menu:kolibrios') }}</b>
-    {{ _('article:p2[1]') }}
-    <a href="http://www.flatassembler.net" target="_blank">FASM</a>
-    {{ _('article:p2[2]') }}
-    <b>{{ _('menu:kolibrios') }}</b>
-    {{ _('article:p2[3]') }}
+    {{ _(
+        'article:p2',
+        kolibrios="<b>{0}</b>"
+            .format(_('menu:kolibrios')),
+        fasm="<a href='http://www.flatassembler.net' target='_blank'>FASM</a>"
+    ) | safe }}
 </p>
 
 <p>
-    <b>{{ _('menu:kolibrios') }}</b>
-    {{ _('article:p3[0]') }}
-    <a href="http://board.kolibrios.org">
-        {{- _('article:p3[1]') -}}
-    </a>
-    {{ _('article:p3[2]') }}
-    <a href="https://git.kolibrios.org/KolibriOS/kolibrios">
-        {{- _('article:p3[3]') -}}
-    </a>
-    {{ _('article:p3[4]') }}
+    {{ _(
+        'article:p3',
+        kolibrios="<b>{0}</b>"
+            .format(_('menu:kolibrios')),
+        feedback="<a href='http://board.kolibrios.org'>{0}</a>"
+            .format(_('article:feedback')),
+        help="<a href='https://git.kolibrios.org/KolibriOS/kolibrios'>{0}</a>"
+            .format(_('article:help'))
+    ) | safe }}
 </p>
 
 <p class="p-subscription">
     <b>
-        {{ _('article:p_subscription[0]') }}
+        {{ _('article:p_subscription') }}
         <br/>
-        {{ _('article:p_subscription[1]') }}
+        {{ _('footer:team') }}
     </b>
 </p>
