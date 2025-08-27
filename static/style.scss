@@ -127,7 +127,7 @@ body {
     background: rgba(254, 255, 255, 1);
     border: 1px solid #c0b9c491;
     border-radius: 4px;
-    box-shadow: rgb(28 26 40 / 12%) 0px 4px 4px -2px;
+    box-shadow: rgba(28, 26, 40, 0.12) 0 4px 4px -2px;
     margin: 2em auto;
     max-width: 910px;
     padding: 2em;
@@ -416,7 +416,7 @@ iframe {
     #banner {
         max-width: calc(100% - 2px);
         margin: 1px 0 1em;
-        outline: 1px solid rgb(227 227 227);;
+        outline: 1px solid rgb(227, 227, 227);
 
         table td {
             &:first-child,
