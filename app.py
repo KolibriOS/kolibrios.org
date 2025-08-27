@@ -1,6 +1,8 @@
-from os import path, listdir, system
+from os import path, listdir
 from datetime import date
 from configparser import ConfigParser
+
+import sass
 
 from flask import (
     Flask,
@@ -19,7 +21,9 @@ from flask import (
 app = Flask(__name__)
 
 if app.debug:
-    system("sass static/style.scss static/style.css")
+    css = sass.compile(filename="static/style.scss")
+    with open("static/style.css", "w", encoding="utf-8") as f:
+        f.write(css)
 
 
 # ---------- LOCALES FUNCTIONS -----------------------------------------------
