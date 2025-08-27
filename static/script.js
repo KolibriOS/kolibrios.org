@@ -68,7 +68,7 @@ function updateDots() {
     var dots = document.querySelectorAll("#dots .dot");
     dots.forEach(function(dot, index) {
         // index starts at 0 so add FIRST_IMG_ID to match your slide IDs
-        dot.className = "dot" + ((index + FIRST_IMG_ID) === current ? " active" : "");
+        dot.classList.toggle("active", (index + FIRST_IMG_ID) === current);
     });
 }
 
