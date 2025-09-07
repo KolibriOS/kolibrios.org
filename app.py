@@ -1,6 +1,11 @@
+import threading
+import time
+import json
+
 from os import path, listdir
-from datetime import date
+from datetime import date, datetime, timezone
 from configparser import ConfigParser
+from urllib.request import urlopen
 
 import sass
 
@@ -15,6 +20,12 @@ from flask import (
 )
 
 
+# ---------- ENV VARS --------------------------------------------------------
+
+
+GIT_URL = "https://git.kolibrios.org/api/v1/repos/KolibriOS/kolibrios/branches/main"
+GIT_FETCH_DELAY_SEC = 300 # 5 minutes
+
 # ---------- APP CONFIG ------------------------------------------------------
 
 
@@ -24,6 +35,53 @@ if app.debug:
     css = sass.compile(filename="static/style.scss")
     with open("static/style.css", "w", encoding="utf-8") as f:
         f.write(css)
+
+
+# ---------- LATEST COMMIT DATE (MINIMAL ADD-ON) -----------------------------
+
+
+autobuild_date = "DD.MM.YYYY"
+
+
+def _refresh_build_date_once():
+    global autobuild_date
+    try:
+        with urlopen(GIT_URL, timeout=10) as r:
+            b = json.load(r)
+        c = b.get("commit", {}) or {}
+        ts = c.get("timestamp")
+        if ts:
+            dt = datetime.fromisoformat(ts.replace("Z", "+00:00")).astimezone(timezone.utc)
+            autobuild_date = dt.strftime("%d.%m.%Y")
+    except Exception:
+        pass
+
+
+def _updater_loop():
+    while True:
+        _refresh_build_date_once()
+        time.sleep(GIT_FETCH_DELAY_SEC)
+
+
+_started = False
+_refresh_build_date_once()
+
+# Flask 3.x fix: start updater lazily on first request (since before_first_request is removed)
+_updater_lock = threading.Lock()
+
+@app.before_request
+def _ensure_updater_started():
+    global _started
+    if not _started:
+        with _updater_lock:
+            if not _started:
+                _started = True
+                threading.Thread(target=_updater_loop, daemon=True).start()
+
+
+@app.context_processor
+def _inject_autobuild_date():
+    return {"autobuild_date": autobuild_date}
 
 
 # ---------- LOCALES FUNCTIONS -----------------------------------------------
@@ -96,7 +154,7 @@ def inject_translations():
 
         try:
             return template.format(**kwargs)
-        except:
+        except Exception:
             return template
 
     return {'_': translate}
@@ -151,12 +209,12 @@ def sitemap_xml():
     for loc in urls:
         xml_lines.extend(
             [
-                "  <url>",
+                f"  <url>",
                 f"    <loc>{loc}</loc>",
                 f"    <lastmod>{today}</lastmod>",
-                "    <changefreq>monthly</changefreq>",
-                "    <priority>0.8</priority>",
-                "  </url>",
+                f"    <changefreq>monthly</changefreq>",
+                f"    <priority>0.8</priority>",
+                f"  </url>",
             ]
         )
     xml_lines.append("</urlset>")
