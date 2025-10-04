@@ -223,6 +223,13 @@ p {
     &-subscription {
         text-align: center;
     }
+
+    &-warn {
+        img {
+            margin-bottom: -2px;
+            margin-right: 0.25em;
+        }
+    }
 }
 
 /*  DOWNLOADS  */
@@ -247,13 +254,21 @@ tr {
     vertical-align: middle;
 }
 
-.tr-margin {
-    &-bot > td {
-        padding-bottom: 1em;
+.tr {
+    &-header {
+        b {
+            display: inline;
+        }
     }
 
-    &-top > td {
-        padding-top: 1em;
+    &-margin {
+        &-bot > td {
+            padding-bottom: 1em;
+        }
+
+        &-top > td {
+            padding-top: 1em;
+        }
     }
 }
 
@@ -284,18 +299,17 @@ td {
         }
     }
 
-    &-date {
-        text-align: right;
-        padding-right: 2em;
-    }
-
     &-languages {
         text-align: right;
+        padding-left: 2em;
+
+        a {
+            display: inline-block;
+            white-space: nowrap;
+        }
 
         a + a {
-            display: inline;
             margin-left: 1em;
-            margin-top: 0em;
         }
     }
 }
@@ -307,16 +321,10 @@ hr {
 .help-button {
     cursor: pointer;
     display: inline-block;
-    background: #FF9800;
-    border-radius: 4px;
-    box-shadow: inset 0 1px rgba(254,181,94,0.9), inset 0 -2px rgba(0,0,0,0.04);
-    color: #FFFFFF;
-    padding: 0.5em 1em;
-    text-align: center;
-    transition: 0.5s;
+    color: #609A21;
 
-    &:hover {
-        background: #F6920B;
+    img {
+        padding-bottom: 1px;
     }
 }
 
@@ -444,22 +452,28 @@ iframe {
         margin: 0 0.5em;
     }
 
+    .tr {
+        &-header {
+            b {
+                display: block;
+            }
+        }
+    }
+
     .td {
         &-description {
             width: auto;
         }
 
-        &-date {
-            display: none;
-            padding-right: 1em;
-            padding-left: 1em;
-        }
+        &-languages a {
+            display: block;
+            width: max-content;
+            margin-left: auto;
+          }
 
         &-languages a + a {
-            display: inline-block;
-            white-space: nowrap;
             margin-top: 0.5em;
-            margin-left: 0em;
+            margin-left: auto;
         }
     }
 
