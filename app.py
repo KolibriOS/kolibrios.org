@@ -1,11 +1,9 @@
 import threading
 import time
-import re
 
 from os import path, listdir
 from datetime import date
 from configparser import ConfigParser
-from urllib.request import urlopen
 
 import sass
 
