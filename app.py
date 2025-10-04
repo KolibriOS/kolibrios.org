@@ -1,30 +1,23 @@
 import threading
 import time
-import json
+import re
 
 from os import path, listdir
-from datetime import date, datetime, timezone
+from datetime import date
 from configparser import ConfigParser
 from urllib.request import urlopen
 
 import sass
 
-from flask import (
-    Flask,
-    redirect,
-    render_template,
-    request,
-    url_for,
-    g,
-    Response
-)
+from flask import Flask, redirect, render_template, request, url_for, g, Response
 
 
 # ---------- ENV VARS --------------------------------------------------------
 
 
-GIT_URL = "https://git.kolibrios.org/api/v1/repos/KolibriOS/kolibrios/branches/main"
-GIT_FETCH_DELAY_SEC = 300 # 5 minutes
+STATUS_URL = "https://builds.kolibrios.org/status.html"
+STATUS_FETCH_DELAY_SEC = 300  # 5 minutes
+
 
 # ---------- APP CONFIG ------------------------------------------------------
 
@@ -41,18 +34,64 @@ if app.debug:
 
 
 autobuild_date = "DD.MM.YYYY"
+autobuild_vers = "0.0.0.0+0000-0000000"
 
 
 def _refresh_build_date_once():
-    global autobuild_date
+    global autobuild_date, autobuild_vers
     try:
-        with urlopen(GIT_URL, timeout=10) as r:
-            b = json.load(r)
-        c = b.get("commit", {}) or {}
-        ts = c.get("timestamp")
-        if ts:
-            dt = datetime.fromisoformat(ts.replace("Z", "+00:00")).astimezone(timezone.utc)
-            autobuild_date = dt.strftime("%d.%m.%Y")
+        from urllib.request import Request, urlopen
+        import re
+
+        req = Request(
+            STATUS_URL,
+            headers={
+                "User-Agent": "Mozilla/5.0",
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            },
+        )
+        with urlopen(req, timeout=10) as r:
+            html = r.read().decode(
+                r.headers.get_content_charset() or "utf-8", "replace"
+            )
+
+        rows = re.findall(r"(<tr\b[^>]*>.*?</tr>)", html, flags=re.I | re.S)
+        if not rows:
+            return
+
+        last_commit_ver = None
+
+        for row in rows:
+            cls = re.search(r'class\s*=\s*"([^"]*)"', row, flags=re.I)
+            classes = cls.group(1).lower() if cls else ""
+
+            text = re.sub(r"<[^>]+>", " ", row)
+
+            if "commit" in classes:
+                mver = re.search(
+                    r"\b(\d+\.\d+\.\d+\.\d+\+\d{3,8}-[0-9a-fA-F]{7,40})\b", row
+                )
+                if mver:
+                    last_commit_ver = mver.group(1)
+
+            elif "success" in classes:
+                mts = re.search(
+                    r"\b(\d{4})\.(\d{2})\.(\d{2})\s+\d{2}:\d{2}:\d{2}\b", text
+                )
+                if not mts:
+                    mds = re.search(r"\b(\d{2})\.(\d{2})\.(\d{4})\b", text)
+                    if mds:
+                        autobuild_date = f"{mds.group(1)}.{mds.group(2)}.{mds.group(3)}"
+                    else:
+                        return
+                else:
+                    y, mo, d = mts.groups()
+                    autobuild_date = f"{d}.{mo}.{y}"
+
+                if last_commit_ver:
+                    autobuild_vers = last_commit_ver
+                return
+
     except Exception:
         pass
 
@@ -60,7 +99,7 @@ def _refresh_build_date_once():
 def _updater_loop():
     while True:
         _refresh_build_date_once()
-        time.sleep(GIT_FETCH_DELAY_SEC)
+        time.sleep(STATUS_FETCH_DELAY_SEC)
 
 
 _started = False
@@ -68,6 +107,7 @@ _refresh_build_date_once()
 
 # Flask 3.x fix: start updater lazily on first request (since before_first_request is removed)
 _updater_lock = threading.Lock()
+
 
 @app.before_request
 def _ensure_updater_started():
@@ -80,8 +120,13 @@ def _ensure_updater_started():
 
 
 @app.context_processor
+def _inject_autobuild_vers():
+    return {'autobuild_vers': autobuild_vers}
+
+
+@app.context_processor
 def _inject_autobuild_date():
-    return {"autobuild_date": autobuild_date}
+    return {'autobuild_date': autobuild_date}
 
 
 # ---------- LOCALES FUNCTIONS -----------------------------------------------
@@ -138,7 +183,7 @@ def render_localized_template(lang, template_name):
 @app.before_request
 def before_request():
     if args := request.view_args:
-        g.locale = args.get('lang', 'en')
+        g.locale = args.get("lang", "en")
         g.translations = translations.get(g.locale, get_best_lang())
         g.locales_name = locales_name
 

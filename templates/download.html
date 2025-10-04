@@ -11,7 +11,28 @@
 
     <div id="article">
         <h1>{{ _('downloads:header') }}</h1>
+
         <table>
+            <tr class="tr-margin-bot">
+                <td colspan="3"><hr /></td>
+            </tr>
+
+            <tr class="tr-margin-bot tr-header">
+                <td class="td-image" width="40">
+                    <img src="{{ url_for('static', filename='img/icons/i_kolibrios.png') }}" alt="kolibrios">
+                </td>
+                <td class="td-description">
+                    {{ _('downloads:version') }} <b>{{ autobuild_vers }}</b>
+                </td>
+                <td class="td-languages">
+                    {{ _('downloads:date') }} <b>{{ autobuild_date }}</b>
+                </td>
+            </tr>
+
+            <tr class="tr-margin-bot">
+                <td colspan="3"><hr /></td>
+            </tr>
+
             {% for ext, alt in (
                 ('img', 'floppy'),
                 ('iso', 'cd'),
@@ -28,9 +49,6 @@
                         <span class="beta">BETA</span>
                     {% endif %}
                 </td>
-                <td class="td-date">
-                    {{ autobuild_date }}
-                </td>
                 <td class="td-languages">
                     {% for l, lang in (
                         ('en_US', 'English'),
@@ -38,27 +56,42 @@
                         ('es_ES', 'Español')
                     ) %}
                     <a href="//builds.kolibrios.org/{{ l }}/latest-{{ ext }}.7z"
-                        title="ver. $autobuild_cmtid_{{ l }}, $autobuild_size_{{ l }}_{{ ext }}">{{ lang }}</a>
+                        title="ver. $autobuild_cmtid_{{ l }}, $autobuild_size_{{ l }}_{{ ext }}"
+                        class="button">
+                        {{ lang }}
+                        {% if l == 'en_US' %}
+                            <img src="{{ url_for('static', filename='img/flags/en.png') }}" alt="{{ lang }}">
+                        {% elif l == 'ru_RU' %}
+                            <img src="{{ url_for('static', filename='img/flags/ru.png') }}" alt="{{ lang }}">
+                        {% elif l == 'es_ES' %}
+                            <img src="{{ url_for('static', filename='img/flags/es.png') }}" alt="{{ lang }}">
+                        {% endif %}</a>
                     {% endfor %}
                 </td>
             </tr>
             {% endfor %}
+
             <tr>
-                <td colspan="4">
-                    <hr />
-                </td>
+                <td colspan="3"><hr /></td>
             </tr>
+        </table>
+
+        <table>
             <tr class="tr-margin-top">
                 <td class="td-description" colspan="2">
                     <div role="button" class="help-button"
-                        onclick="alert('{{ _('downloads:download_help') }}');">
-                        {{ _('downloads:download_choice') }}
+                         onclick="alert('{{ _('downloads:download_help') }}');">
+                        <img src="{{ url_for('static', filename='img/icons/i_info.png') }}" alt="Info">
+                        <u>{{ _('downloads:download_choice') }}</u>
                     </div>
-                <td class="td-date">
-                    <a href="//archive.kolibrios.org/ru/">{{ _('downloads:prev_rev') }}</a>
                 </td>
                 <td class="td-languages">
-                    <a href="//builds.kolibrios.org/">{{ _('downloads:all_rev') }}</a>
+                    <a href="//archive.kolibrios.org/ru/">
+                        {{ _('downloads:prev_rev') }}
+                    </a>
+                    <a href="//builds.kolibrios.org/">
+                        {{ _('downloads:all_rev') }}
+                    </a>
                 </td>
             </tr>
         </table>
@@ -66,12 +99,17 @@
         <p>
             {{ _(
                 'downloads:download_description',
-                kolibrios="<b>{0}</b>"
-                    .format(_('title:index')),
+                kolibrios="<b>{0}</b>".format(_('title:index')),
                 zip="<a href='http://www.7-zip.org' target='_blank'>7zip</a>",
                 gpl="<a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>",
-                git="<a href='https://git.kolibrios.org'>{0}</a>"
-                    .format(_('downloads:git-server'))
+                git="<a href='https://git.kolibrios.org'>{0}</a>".format(_('downloads:git-server'))
+            ) | safe }}
+        </p>
+
+        <p class="p-warn">
+            <img src="{{ url_for('static', filename='img/icons/i_warn.png') }}" alt="Warn">{{ _(
+                'downloads:download_warn',
+                kolibrios="<b>{0}</b>".format(_('title:index'))
             ) | safe }}
         </p>
 
