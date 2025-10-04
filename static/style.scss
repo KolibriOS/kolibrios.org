@@ -1,24 +1,61 @@
+/*  VARIABLES  */
+
+$c-body-bg-img:    url(img/bg.png);
+$c-body-bg:        #E2E2E2;
+$c-text:           #333333;
+$c-white:          #FFFFFF;
+$c-gray:           #888888;
+$c-black:          #000000;
+
+$c-menu-bg:        #161617CC;
+$c-menu-hover:     #FFE36A;
+$c-menu-shadow:    #00000040;
+
+$c-shadow-soft:    #1C1A281F;
+
+$c-article-bd:     #C0B9C491;
+
+$c-primary:        #609A21;
+$c-primary-ink:    #609A21AA;
+
+$c-link:           #0472D8;
+$c-link-hover:     #0053B9;
+$c-text-link:      #1F1F1F;
+
+$c-lang-panel:     #333333D8;
+$c-lang-sep-top:   #FFFFFF0F;
+$c-lang-sep-bot:   #00000012;
+$c-lang-grad-start:#C20D2C7D;
+$c-lang-grad-end:  #3928C78A;
+$c-hover-bot-bd:   #34312E;
+$c-hover-top-bd:   #484848;
+
+$c-dot:            #CCCCCC;
+$c-screen-border:  #182028;
+
+/*  STYLES  */
+
 body {
     margin: 0;
     font-family: "Source Sans Pro", "Open Sans", sans-serif;
-    background: #e1e2e2 url(img/bg.png) repeat fixed 0 0;
+    background: $c-body-bg $c-body-bg-img repeat fixed 0 0;
 }
 
 #menu {
-    background: rgba(22, 22, 23, .8);
-    color: #FFFFFF;
+    background: $c-menu-bg;
+    color: $c-white;
     cursor: default;
     line-height: 2em;
     padding: 0.5em 0;
     text-align: center;
-    text-shadow: 2px 2px 2px #00000063;
+    text-shadow: 2px 2px 2px $c-menu-shadow;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 9000;
 
     & > * {
-        color: #fff;
+        color: $c-white;
         cursor: pointer;
         margin: 0 1em;
         text-decoration: none;
@@ -27,11 +64,11 @@ body {
 
     a:hover,
     a.a-sel {
-        color: #ffe36a;
+        color: $c-menu-hover;
     }
 
     img {
-        filter: drop-shadow(2px 2px 2px #00000020);
+        filter: drop-shadow(2px 2px 2px $c-menu-shadow);
     }
 }
 
@@ -47,16 +84,15 @@ body {
     z-index: 9100;
     display: none;
     opacity: 0;
-    filter: alpha(opacity=0);
 
     &::before {
         content: '';
         display: block;
         position: absolute;
-        border: 11px solid #333C;
-        border-left: 10px solid rgba(255, 255, 255, 0);
-        border-right: 10px solid rgba(255, 255, 255, 0);
-        border-top: 0px solid rgba(255, 255, 255, 0);
+        border: 10px solid $c-lang-panel;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 0;
         top: -10px;
         left: 50%;
         margin-left: -6px;
@@ -66,12 +102,10 @@ body {
         display: block;
         margin-left: 4px;
         border-radius: 4px;
-        border: 1px solid #333;
-        box-shadow: 0 0 5px #000;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        border: 1px solid $c-text;
+        box-shadow: 0 0 10px $c-menu-shadow;
         overflow: hidden;
-        background: #333;
-        background: #333E;
+        background: $c-lang-panel;
         backdrop-filter: saturate(180%) blur(6px);
 
         a {
@@ -79,23 +113,23 @@ body {
             padding: 0 3em 0 1em;
             font-size: 90%;
             line-height: 2.5;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+            border-top: 1px solid $c-lang-sep-top;
+            border-bottom: 1px solid $c-lang-sep-bot;
             text-decoration: none;
-            color: #fff !important;
+            color: $c-white !important;
 
             &:hover {
-                border-bottom: 1px solid #34312eff;
-                border-top: 1px solid #4c4c4cff;
-                background: #444;
-                background: linear-gradient(328deg, #c20d2c7d, #3928c78a);
+                border-bottom: 1px solid $c-hover-bot-bd;
+                border-top: 1px solid $c-hover-top-bd;
+                background-color: $c-hover-top-bd;
+                background-image: linear-gradient(328deg, $c-lang-grad-start, $c-lang-grad-end);
             }
 
             &.a-sel {
-                color: #888 !important;
+                color: $c-gray !important;
 
                 img {
-                    color: #888 !important;
+                    color: $c-gray !important;
                     filter: brightness(0.5);
                 }
             }
@@ -107,7 +141,7 @@ body {
                 margin-top: -3px;
                 width: 16px;
                 height: 11px;
-                filter: drop-shadow(1px 2px 2px #0003);
+                filter: drop-shadow(1px 2px 2px $c-menu-shadow);
             }
 
             &:first-child {
@@ -124,21 +158,21 @@ body {
 /*  ARTICLE  */
 
 #article {
-    background: rgba(254, 255, 255, 1);
-    border: 1px solid #c0b9c491;
+    background: $c-white;
+    border: 1px solid $c-article-bd;
     border-radius: 4px;
-    box-shadow: rgba(28, 26, 40, 0.12) 0 4px 4px -2px;
+    box-shadow: $c-shadow-soft 0 4px 4px -2px;
     margin: 2em auto;
     max-width: 910px;
     padding: 2em;
     text-align: justify;
-    color: #333;
+    color: $c-text;
 }
 
 #banner {
     box-sizing: border-box;
     border-radius: 4px;
-    box-shadow: inset 0 0 0 1px #00000020;
+    box-shadow: inset 0 0 0 1px $c-menu-shadow;
     transition: box-shadow 0.3s ease;
     display: block;
     margin: 0px 0px 1em;
@@ -146,12 +180,12 @@ body {
     text-decoration: none;
 
     &:hover {
-        box-shadow: inset 0 0 0 4px #609A21AA;
+        box-shadow: inset 0 0 0 4px $c-primary-ink;
     }
 
     td {
         text-align: center;
-        vertical-align: center;
+        vertical-align: middle;
     }
 
     img {
@@ -159,8 +193,7 @@ body {
     }
 
     h1 {
-        margin-top: 0em;
-        color: #609A21;
+        color: $c-primary;
         font-size: 2.5em;
         margin: 0 0 16px;
     }
@@ -171,12 +204,12 @@ body {
 
     .p-link {
         margin-top: 16px;
-        color: #609A21;
+        color: $c-primary;
         font-weight: bold;
     }
 
     a {
-        color: #609A21;
+        color: $c-primary;
     }
 }
 
@@ -187,10 +220,10 @@ h1 {
 }
 
 a {
-    color: #1F1F1F;
+    color: $c-text-link;
 
-    a:hover {
-        color: #000;
+    &:hover {
+        color: $c-black;
     }
 }
 
@@ -242,10 +275,10 @@ table {
         padding-bottom: 1px;
         border-bottom: 1px solid;
         text-decoration: none;
-        color: #0472D8;
+        color: $c-link;
 
         &:hover {
-            color: #0053B9;
+            color: $c-link-hover;
         }
     }
 }
@@ -290,8 +323,8 @@ td {
         width: 40%;
 
         .beta {
-            border: 1px solid grey;
-            color: grey;
+            border: 1px solid $c-gray;
+            color: $c-gray;
             font-size: 0.75em;
             font-weight: bold;
             border-radius: 0.25em;
@@ -321,7 +354,7 @@ hr {
 .help-button {
     cursor: pointer;
     display: inline-block;
-    color: #609A21;
+    color: $c-primary;
 
     img {
         padding-bottom: 1px;
@@ -329,7 +362,7 @@ hr {
 }
 
 acronym {
-    border-bottom: 1px dashed #ccc;
+    border-bottom: 1px dashed $c-dot;
     text-decoration: none;
     cursor: help;
 }
@@ -342,7 +375,7 @@ acronym {
     width: 100%;
     height: 100%;
     cursor: pointer;
-    border: 1px solid #182028;
+    border: 1px solid $c-screen-border;
     display: block;
     position: relative;
     border-radius: 4px;
@@ -379,13 +412,13 @@ iframe {
     display: inline-block;
     width: 0.625em;
     height: 0.625em;
-    background: #ccc;
+    background: $c-dot;
     border-radius: 50%;
     margin: 0 0.25em;
     cursor: pointer;
 
     &.active {
-        background: #333;
+        background: $c-text;
     }
 }
 
@@ -394,12 +427,10 @@ iframe {
 #footer {
     margin: 2em auto;
     text-align: center;
-    color: #848585;
+    color: $c-gray;
     display: block;
-    text-align: center;
     width: 100%;
-    color: rgb(132, 133, 133);
-    text-shadow: rgb(255, 255, 255) 1px 1px 0px;
+    text-shadow: $c-white 1px 1px 0px;
     font-size: 90%;
 
     img {
@@ -424,7 +455,7 @@ iframe {
     #banner {
         max-width: calc(100% - 2px);
         margin: 1px 0 1em;
-        outline: 1px solid rgb(227, 227, 227);
+        outline: 1px solid $c-body-bg;
 
         table td {
             &:first-child,
