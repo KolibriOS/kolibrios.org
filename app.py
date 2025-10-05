@@ -22,9 +22,10 @@ STATUS_FETCH_DELAY_SEC = 300  # 5 minutes
 
 app = Flask(__name__)
 
-css = sass.compile(filename="static/style.scss")
-with open("static/style.css", "w", encoding="utf-8") as f:
-    f.write(css)
+if app.debug:
+    css = sass.compile(filename="static/style.scss")
+    with open("static/style.css", "w", encoding="utf-8") as f:
+        f.write(css)
 
 
 # ---------- LATEST COMMIT DATE (MINIMAL ADD-ON) -----------------------------
