@@ -20,4 +20,6 @@ in pkgs.mkShell {
       pip install -r requirements.txt
     fi
   '';
+
+  LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
 }
