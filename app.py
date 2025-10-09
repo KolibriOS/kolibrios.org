@@ -119,12 +119,12 @@ def _ensure_updater_started():
 
 @app.context_processor
 def _inject_autobuild_vers():
-    return {"autobuild_vers": autobuild_vers}
+    return {'autobuild_vers': autobuild_vers}
 
 
 @app.context_processor
 def _inject_autobuild_date():
-    return {"autobuild_date": autobuild_date}
+    return {'autobuild_date': autobuild_date}
 
 
 # ---------- LOCALES FUNCTIONS -----------------------------------------------
@@ -134,7 +134,7 @@ def load_all_locales():
     translations = {}
     locales_dir = "locales"
 
-    locales_code_default = ("en", "ru", "es")
+    locales_code_default = ('en', 'ru', 'es')
     locales_code_extra = []
     locales_code = ()
 
@@ -153,7 +153,7 @@ def load_all_locales():
             }
 
     locales_code = locales_code_default + tuple(sorted(locales_code_extra))
-    locales_name = {l: translations[l]["title"]["language"] for l in locales_code}
+    locales_name = {l: translations[l]['title']['language'] for l in locales_code}
 
     return translations, locales_name, locales_code
 
@@ -191,14 +191,16 @@ def inject_translations():
     def translate(text, **kwargs):
         section, key = text.split(":", 1)
 
-        template = g.translations.get(section, {}).get(key, f"${section}: {key}$")
+        template = g.translations \
+            .get(section, {}) \
+            .get(key, f"${section}: {key}$")
 
         try:
             return template.format(**kwargs)
         except Exception:
             return template
 
-    return {"_": translate}
+    return {'_': translate}
 
 
 # ---------- MAIN PAGES ------------------------------------------------------
