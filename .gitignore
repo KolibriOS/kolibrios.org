@@ -21,3 +21,4 @@ Dockerfile
 .env
 static/*.css
 static/*.css.map
+static/*.min.js

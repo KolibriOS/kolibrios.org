@@ -1,3 +1,4 @@
+import re
 import threading
 import time
 
@@ -5,7 +6,8 @@ from os import path, listdir
 from datetime import date
 from configparser import ConfigParser
 
-import sass
+from sass import compile as compile_sass
+from htmlmin import minify as minify_html
 
 from flask import Flask, redirect, render_template, request, url_for, g, Response
 
@@ -23,9 +25,19 @@ STATUS_FETCH_DELAY_SEC = 300  # 5 minutes
 app = Flask(__name__)
 
 if app.debug:
-    css = sass.compile(filename="static/style.scss")
+    # CSS Compilation and minification
+    css = compile_sass(filename="static/style.scss", output_style="compressed")
     with open("static/style.css", "w", encoding="utf-8") as f:
         f.write(css)
+
+    # JS minification
+    with open("static/script.js", encoding="utf-8") as f:
+        js = f.read()
+    js = re.sub(r"/\*.*?\*/", "", js, flags=re.S)
+    js = re.sub(r"//.*", "", js)
+    js = re.sub(r"\s+", " ", js).strip()
+    with open("static/script.min.js", "w", encoding="utf-8") as f:
+        f.write(js)
 
 
 # ---------- LATEST COMMIT DATE (MINIMAL ADD-ON) -----------------------------
@@ -102,8 +114,6 @@ def _updater_loop():
 
 _started = False
 _refresh_build_date_once()
-
-# Flask 3.x fix: start updater lazily on first request (since before_first_request is removed)
 _updater_lock = threading.Lock()
 
 
@@ -172,9 +182,12 @@ def render_localized_template(lang, template_name):
     if lang not in locales_code:
         return redirect(url_for("index", lang=get_best_lang()))
 
-    return render_template(
-        template_name,
-        year=date.today().year,
+    return minify_html(
+        render_template(
+            template_name,
+            year=date.today().year,
+        ),
+        remove_empty_space=True,
     )
 
 
