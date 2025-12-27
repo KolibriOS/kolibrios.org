@@ -1,0 +1,31 @@
+name: Docker Build and Push
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Login to Docker Registry
+      uses: docker/login-action@v2
+      with:
+        registry: git.kolibrios.org
+        username: kolibrios
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        push: ${{ github.event_name == 'push' }}
+        tags: git.kolibrios.org/kolibrios/kolibrios.org:latest
+        cache-from: type=gha
+        cache-to: type=gha,mode=max

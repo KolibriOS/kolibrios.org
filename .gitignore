@@ -17,7 +17,6 @@ htmlcov/
 docs/_build/
 
 # Our's
-Dockerfile
 .env
 static/*.css
 static/*.css.map
