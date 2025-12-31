@@ -78,12 +78,12 @@ def home():
     return redirect(url_for("index", lang=helpers.get_best_lang()))
 
 
-@app.route("/<lang>")
+@app.route("/<lang>", strict_slashes=False)
 def index(lang):
     return helpers.render_localized_template(lang, "index.html")
 
 
-@app.route("/<lang>/download")
+@app.route("/<lang>/download", strict_slashes=False)
 def download(lang):
     return helpers.render_localized_template(lang, "download.html")
 
