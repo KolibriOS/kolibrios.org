@@ -4,7 +4,7 @@ import datetime
 from sass import compile as compile_sass
 from flask import Flask, redirect, request, url_for, g, Response
 
-from modules import autobuild, locales, helpers
+from modules import autobuild, locales, helpers, slides
 
 
 # ---------- APP CONFIG ------------------------------------------------------
@@ -12,7 +12,9 @@ from modules import autobuild, locales, helpers
 
 app = Flask(__name__)
 
+# load locales and slides
 locales.ensure_loaded()
+SLIDES = slides.load_slides(app.root_path)
 
 # CSS Compilation and minification
 if app.debug:
@@ -51,6 +53,11 @@ def _inject_autobuild_vers():
 @app.context_processor
 def _inject_autobuild_date():
     return {'autobuild_date': autobuild.autobuild_date}
+
+
+@app.context_processor
+def _inject_slides():
+    return {"slides": SLIDES}
 
 
 @app.context_processor

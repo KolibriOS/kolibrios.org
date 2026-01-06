@@ -115,20 +115,43 @@
 
         <h1>{{ _('screenshots:header') }}</h1>
 
-        <div id="screen" onclick="next()">
-            <div id="show">
-            {% for i in range(1, 7) %}
-                <img
-                    id="slide{{ i }}"
-                    src="{{ url_for('static', filename='img/screenshots/%d.png' % i ) }}"
-                    {% if i == 1 %}class="visible"{% endif %}
-                    alt="{{ _('screenshots:%d' % i) }}"
+        {% if slides %}
+        <div id="screen" class="gallery">
+            {% for slide in slides %}
+                <input
+                    type="radio"
+                    name="slide"
+                    id="slide-{{ loop.index0 }}"
+                    class="gallery-input"
+                    {% if loop.first %}checked{% endif %}
                 >
+                <figure class="gallery-slide">
+                    <div class="gallery-show">
+                        <img
+                            src="{{ url_for('static', filename=slide.filename) }}"
+                            alt="{{ _('screenshots:%s' % slide.key) }}"
+                        >
+                        {% set next_index = 0 if loop.last else loop.index0 + 1 %}
+                        <label
+                            class="gallery-next"
+                            for="slide-{{ next_index }}"
+                            aria-label="Next slide"
+                        ></label>
+                    </div>
+                    <figcaption class="gallery-caption">
+                        {{ _('screenshots:%s' % slide.key) }}
+                    </figcaption>
+                </figure>
+                <div class="gallery-dot">
+                    <label
+                        class="dot"
+                        for="slide-{{ loop.index0 }}"
+                        aria-label="{{ _('screenshots:%s' % slide.key) }}"
+                    ></label>
+                </div>
             {% endfor %}
-            </div>
         </div>
-        <div id="carousel"></div>
-        <div id="dots"></div>
+        {% endif %}
     </div>
 
     {% include 'tmpl/_footer.htm' %}
