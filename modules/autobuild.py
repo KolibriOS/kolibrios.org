@@ -6,7 +6,7 @@ import time
 STATUS_URL = "https://builds.kolibrios.org/status.html"
 STATUS_SEC = 300  # refetch each 5 minutes
 
-autobuild_date = "DD.MM.YYYY"
+autobuild_date = {"YYYY": "YYYY", "MM": "MM", "DD": "DD"}
 autobuild_vers = "0.0.0.0+0000-0000000"
 
 _started = False
@@ -56,12 +56,17 @@ def _refresh_build_date_once():
                 if not mts:
                     mds = re.search(r"\b(\d{2})\.(\d{2})\.(\d{4})\b", text)
                     if mds:
-                        autobuild_date = f"{mds.group(1)}.{mds.group(2)}.{mds.group(3)}"
+                        autobuild_date["YYYY"] = mds.group(1)
+                        autobuild_date["MM"] = mds.group(2)
+                        autobuild_date["DD"] = mds.group(3)
                     else:
                         return
                 else:
-                    y, mo, d = mts.groups()
-                    autobuild_date = f"{d}.{mo}.{y}"
+                    (
+                        autobuild_date["YYYY"],
+                        autobuild_date["MM"],
+                        autobuild_date["DD"],
+                    ) = mts.groups()
 
                 if last_commit_ver:
                     autobuild_vers = last_commit_ver
