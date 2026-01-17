@@ -45,12 +45,16 @@ def before_request():
 
 @app.context_processor
 def _inject_autobuild_vers():
-    return {'autobuild_vers': autobuild.autobuild_vers}
+    return {"autobuild_vers": autobuild.autobuild_vers}
 
 
 @app.context_processor
 def _inject_autobuild_date():
-    return {'autobuild_date': autobuild.autobuild_date}
+    return {
+        "autobuild_date": g.translations.get("downloads", {})
+        .get("date-format", "{DD}.{MM}.{YYYY}")
+        .format(**autobuild.autobuild_date)
+    }
 
 
 @app.context_processor
@@ -58,16 +62,19 @@ def inject_translations():
     def translate(text, **kwargs):
         section, key = text.split(":", 1)
 
-        template = g.translations \
-            .get(section, {}) \
+        template = (
+            g.translations.get(section, {})
             .get(key, f"${section}: {key}$")
+            .replace("\\n", " \\n")
+            .replace("\n", "")
+        )
 
         try:
             return template.format(**kwargs)
         except Exception:
             return template
 
-    return {'_': translate}
+    return {"_": translate}
 
 
 # ---------- ROUTES -------------------------------------------------------
