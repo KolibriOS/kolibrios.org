@@ -65,8 +65,6 @@ def inject_translations():
         template = (
             g.translations.get(section, {})
             .get(key, f"${section}: {key}$")
-            .replace("\\n", " \\n")
-            .replace("\n", "")
         )
 
         try:
