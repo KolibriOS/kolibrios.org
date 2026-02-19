@@ -3,7 +3,7 @@ import threading
 import time
 
 
-STATUS_URL = "https://builds.kolibrios.org/status.html"
+STATUS_URL = "http://builds.kolibrios.org/status.html"
 STATUS_SEC = 300  # refetch each 5 minutes
 
 autobuild_date = {"YYYY": "YYYY", "MM": "MM", "DD": "DD"}
@@ -17,7 +17,6 @@ def _refresh_build_date_once():
     global autobuild_date, autobuild_vers
     try:
         from urllib.request import Request, urlopen
-
         req = Request(
             STATUS_URL,
             headers={
@@ -30,46 +29,58 @@ def _refresh_build_date_once():
                 r.headers.get_content_charset() or "utf-8", "replace"
             )
 
+        ver_re = re.compile(
+            r"\b(\d+\.\d+\.\d+\.\d+\+\d{3,8}-[0-9a-fA-F]{7,40})\b"
+        )
+        last_ver = None
+
         rows = re.findall(r"(<tr\b[^>]*>.*?</tr>)", html, flags=re.I | re.S)
-        if not rows:
-            return
-
-        last_commit_ver = None
-
         for row in rows:
             cls = re.search(r'class\s*=\s*"([^"]*)"', row, flags=re.I)
             classes = cls.group(1).lower() if cls else ""
-
-            text = re.sub(r"<[^>]+>", " ", row)
-
             if "commit" in classes:
-                mver = re.search(
-                    r"\b(\d+\.\d+\.\d+\.\d+\+\d{3,8}-[0-9a-fA-F]{7,40})\b", row
-                )
+                mver = ver_re.search(row)
                 if mver:
-                    last_commit_ver = mver.group(1)
-
-            elif "success" in classes:
-                mts = re.search(
-                    r"\b(\d{4})\.(\d{2})\.(\d{2})\s+\d{2}:\d{2}:\d{2}\b", text
+                    last_ver = mver.group(1)
+                continue
+            if "success" not in classes:
+                continue
+            text = re.sub(r"<[^>]+>", " ", row)
+            mts = re.search(
+                r"\b(\d{4})\.(\d{2})\.(\d{2})\s+\d{2}:\d{2}:\d{2}\b", text
+            )
+            if mts:
+                autobuild_date["YYYY"], autobuild_date["MM"], autobuild_date["DD"] = mts.groups()
+            else:
+                mds = re.search(r"\b(\d{2})\.(\d{2})\.(\d{4})\b", text)
+                if not mds:
+                    return
+                autobuild_date["YYYY"], autobuild_date["MM"], autobuild_date["DD"] = (
+                    mds.group(3),
+                    mds.group(2),
+                    mds.group(1),
                 )
-                if not mts:
-                    mds = re.search(r"\b(\d{2})\.(\d{2})\.(\d{4})\b", text)
-                    if mds:
-                        autobuild_date["YYYY"] = mds.group(1)
-                        autobuild_date["MM"] = mds.group(2)
-                        autobuild_date["DD"] = mds.group(3)
-                    else:
-                        return
-                else:
-                    (
-                        autobuild_date["YYYY"],
-                        autobuild_date["MM"],
-                        autobuild_date["DD"],
-                    ) = mts.groups()
+            if last_ver:
+                autobuild_vers = last_ver
+            return
 
-                if last_commit_ver:
-                    autobuild_vers = last_commit_ver
+        # Fallback for plain-text log format (no HTML table)
+        # Example: 2025.09.20 20:45:10 user 💚 Build processing completed successfully. Thank you.
+        log_line_re = re.compile(
+            r"^(\d{4})\.(\d{2})\.(\d{2})\s+\d{2}:\d{2}:\d{2}\s+(.*)$"
+        )
+        for raw in html.splitlines():
+            mline = log_line_re.match(raw.strip())
+            if not mline:
+                continue
+            yyyy, mm, dd, rest = mline.groups()
+            mver = ver_re.search(rest)
+            if mver:
+                last_ver = mver.group(1)
+            if "Build processing completed successfully" in rest:
+                autobuild_date["YYYY"], autobuild_date["MM"], autobuild_date["DD"] = yyyy, mm, dd
+                if last_ver:
+                    autobuild_vers = last_ver
                 return
 
     except Exception:
