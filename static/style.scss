@@ -16,7 +16,9 @@ $c-shadow-soft:    #1C1A281F;
 $c-article-bd:     #C0B9C491;
 
 $c-primary:        #609A21;
-$c-primary-ink:    #609A21AA;
+
+$c-banner:         #F9AB00;
+$c-banner-ink:     #F9AB00AA;
 
 $c-link:           #0472D8;
 $c-link-hover:     #0053B9;
@@ -180,12 +182,21 @@ body {
     text-decoration: none;
 
     &:hover {
-        box-shadow: inset 0 0 0 4px $c-primary-ink;
+        box-shadow: inset 0 0 0 4px $c-banner-ink;
+    }
+
+    table {
+        table-layout: fixed;
     }
 
     td {
         text-align: center;
         vertical-align: middle;
+
+        &:first-child,
+        &:last-child {
+            width: 128px;
+        }
     }
 
     img {
@@ -193,7 +204,7 @@ body {
     }
 
     h1 {
-        color: $c-primary;
+        color: $c-banner;
         font-size: 2.5em;
         margin: 0 0 16px;
     }
@@ -202,14 +213,14 @@ body {
         margin: 0em;
     }
 
-    .p-link {
-        margin-top: 16px;
-        color: $c-primary;
-        font-weight: bold;
-    }
-
     a {
-        color: $c-primary;
+        display: block;
+        margin-top: 16px;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        font-weight: bold;
+        color: $c-banner;
+        border: none;
     }
 }
 
@@ -475,7 +486,7 @@ iframe {
             margin-bottom: 0;
         }
 
-        p, .p-link {
+        p {
             margin-top: 0.5em;
         }
     }

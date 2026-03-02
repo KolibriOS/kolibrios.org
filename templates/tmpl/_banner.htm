@@ -1,0 +1,17 @@
+<a id="banner" href="{{ _('banner:url') }}" target="_blank">
+    <table>
+        <tr>
+            <td valign="top" width="128">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="{{ _('title:index')}}">
+            </td>
+            <td valign="top">
+                <h1>{{ _('banner:header') }}</h1>
+                <p>{{ _('banner:text') }}</p>
+                <a href="{{ _('banner:url') }}">{{ _('banner:url') }}</a>
+            </td>
+            <td valign="top" width="128">
+                <img src="{{ url_for('static', filename='img/banners/' + _('banner:img')) }}" alt="{{ _('banner:alt') }}">
+            </td>
+        </tr>
+    </table>
+</a>

@@ -2,6 +2,8 @@ from os import path, listdir
 from configparser import ConfigParser
 import threading
 
+from modules import configs
+
 
 translations = {}
 locales_name = {}
@@ -32,6 +34,13 @@ def load_all_locales():
             new_translations[lang] = {
                 section: dict(cp[section]) for section in cp.sections()
             }
+
+    shared_sections = configs.get_all_sections()
+    if shared_sections:
+        for locale_translation in new_translations.values():
+            for section_name, section_values in shared_sections.items():
+                locale_section = locale_translation.setdefault(section_name, {})
+                locale_section.update(section_values)
 
     new_locales_code = locales_code_default + tuple(sorted(locales_code_extra))
     new_locales_name = {
