@@ -6,7 +6,6 @@ in pkgs.mkShell {
   buildInputs = with pypkgs; [
     python
     virtualenv
-    pkgs.nodePackages.sass
   ];
 
   shellHook = ''
