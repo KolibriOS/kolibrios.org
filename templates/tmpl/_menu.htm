@@ -18,7 +18,28 @@
     <a href="https://board.kolibrios.org">{{ _('menu:forum') }}</a>
     <a href="https://wiki.kolibrios.org/wiki/Main_Page/{{ g.locale }}">{{ _('menu:wiki') }}</a>
     <a href="https://git.kolibrios.org">Git</a>
-    
+
+    <div x-data="chatsDropdownMenu()"
+         x-init="init"
+         @mouseenter="pause"
+         @mouseleave="resume"
+         id="chats-dropdown">
+
+        <div class="wrapper">
+            <div class="header"
+                 :class="{ 'hide': isOpen }"
+                 x-text="items[currentIndex]">
+            </div>
+
+            <ul class="list"
+                :class="{ 'show': isOpen }">
+                <template x-for="(item, index) in listItems" :key="index">
+                    <li x-text="item"></li>
+                </template>
+            </ul>
+        </div>
+    </div>
+
     <button onclick="dropdown_show(this)" id="lang-butt">
         <img src="{{ url_for('static', filename='img/flags/%s.png' % g.locale) }}" alt="{{ g.locale }}">
     </button>

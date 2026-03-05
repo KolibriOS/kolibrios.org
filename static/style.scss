@@ -155,6 +155,66 @@ body {
     }
 }
 
+#chats-dropdown {
+    position: relative;
+    width: 250px;
+    cursor: pointer;
+
+    .wrapper {
+        position: relative;
+        height: 40px;
+        /* overflow: hidden; */
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: #fff;
+    }
+    .header,
+    .list {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 8px 12px;
+        background: #fff;
+        transition: transform 0.25s ease, opacity 0.2s ease;
+        list-style: none;
+    }
+    .header {
+        top: 0;
+        transform: translateY(0);
+        opacity: 1;
+        z-index: 2;
+
+        &.hide {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+    }
+    .list {
+        top: 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        z-index: 1;
+        padding: 0;
+
+        &.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    .list li {
+        padding: 8px 12px;
+        border-bottom: 1px solid #f0f0f0;
+
+        &:last-child {
+            border-bottom: none;
+        }
+        &:hover {
+            background-color: #e9e9e9;
+        }
+    }
+}
+
 /*  ARTICLE  */
 
 #article {

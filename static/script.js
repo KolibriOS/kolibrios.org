@@ -117,3 +117,49 @@ function checkkey(e) {
     else if (keycode == 39) { next(); }
     else if (keycode == 27) { dropdown_hide(); }
 }
+
+
+function chatsDropdownMenu() {
+    return {
+        items: ["IRC", "Matrix", "Discord", "Telegram"],
+        currentIndex: 0,
+        isOpen: false,
+        intervalId: null,
+
+        init() {
+            console.debug("init");
+            this.startRotation();
+        },
+
+        startRotation() {
+            if (this.intervalId != null) {
+                console.debug("Already started");
+            } else {
+                this.intervalId = setInterval(() => {
+                    this.currentIndex = (this.currentIndex + 1) % this.items.length;
+                }, 3000);
+                console.debug("start");
+            }
+        },
+
+        stopRotation() {
+            clearInterval(this.intervalId);
+            this.intervalId = null;
+            console.debug("stop");
+        },
+
+        pause() {
+            this.stopRotation();
+            this.isOpen = true;
+        },
+        resume() {
+            this.startRotation();
+            this.isOpen = false;
+        },
+        get listItems() {
+            const current = this.items[this.currentIndex];
+            const others = this.items.filter((_, i) => i !== this.currentIndex);
+            return [current, ...others];
+        }
+    }
+}
