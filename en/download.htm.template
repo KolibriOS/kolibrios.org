@@ -123,7 +123,7 @@
             that they always contain the most recent changes in the system and can, 
             therefore, be unstable. All files are compressed with 
             <a href='http://www.7-zip.org' target='_blank'>7zip</a>.
-            <b>KolibriOS</b> is distributed under under 
+            <b>KolibriOS</b> is distributed under 
             <a href='http://www.gnu.org/licenses/gpl-2.0.html' target='_blank'>GPLv2</a>
             license, its source code is available on our 
             <a href='https://git.kolibrios.org'>Git server</a>.
@@ -143,15 +143,16 @@
         <div id="carousel"></div>
         <div id="dots"></div>
     </div>
-    
+
     <div id="footer">
-        <img src="../i/logo.png" />
+        <img src="../i/logo.png" alt="KolibriOS Logo" />
         <p>
             &copy; 2004<script>document.write("&thinsp;&ndash;&thinsp;" + new Date().getFullYear());</script>
             <br>
             KolibriOS Team
         </p>
     </div>
+
 </body>
 
 </html>
