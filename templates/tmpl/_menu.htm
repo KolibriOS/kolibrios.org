@@ -1,13 +1,13 @@
 <nav id="menu">
-    <a href="{{ url_for('index', lang=g.locale) }}" class="{% if request.endpoint == 'index' %}a-sel{% endif %}">
+    <a href="{{ url_for('index', lang=g.locale) }}"{% if request.endpoint == 'index' %} class="a-sel"{% endif %}>
         {% if current == 'index' %}
             <font bg="lightblue">{{ _('menu:kolibrios') }}</font>
         {% else %}
             {{ _('menu:kolibrios') }}
         {% endif %}
     </a>
-    
-    <a href="{{ url_for('download', lang=g.locale) }}" class="{% if request.endpoint == 'download' %}a-sel{% endif %}">
+
+    <a href="{{ url_for('download', lang=g.locale) }}"{% if request.endpoint == 'download' %} class="a-sel"{% endif %}>
         {% if current == 'download' %}
             <font bg="lightblue">{{ _('menu:download') }}</font>
         {% else %}
@@ -15,10 +15,12 @@
         {% endif %}
     </a>
 
-    <a href="https://board.kolibrios.org">{{ _('menu:forum') }}</a>
-    <a href="https://wiki.kolibrios.org/wiki/Main_Page/{{ g.locale }}">{{ _('menu:wiki') }}</a>
-    <a href="https://git.kolibrios.org">Git</a>
-    
+    <a href="//board.kolibrios.org">{{ _('menu:forum') }}</a>
+
+    <a href="//wiki.kolibrios.org/wiki/Main_Page/{{ g.locale }}">{{ _('menu:wiki') }}</a>
+
+    <a href="//git.kolibrios.org">Git</a>
+
     <button onclick="dropdown_show(this)" id="lang-butt">
         <img src="{{ url_for('static', filename='img/flags/%s.png' % g.locale) }}" alt="{{ g.locale }}">
     </button>

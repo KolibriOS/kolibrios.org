@@ -45,15 +45,22 @@ def before_request():
 
 @app.context_processor
 def _inject_autobuild_vers():
-    return {"autobuild_vers": autobuild.autobuild_vers}
+    return {
+        "autobuild_vers": autobuild.autobuild_vers,
+        "autobuild_sizes": autobuild.autobuild_sizes,
+    }
 
 
 @app.context_processor
 def _inject_autobuild_date():
     return {
-        "autobuild_date": g.translations.get("downloads", {})
-        .get("date-format", "{DD}.{MM}.{YYYY}")
-        .format(**autobuild.autobuild_date)
+        "autobuild_date": autobuild.autobuild_date.strftime(
+            g.translations.get("downloads", {})
+            .get("date-format", "{DD}.{MM}.{YYYY}")
+            .replace("{YYYY}", "%Y")
+            .replace("{MM}", "%m")
+            .replace("{DD}", "%d")
+        )
     }
 
 

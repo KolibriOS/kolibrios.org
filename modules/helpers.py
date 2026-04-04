@@ -19,5 +19,5 @@ def render_localized_template(lang, template_name):
             template_name,
             year=date.today().year,
         ),
-        remove_empty_space=True,
+        remove_empty_space=False,
     )

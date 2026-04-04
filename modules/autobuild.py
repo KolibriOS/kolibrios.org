@@ -1,22 +1,50 @@
+from datetime import date
 import re
 import threading
 import time
 
+from urllib.request import Request, urlopen
+
 
 STATUS_URL = "http://builds.kolibrios.org/status.html"
 STATUS_SEC = 300  # refetch each 5 minutes
+DOWNLOAD_LANGS = ("en_US", "ru_RU", "es_ES")
+DOWNLOAD_EXTS = ("img", "iso", "distr", "raw")
 
-autobuild_date = {"YYYY": "YYYY", "MM": "MM", "DD": "DD"}
+VER_RE = re.compile(r"\b(\d+\.\d+\.\d+\.\d+\+\d{3,8}-[0-9a-fA-F]{7,40})\b")
+DATE_RE = re.compile(r"\b(\d{4})\.(\d{2})\.(\d{2})\s+\d{2}:\d{2}:\d{2}\b")
+ROW_RE = re.compile(r"(<tr\b[^>]*>.*?</tr>)", flags=re.I | re.S)
+
+autobuild_date = date.today()
 autobuild_vers = "0.0.0.0+0000-0000000"
+autobuild_sizes = {
+    lang: {ext: "?" for ext in DOWNLOAD_EXTS}
+    for lang in DOWNLOAD_LANGS
+}
 
 _started = False
 _updater_lock = threading.Lock()
 
 
-def _refresh_build_date_once():
+def _refresh_build_sizes():
+    for lang in DOWNLOAD_LANGS:
+        for ext in DOWNLOAD_EXTS:
+            url = f"http://builds.kolibrios.org/{lang}/latest-{ext}.7z"
+            req = Request(
+                url,
+                method="HEAD",
+                headers={"User-Agent": "Mozilla/5.0"},
+            )
+            with urlopen(req, timeout=10) as r:
+                content_length = r.headers.get("Content-Length")
+                if not content_length:
+                    continue
+                autobuild_sizes[lang][ext] = f"{int(content_length) / 1048576:.1f} MB"
+
+
+def _refresh_autobuild_once():
     global autobuild_date, autobuild_vers
     try:
-        from urllib.request import Request, urlopen
         req = Request(
             STATUS_URL,
             headers={
@@ -29,59 +57,26 @@ def _refresh_build_date_once():
                 r.headers.get_content_charset() or "utf-8", "replace"
             )
 
-        ver_re = re.compile(
-            r"\b(\d+\.\d+\.\d+\.\d+\+\d{3,8}-[0-9a-fA-F]{7,40})\b"
-        )
         last_ver = None
 
-        rows = re.findall(r"(<tr\b[^>]*>.*?</tr>)", html, flags=re.I | re.S)
-        for row in rows:
+        for row in ROW_RE.findall(html):
             cls = re.search(r'class\s*=\s*"([^"]*)"', row, flags=re.I)
             classes = cls.group(1).lower() if cls else ""
             if "commit" in classes:
-                mver = ver_re.search(row)
+                mver = VER_RE.search(row)
                 if mver:
                     last_ver = mver.group(1)
                 continue
             if "success" not in classes:
                 continue
             text = re.sub(r"<[^>]+>", " ", row)
-            mts = re.search(
-                r"\b(\d{4})\.(\d{2})\.(\d{2})\s+\d{2}:\d{2}:\d{2}\b", text
-            )
+            mts = DATE_RE.search(text)
             if mts:
-                autobuild_date["YYYY"], autobuild_date["MM"], autobuild_date["DD"] = mts.groups()
-            else:
-                mds = re.search(r"\b(\d{2})\.(\d{2})\.(\d{4})\b", text)
-                if not mds:
-                    return
-                autobuild_date["YYYY"], autobuild_date["MM"], autobuild_date["DD"] = (
-                    mds.group(3),
-                    mds.group(2),
-                    mds.group(1),
-                )
+                autobuild_date = date(*map(int, mts.groups()))
             if last_ver:
                 autobuild_vers = last_ver
+                _refresh_build_sizes()
             return
-
-        # Fallback for plain-text log format (no HTML table)
-        # Example: 2025.09.20 20:45:10 user 💚 Build processing completed successfully. Thank you.
-        log_line_re = re.compile(
-            r"^(\d{4})\.(\d{2})\.(\d{2})\s+\d{2}:\d{2}:\d{2}\s+(.*)$"
-        )
-        for raw in html.splitlines():
-            mline = log_line_re.match(raw.strip())
-            if not mline:
-                continue
-            yyyy, mm, dd, rest = mline.groups()
-            mver = ver_re.search(rest)
-            if mver:
-                last_ver = mver.group(1)
-            if "Build processing completed successfully" in rest:
-                autobuild_date["YYYY"], autobuild_date["MM"], autobuild_date["DD"] = yyyy, mm, dd
-                if last_ver:
-                    autobuild_vers = last_ver
-                return
 
     except Exception:
         pass
@@ -89,7 +84,7 @@ def _refresh_build_date_once():
 
 def _updater_loop():
     while True:
-        _refresh_build_date_once()
+        _refresh_autobuild_once()
         time.sleep(STATUS_SEC)
 
 
@@ -102,4 +97,4 @@ def ensure_started():
         _started = True
 
 
-_refresh_build_date_once()
+_refresh_autobuild_once()
