@@ -1,8 +1,11 @@
+import os
 import re
 import datetime
 
+import click
 from sass import compile as compile_sass
 from flask import Flask, redirect, request, url_for, g, Response
+from flask.cli import run_command
 
 from modules import autobuild, locales, helpers
 
@@ -90,6 +93,11 @@ def home():
     return redirect(url_for("index", lang=helpers.get_best_lang()))
 
 
+@app.route("/download", strict_slashes=False)
+def download_home():
+    return redirect(url_for("download", lang=helpers.get_best_lang()))
+
+
 @app.route("/<lang>", strict_slashes=False)
 def index(lang):
     return helpers.render_localized_template(lang, "index.html")
@@ -139,6 +147,24 @@ def sitemap_xml():
     xml_lines.append("</urlset>")
 
     return Response("\n".join(xml_lines), mimetype="application/xml")
+
+
+# ---------- CLI -------------------------------------------------------------
+
+
+@app.cli.command("preview")
+@click.option("--nocss", is_flag=True, help="Render pages without CSS")
+@click.option("--nojs", is_flag=True, help="Render pages without JS")
+@click.pass_context
+def preview(ctx, nocss, nojs):
+    """Run the dev server without CSS/JS to preview the KolibriOS WebView look."""
+    app.config["NOCSS"] = nocss
+    app.config["NOJS"] = nojs
+    # Delegate to the built-in `flask run` instead of app.run() (which the
+    # Flask CLI ignores). FLASK_DEBUG enables the reloader/debugger so the
+    # command behaves like `flask run --debug`.
+    os.environ["FLASK_DEBUG"] = "1"
+    ctx.invoke(run_command, host="0.0.0.0")
 
 
 # ---------- APP ENTRY -------------------------------------------------------

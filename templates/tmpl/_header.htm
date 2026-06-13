@@ -6,6 +6,6 @@
     <meta name="keywords"
         content="kolibri, kolibrios, colibri, colibrios, колибри, колибриос, калибри, калибриос, operating system, assembler, fasm, alternate, open source">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-    <script src="{{ url_for('static', filename='script.min.js') }}"></script>
+    {% if not config.NOCSS %}<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">{% endif %}
+    {% if not config.NOJS %}<script src="{{ url_for('static', filename='script.min.js') }}"></script>{% endif %}
 </head>

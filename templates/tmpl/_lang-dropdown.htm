@@ -1,8 +1,8 @@
 <div id="lang-dropdown">
     <div>
-    {%- for lang_code in g.locales_name.keys() %}
+    {% for lang_code in g.locales_name.keys() %}
         {% set lang_name = g.locales_name[lang_code] %}
-        {%- if request.view_args["lang"] == lang_code %}
+        {% if request.view_args["lang"] == lang_code %}
             <font bg=#FF9800>
                 <a class="a-sel" href="{{ url_for(request.url_rule.endpoint, lang=lang_code) }}">
                     <img 
@@ -12,7 +12,7 @@
                     {{ lang_name }}
                 </a>
             </font>
-        {%- else %}
+        {% else %}
             <a href="{{ url_for(request.url_rule.endpoint, lang=lang_code) }}">
                 <img 
                     src="{{ url_for('static', filename='img/flags/%s.png' % lang_code) }}" 
@@ -20,7 +20,7 @@
                 >
                 {{ lang_name }}
             </a>
-        {%- endif %}
-    {%- endfor %}
+        {% endif %}
+    {% endfor %}
     </div>
 </div>

@@ -259,7 +259,6 @@ p {
 
         img {
             height: 1em;
-            margin-right: 0.5em;
             margin-bottom: -0.15em;
         }
     }
@@ -271,7 +270,6 @@ p {
     &-warn {
         img {
             margin-bottom: -2px;
-            margin-right: 0.25em;
         }
     }
 }
@@ -354,12 +352,6 @@ td {
 
         a + a {
             margin-left: 1em;
-        }
-    }
-
-    &-info {
-        img {
-            margin-right: 0.25em;
         }
     }
 }

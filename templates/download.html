@@ -65,7 +65,8 @@
                             <img src="{{ url_for('static', filename='img/flags/ru.png') }}" alt="{{ lang }}">
                         {% elif l == 'es_ES' %}
                             <img src="{{ url_for('static', filename='img/flags/es.png') }}" alt="{{ lang }}">
-                        {% endif %}</a>
+                        {% endif %}
+                    </a>
                     {% endfor %}
                 </td>
             </tr>
@@ -80,9 +81,8 @@
             <tr class="tr-margin-top">
                 <td class="td-description td-info" colspan="2">
                     <div role="button" class="help-button"
-                         onclick="alert('{{ _('downloads:download_help') }}');">
-                        <img src="{{ url_for('static', filename='img/icons/i_info.png') }}" alt="Info">
-                        <u>{{ _('downloads:download_choice') }}</u>
+                         onclick="alert('{{ _('downloads:download_help') | replace("'", "\\'") }}');">
+                        <img src="{{ url_for('static', filename='img/icons/i_info.png') }}" alt="Info">&nbsp;<u>{{ _('downloads:download_choice') }}</u>
                     </div>
                 </td>
                 <td class="td-languages">
@@ -107,7 +107,7 @@
         </p>
 
         <p class="p-warn">
-            <img src="{{ url_for('static', filename='img/icons/i_warn.png') }}" alt="Warn">{{ _(
+            <img src="{{ url_for('static', filename='img/icons/i_warn.png') }}" alt="Warn">&nbsp;{{ _(
                 'downloads:download_warn',
                 kolibrios="<b>{0}</b>".format(_('title:index'))
             ) | safe }}
