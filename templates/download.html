@@ -36,7 +36,6 @@
             {% for ext, alt in (
                 ('img', 'floppy'),
                 ('iso', 'cd'),
-                ('distr', 'universal'),
                 ('raw', 'uefi')
             ) %}
             <tr class="tr-margin-bot">
@@ -55,7 +54,7 @@
                         ('ru_RU', 'Русский'),
                         ('es_ES', 'Español')
                     ) %}
-                    <a href="//builds.kolibrios.org/{{ l }}/latest-{{ ext }}.7z"
+                    <a href="//builds.kolibrios.org/{{ autobuild_files[l][ext] }}"
                         title="{{ autobuild_vers }}, {{ autobuild_sizes[l][ext] }}"
                         class="button">
                         {{ lang }}
