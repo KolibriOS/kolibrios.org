@@ -74,18 +74,31 @@ body {
     }
 }
 
-#lang-butt {
-    background: transparent;
-    border: none;
-}
-
 /*  LANG-DROPDOWN  */
 
+#lang-switch {
+    position: relative;
+    cursor: pointer;
+}
+
+/*  Focus opens it (span is tabindex-focusable, so a click focuses in every
+    browser); clicking away blurs and closes it.  */
 #lang-dropdown {
-    position: fixed;
+    position: absolute;
+    top: 48px;             // matches the old JS: button top + 48px
+    left: 50%;
+    transform: translateX(-50%);   // centre the panel under the flag
     z-index: 9100;
-    display: none;
+    width: max-content;      // anchor is a tiny inline span, else it collapses and wraps
+    text-align: left;        // reset the centering inherited from #menu
     opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+
+    #lang-switch:focus-within & {
+        opacity: 1;
+        visibility: visible;
+    }
 
     &::before {
         content: '';
@@ -97,12 +110,11 @@ body {
         border-top: 0;
         top: -10px;
         left: 50%;
-        margin-left: -6px;
+        margin-left: -10px;
     }
 
     & > div {
         display: block;
-        margin-left: 4px;
         border-radius: 4px;
         border: 1px solid $c-text;
         box-shadow: 0 0 10px $c-menu-shadow;
@@ -266,12 +278,6 @@ p {
     &-subscription {
         text-align: center;
     }
-
-    &-warn {
-        img {
-            margin-bottom: -2px;
-        }
-    }
 }
 
 /*  DOWNLOADS  */
@@ -360,14 +366,61 @@ hr {
     margin: 0;
 }
 
-.help-button {
+/*  Info and warning: a clickable icon-heading toggles a hidden checkbox; the
+    0fr -> 1fr grid row animates the panel open. Same mechanism, two colours.  */
+.help-button,
+.warn-title {
     cursor: pointer;
     display: inline-block;
-    color: $c-primary;
 
     img {
+        vertical-align: middle;
         padding-bottom: 1px;
     }
+}
+
+.help-button { color: $c-primary; }
+.warn-title  { color: $c-banner; }
+
+#help-toggle,
+#warn-toggle {
+    display: none;
+}
+
+#help-toggle:checked ~ #download-help,
+#warn-toggle:checked ~ #download-warn {
+    grid-template-rows: 1fr;
+    margin-top: 1em;   // breathing room only while open; closed panel adds no gap
+}
+
+#download-help,
+#download-warn {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease, margin-top 0.35s ease;
+
+    & > div {
+        overflow: hidden;
+        padding-left: calc(1.25em - 1px);
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+#download-help {
+    border-left: 1px solid $c-primary;
+
+    & > div {          // help has several paragraphs; space them
+        display: grid;
+        gap: 1em;
+    }
+}
+
+#download-warn {
+    border-left: 1px solid $c-banner;
+    margin-bottom: 1em;   // the next heading has no top margin of its own
 }
 
 acronym {
@@ -378,24 +431,53 @@ acronym {
 
 /*  SCREENS.CSS  */
 
-#show {
-    max-width: 1280px;
-    max-height: 800px;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    border: 1px solid $c-screen-border;
-    display: block;
-    position: relative;
-    border-radius: 4px;
-    overflow: hidden;
+#screen {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    figure {
+        order: 1;
+        flex: 0 0 100%;
+        display: none;
+        margin: 0;
+        text-align: center;
+    }
+
+    input:checked + figure {
+        display: block;
+    }
+
+    label {
+        display: block;
+        cursor: pointer;
+    }
 
     img {
-        display: none;
+        display: block;
         max-width: 100%;
+        margin: 0 auto;
+        border: 1px solid $c-screen-border;
+        border-radius: 4px;
+    }
 
-        &.visible {
-            display: block;
+    figcaption {
+        margin: 1.25em 0;
+    }
+
+    input {
+        order: 2;
+        appearance: none;
+        -webkit-appearance: none;
+        width: 8px;
+        height: 8px;
+        margin: 0 8px;
+        border-radius: 50%;
+        background: $c-dot;
+        cursor: pointer;
+
+        &:checked {
+            background: $c-text;
         }
     }
 }
@@ -405,30 +487,6 @@ iframe {
     border: none;
     border-radius: 4px;
     aspect-ratio: 16 / 9;
-}
-
-#carousel {
-    text-align: center;
-    margin: 1.25em auto 1em;
-}
-
-#dots {
-    text-align: center;
-    line-height: 1;
-}
-
-.dot {
-    display: inline-block;
-    width: 0.625em;
-    height: 0.625em;
-    background: $c-dot;
-    border-radius: 50%;
-    margin: 0 0.25em;
-    cursor: pointer;
-
-    &.active {
-        background: $c-text;
-    }
 }
 
 /*  FOOTER  */

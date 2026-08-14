@@ -9,7 +9,13 @@ _load_lock = threading.Lock()
 
 
 def load_all_configs():
-    new_configs = {}
+    new_configs = {
+        "screenshots": {
+            "slides": str(
+                sum(1 for f in listdir("static/img/screenshots") if f.endswith(".png"))
+            )
+        }
+    }
 
     configs_dir = "configs"
     if not path.isdir(configs_dir):

@@ -1,11 +1,9 @@
 <!doctype html>
-<html lang="{{ lang }}" onmouseup="dropdown_hide()">
+<html lang="{{ lang }}">
 
 {% include 'tmpl/_header.htm' %}
 
-<body onkeydown="checkkey(event)">
-
-    {% include 'tmpl/_lang-dropdown.htm' %}
+<body>
 
     {% include 'tmpl/_menu.htm' %}
 
@@ -76,13 +74,14 @@
             </tr>
         </table>
 
+        {% if not config.NOCSS %}<input type="checkbox" id="help-toggle">{% endif %}
+
         <table>
             <tr class="tr-margin-top">
                 <td class="td-description td-info" colspan="2">
-                    <div role="button" class="help-button"
-                         onclick="alert('{{ _('downloads:download_help') | replace("'", "\\'") }}');">
+                    <label for="help-toggle" class="help-button">
                         <img src="{{ url_for('static', filename='img/icons/i_info.png') }}" alt="Info">&nbsp;<u>{{ _('downloads:download_choice') }}</u>
-                    </div>
+                    </label>
                 </td>
                 <td class="td-languages">
                     <a href="//archive.kolibrios.org/{{ g.locale | e }}/">
@@ -95,6 +94,14 @@
             </tr>
         </table>
 
+        <div id="download-help">
+            <div>
+                {% for p in _('downloads:download_help').split('\\n') if p.strip() %}
+                <p>{{ p }}</p>
+                {% endfor %}
+            </div>
+        </div>
+
         <p>
             {{ _(
                 'downloads:download_description',
@@ -105,29 +112,35 @@
             ) | safe }}
         </p>
 
-        <p class="p-warn">
-            <img src="{{ url_for('static', filename='img/icons/i_warn.png') }}" alt="Warn">&nbsp;{{ _(
-                'downloads:download_warn',
-                kolibrios="<b>{0}</b>".format(_('title:index'))
-            ) | safe }}
-        </p>
+        {% if not config.NOCSS %}<input type="checkbox" id="warn-toggle">{% endif %}
+        <label for="warn-toggle" class="warn-title">
+            <img src="{{ url_for('static', filename='img/icons/i_warn.png') }}" alt="Warn">&nbsp;<u>{{ _('downloads:warn_title') }}</u>
+        </label>
+
+        <div id="download-warn">
+            <div>
+                <p>{{ _(
+                    'downloads:download_warn',
+                    kolibrios="<b>{0}</b>".format(_('title:index'))
+                ) | safe }}</p>
+            </div>
+        </div>
 
         <h1>{{ _('screenshots:header') }}</h1>
 
-        <div id="screen" onclick="next()">
-            <div id="show">
-            {% for i in range(1, 7) %}
-                <img
-                    id="slide{{ i }}"
-                    src="{{ url_for('static', filename='img/screenshots/%d.png' % i ) }}"
-                    {% if i == 1 %}class="visible"{% endif %}
-                    alt="{{ _('screenshots:%d' % i) }}"
-                >
+        <div id="screen">
+            {% set slides = _('screenshots:slides') | int %}
+            {% for i in range(1, slides + 1) %}
+            {% if not config.NOCSS %}<input type="radio" name="shot" id="slide{{ i }}" aria-label="{{ i }}"{% if i == 1 %} checked{% endif %}>{% endif %}
+            <figure>
+                <label for="slide{{ i % slides + 1 }}">
+                    <img src="{{ url_for('static', filename='img/screenshots/%d.png' % i ) }}"
+                        alt="{{ _('screenshots:%d' % i) }}">
+                </label>
+                <figcaption>{{ _('screenshots:%d' % i) }}</figcaption>
+            </figure>
             {% endfor %}
-            </div>
         </div>
-        <div id="carousel"></div>
-        <div id="dots"></div>
     </div>
 
     {% include 'tmpl/_footer.htm' %}

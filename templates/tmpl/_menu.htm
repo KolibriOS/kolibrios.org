@@ -1,6 +1,6 @@
 <nav id="menu">
     <a href="{{ url_for('index', lang=g.locale) }}"{% if request.endpoint == 'index' %} class="a-sel"{% endif %}>
-        {% if current == 'index' %}
+        {% if request.endpoint == 'index' %}
             <font bg="lightblue">{{ _('menu:kolibrios') }}</font>
         {% else %}
             {{ _('menu:kolibrios') }}
@@ -8,7 +8,7 @@
     </a>
 
     <a href="{{ url_for('download', lang=g.locale) }}"{% if request.endpoint == 'download' %} class="a-sel"{% endif %}>
-        {% if current == 'download' %}
+        {% if request.endpoint == 'download' %}
             <font bg="lightblue">{{ _('menu:download') }}</font>
         {% else %}
             {{ _('menu:download') }}
@@ -21,7 +21,8 @@
 
     <a href="//git.kolibrios.org">Git</a>
 
-    <button onclick="dropdown_show(this)" id="lang-butt">
+    <span id="lang-switch" tabindex="0">
         <img src="{{ url_for('static', filename='img/flags/%s.png' % g.locale) }}" alt="{{ g.locale }}">
-    </button>
+        {% include 'tmpl/_lang-dropdown.htm' %}
+    </span>
 </nav>

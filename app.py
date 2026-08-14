@@ -1,5 +1,4 @@
 import os
-import re
 import datetime
 
 import click
@@ -17,20 +16,11 @@ app = Flask(__name__)
 
 locales.ensure_loaded()
 
-# CSS Compilation and minification
+# CSS compilation
 if app.debug:
     css = compile_sass(filename="static/style.scss", output_style="compressed")
     with open("static/style.css", "w", encoding="utf-8") as f:
         f.write(css)
-
-# JS minification
-with open("static/script.js", encoding="utf-8") as f:
-    js = f.read()
-js = re.sub(r"/\*.*?\*/", "", js, flags=re.S)
-js = re.sub(r"//.*", "", js)
-js = re.sub(r"\s+", " ", js).strip()
-with open("static/script.min.js", "w", encoding="utf-8") as f:
-    f.write(js)
 
 
 @app.before_request
@@ -155,12 +145,10 @@ def sitemap_xml():
 
 @app.cli.command("preview")
 @click.option("--nocss", is_flag=True, help="Render pages without CSS")
-@click.option("--nojs", is_flag=True, help="Render pages without JS")
 @click.pass_context
-def preview(ctx, nocss, nojs):
-    """Run the dev server without CSS/JS to preview the KolibriOS WebView look."""
+def preview(ctx, nocss):
+    """Run the dev server without CSS to preview the KolibriOS WebView look."""
     app.config["NOCSS"] = nocss
-    app.config["NOJS"] = nojs
     # Delegate to the built-in `flask run` instead of app.run() (which the
     # Flask CLI ignores). FLASK_DEBUG enables the reloader/debugger so the
     # command behaves like `flask run --debug`.
