@@ -34,7 +34,8 @@
             {% for ext, alt in (
                 ('img', 'floppy'),
                 ('iso', 'cd'),
-                ('raw', 'uefi')
+                ('raw', 'uefi'),
+                ('zip', 'distr')
             ) %}
             <tr class="tr-margin-bot">
                 <td class="td-image" width="40">
@@ -42,9 +43,6 @@
                 </td>
                 <td class="td-description">
                     {{ _('downloads:%s-descr' % ext) }}
-                    {% if ext == 'raw' %}
-                        <span class="beta">BETA</span>
-                    {% endif %}
                 </td>
                 <td class="td-languages">
                     {% for l, lang in (
@@ -96,8 +94,11 @@
 
         <div id="download-help">
             <div>
-                {% for p in _('downloads:download_help').split('\\n') if p.strip() %}
-                <p>{{ p }}</p>
+                {% for p in _(
+                    'downloads:download_help',
+                    kolibrios="<b>{0}</b>".format(_('title:index'))
+                ).split('\\n') if p.strip() %}
+                <p>{{ p | safe }}</p>
                 {% endfor %}
             </div>
         </div>

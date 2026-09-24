@@ -78,6 +78,7 @@ body {
 
 #lang-switch {
     position: relative;
+    display: inline-block;   // an inline span splits across a wrapped menu
     cursor: pointer;
 }
 
@@ -86,10 +87,10 @@ body {
 #lang-dropdown {
     position: absolute;
     top: 48px;             // matches the old JS: button top + 48px
-    left: 50%;
-    transform: translateX(-50%);   // centre the panel under the flag
+    right: -8px;           // centring it overflowed the viewport
     z-index: 9100;
     width: max-content;      // anchor is a tiny inline span, else it collapses and wraps
+    max-width: calc(100vw - 1em);
     text-align: left;        // reset the centering inherited from #menu
     opacity: 0;
     visibility: hidden;
@@ -109,8 +110,7 @@ body {
         border-right: 10px solid transparent;
         border-top: 0;
         top: -10px;
-        left: 50%;
-        margin-left: -10px;
+        right: 6px;          // centres the arrow on the flag
     }
 
     & > div {
@@ -336,15 +336,6 @@ td {
     &-description {
         text-align: left;
         width: 40%;
-
-        .beta {
-            border: 1px solid $c-gray;
-            color: $c-gray;
-            font-size: 0.75em;
-            font-weight: bold;
-            border-radius: 0.25em;
-            padding: 0.25em;
-        }
     }
 
     &-languages {

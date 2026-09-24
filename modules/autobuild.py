@@ -9,7 +9,7 @@ from urllib.request import Request, urlopen
 CI_URL = "http://builds.kolibrios.org/ci/"
 REFRESH_SEC = 300  # refetch each 5 minutes
 DOWNLOAD_LANGS = ("en_US", "ru_RU", "es_ES")
-DOWNLOAD_EXTS = ("img", "iso", "raw")
+DOWNLOAD_EXTS = ("img", "iso", "raw", "zip")
 
 # A build dir under /ci/: 0.7.7.0-9083-g3dd8e618a
 BUILD_RE = re.compile(
