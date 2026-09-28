@@ -17,12 +17,12 @@
 
             <tr class="tr-margin-bot tr-header">
                 <td class="td-image" width="40">
-                    <img src="{{ url_for('static', filename='img/icons/i_kolibrios.png') }}" alt="kolibrios">
+                    <img src="{{ url_for('static', filename='img/icons/i_kolibrios.png') }}" alt="kolibrios" width="32" height="32">
                 </td>
                 <td class="td-description">
                     {{ _('downloads:version') }} <b>{{ autobuild_vers }}</b>
                 </td>
-                <td class="td-languages">
+                <td class="right">
                     {{ _('downloads:date') }} <b>{{ autobuild_date }}</b>
                 </td>
             </tr>
@@ -31,6 +31,11 @@
                 <td colspan="3"><hr /></td>
             </tr>
 
+            {% set dl_langs = (
+                ('en_US', 'English'),
+                ('ru_RU', 'Русский'),
+                ('es_ES', 'Español')
+            ) %}
             {% for ext, alt in (
                 ('img', 'floppy'),
                 ('iso', 'cd'),
@@ -39,27 +44,23 @@
             ) %}
             <tr class="tr-margin-bot">
                 <td class="td-image" width="40">
-                    <img src="{{ url_for('static', filename='img/icons/i_%s.png' % alt) }}" alt="{{ alt }}">
+                    <img src="{{ url_for('static', filename='img/icons/i_%s.png' % alt) }}" alt="{{ alt }}" width="32" height="32">
                 </td>
                 <td class="td-description">
                     {{ _('downloads:%s-descr' % ext) }}
                 </td>
-                <td class="td-languages">
-                    {% for l, lang in (
-                        ('en_US', 'English'),
-                        ('ru_RU', 'Русский'),
-                        ('es_ES', 'Español')
-                    ) %}
+                <td class="right">
+                    {% for l, lang in dl_langs %}
                     <a href="//builds.kolibrios.org/{{ autobuild_files[l][ext] }}"
                         title="{{ autobuild_vers }}, {{ autobuild_sizes[l][ext] }}"
                         class="button">
                         {{ lang }}
                         {% if l == 'en_US' %}
-                            <img src="{{ url_for('static', filename='img/flags/en.png') }}" alt="{{ lang }}">
+                            <img src="{{ url_for('static', filename='img/flags/en.png') }}" alt="{{ lang }}" width="16" height="11">
                         {% elif l == 'ru_RU' %}
-                            <img src="{{ url_for('static', filename='img/flags/ru.png') }}" alt="{{ lang }}">
+                            <img src="{{ url_for('static', filename='img/flags/ru.png') }}" alt="{{ lang }}" width="16" height="11">
                         {% elif l == 'es_ES' %}
-                            <img src="{{ url_for('static', filename='img/flags/es.png') }}" alt="{{ lang }}">
+                            <img src="{{ url_for('static', filename='img/flags/es.png') }}" alt="{{ lang }}" width="16" height="11">
                         {% endif %}
                     </a>
                     {% endfor %}
@@ -72,16 +73,26 @@
             </tr>
         </table>
 
-        {% if not config.NOCSS %}<input type="checkbox" id="help-toggle">{% endif %}
+        {% set has_sums = autobuild_sums_files.values() | select | list %}
+        {% if not config.NOCSS %}
+        <input type="checkbox" id="help-toggle" autocomplete="off">
+        {% if has_sums %}<input type="checkbox" id="sums-toggle" autocomplete="off">{% endif %}
+        <input type="checkbox" id="warn-toggle" autocomplete="off">
+        {% endif %}
 
         <table>
             <tr class="tr-margin-top">
-                <td class="td-description td-info" colspan="2">
+                <td>
                     <label for="help-toggle" class="help-button">
-                        <img src="{{ url_for('static', filename='img/icons/i_info.png') }}" alt="Info">&nbsp;<u>{{ _('downloads:download_choice') }}</u>
+                        <img src="{{ url_for('static', filename='img/icons/i_info.png') }}" alt="Info" width="16" height="16">&nbsp;<u>{{ _('downloads:download_choice') }}</u>
                     </label>
+                    {% if has_sums %}
+                    <label for="sums-toggle" class="sums-button">
+                        <img src="{{ url_for('static', filename='img/icons/i_info_gray.png') }}" alt="Info" width="16" height="16">&nbsp;<u>{{ _('downloads:checksums') }}</u>
+                    </label>
+                    {% endif %}
                 </td>
-                <td class="td-languages">
+                <td class="right">
                     <a href="//archive.kolibrios.org/{{ g.locale | e }}/">
                         {{ _('downloads:prev_rev') }}
                     </a>
@@ -103,6 +114,28 @@
             </div>
         </div>
 
+        {% if has_sums %}
+        <div id="download-sums">
+            <div>
+                <table>
+                    {% for l, lang in dl_langs if autobuild_sums_files[l] %}
+                    {% set last_lang = loop.last %}
+                    <tr class="tr-margin-bot">
+                        <td><b>{{ lang }}</b></td>
+                        <td class="right"><a href="//builds.kolibrios.org/{{ autobuild_sums_files[l] }}">sha256sums.txt</a></td>
+                    </tr>
+                    {% for ext in ('img', 'iso', 'raw', 'zip') %}
+                    <tr{% if not (last_lang and loop.last) %} class="tr-margin-bot"{% endif %}>
+                        <td>.{{ ext }}</td>
+                        <td class="right"><code>{{ autobuild_sums[l][ext] or '?' }}</code></td>
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        {% endif %}
+
         <p>
             {{ _(
                 'downloads:download_description',
@@ -113,12 +146,10 @@
             ) | safe }}
         </p>
 
-        {% if not config.NOCSS %}<input type="checkbox" id="warn-toggle">{% endif %}
-        <label for="warn-toggle" class="warn-title">
-            <img src="{{ url_for('static', filename='img/icons/i_warn.png') }}" alt="Warn">&nbsp;<u>{{ _('downloads:warn_title') }}</u>
-        </label>
-
         <div id="download-warn">
+            <label for="warn-toggle" class="warn-title">
+                <img src="{{ url_for('static', filename='img/icons/i_warn.png') }}" alt="Warn" width="16" height="16">&nbsp;<u>{{ _('downloads:warn_title') }}</u>
+            </label>
             <div>
                 <p>{{ _(
                     'downloads:download_warn',
@@ -136,7 +167,8 @@
             <figure>
                 <label for="slide{{ i % slides + 1 }}">
                     <img src="{{ url_for('static', filename='img/screenshots/%d.png' % i ) }}"
-                        alt="{{ _('screenshots:%d' % i) }}">
+                        alt="{{ _('screenshots:%d' % i) }}"
+                        width="1280" height="800">
                 </label>
                 <figcaption>{{ _('screenshots:%d' % i) }}</figcaption>
             </figure>

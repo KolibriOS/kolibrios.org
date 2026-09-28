@@ -21,8 +21,12 @@
 
     <a href="//git.kolibrios.org">Git</a>
 
-    <span id="lang-switch" tabindex="0">
-        <img src="{{ url_for('static', filename='img/flags/%s.png' % g.locale) }}" alt="{{ g.locale }}">
+    <span id="lang-switch">
+        {% if not config.NOCSS %}<input type="checkbox" id="lang-toggle" autocomplete="off">{% endif %}
+        <label for="lang-toggle">
+            <img src="{{ url_for('static', filename='img/flags/%s.png' % g.locale) }}" alt="{{ g.locale }}" width="16" height="11">
+        </label>
+        {% if not config.NOCSS %}<label for="lang-toggle" id="lang-close"></label>{% endif %}
         {% include 'tmpl/_lang-dropdown.htm' %}
     </span>
 </nav>

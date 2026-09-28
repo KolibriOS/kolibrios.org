@@ -43,6 +43,11 @@ body {
     background: $c-body-bg $c-body-bg-img repeat fixed 0 0;
 }
 
+/*  <font bg> marks the active item for CSS-less renderers; .a-sel does it here.  */
+font {
+    background-color: transparent;
+}
+
 #menu {
     background: $c-menu-bg;
     color: $c-white;
@@ -78,25 +83,53 @@ body {
 
 #lang-switch {
     position: relative;
-    display: inline-block;   // an inline span splits across a wrapped menu
+}
+
+#lang-toggle + label {
+    position: relative;
+    z-index: 9100;
     cursor: pointer;
 }
 
-/*  Focus opens it (span is tabindex-focusable, so a click focuses in every
-    browser); clicking away blurs and closes it.  */
+#lang-toggle,
+#help-toggle,
+#sums-toggle,
+#warn-toggle {
+    position: absolute;
+    clip: rect(0 0 0 0);
+}
+
+#lang-toggle:focus-visible + label,
+#help-toggle:focus-visible ~ table .help-button,
+#sums-toggle:focus-visible ~ table .sums-button,
+#warn-toggle:focus-visible ~ #download-warn .warn-title {
+    outline: 1px dotted;
+}
+
+#lang-close {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9050;
+
+    #lang-toggle:checked ~ & {
+        display: block;
+    }
+}
+
 #lang-dropdown {
     position: absolute;
-    top: 48px;             // matches the old JS: button top + 48px
+    top: 48px;
     right: -8px;           // centring it overflowed the viewport
     z-index: 9100;
-    width: max-content;      // anchor is a tiny inline span, else it collapses and wraps
+    width: max-content;    // the anchor is a tiny span, else this collapses and wraps
     max-width: calc(100vw - 1em);
-    text-align: left;        // reset the centering inherited from #menu
+    text-align: left;      // #menu centres its text
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s ease;
 
-    #lang-switch:focus-within & {
+    #lang-toggle:checked ~ & {
         opacity: 1;
         visibility: visible;
     }
@@ -185,16 +218,17 @@ body {
 
 #banner {
     box-sizing: border-box;
+    border: 1px solid $c-menu-shadow;
     border-radius: 4px;
-    box-shadow: inset 0 0 0 1px $c-menu-shadow;
-    transition: box-shadow 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
     display: block;
     margin: 0px 0px 1em;
-    padding: 1.25em;
+    padding: calc(1.25em - 1px);
     text-decoration: none;
 
     &:hover {
-        box-shadow: inset 0 0 0 4px $c-banner-ink;
+        border-color: $c-banner-ink;
+        box-shadow: inset 0 0 0 3px $c-banner-ink;
     }
 
     table {
@@ -212,7 +246,8 @@ body {
     }
 
     img {
-        height: 7em;
+        width: 112px;
+        height: 112px;
     }
 
     h1 {
@@ -270,7 +305,6 @@ p {
         }
 
         img {
-            height: 1em;
             margin-bottom: -0.15em;
         }
     }
@@ -285,16 +319,16 @@ p {
 table {
     width: 100%;
     border-spacing: 0;
+}
 
-    a {
-        padding-bottom: 1px;
-        border-bottom: 1px solid;
-        text-decoration: none;
-        color: $c-link;
+table a {
+    padding-bottom: 1px;
+    border-bottom: 1px solid;
+    text-decoration: none;
+    color: $c-link;
 
-        &:hover {
-            color: $c-link-hover;
-        }
+    &:hover {
+        color: $c-link-hover;
     }
 }
 
@@ -337,19 +371,19 @@ td {
         text-align: left;
         width: 40%;
     }
+}
 
-    &-languages {
-        text-align: right;
-        padding-left: 2em;
+.right {
+    text-align: right;
+    padding-left: 2em;
 
-        a {
-            display: inline-block;
-            white-space: nowrap;
-        }
+    a {
+        display: inline-block;
+        white-space: nowrap;
+    }
 
-        a + a {
-            margin-left: 1em;
-        }
+    a + a {
+        margin-left: 1em;
     }
 }
 
@@ -357,9 +391,8 @@ hr {
     margin: 0;
 }
 
-/*  Info and warning: a clickable icon-heading toggles a hidden checkbox; the
-    0fr -> 1fr grid row animates the panel open. Same mechanism, two colours.  */
 .help-button,
+.sums-button,
 .warn-title {
     cursor: pointer;
     display: inline-block;
@@ -370,28 +403,28 @@ hr {
     }
 }
 
-.help-button { color: $c-primary; }
-.warn-title  { color: $c-banner; }
+.help-button {
+    margin-right: 1em;
+}
 
-#help-toggle,
-#warn-toggle {
+#download-help,
+#download-sums,
+#download-warn > div {
     display: none;
 }
 
 #help-toggle:checked ~ #download-help,
-#warn-toggle:checked ~ #download-warn {
-    grid-template-rows: 1fr;
-    margin-top: 1em;   // breathing room only while open; closed panel adds no gap
+#sums-toggle:checked ~ #download-sums,
+#warn-toggle:checked ~ #download-warn > div {
+    display: block;
 }
 
 #download-help,
+#download-sums,
 #download-warn {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.35s ease, margin-top 0.35s ease;
-
     & > div {
-        overflow: hidden;
+        border-left: 1px solid;
+        margin-top: 1em;
         padding-left: calc(1.25em - 1px);
     }
 
@@ -401,18 +434,28 @@ hr {
 }
 
 #download-help {
-    border-left: 1px solid $c-primary;
+    & > div { border-left-color: $c-primary; }
 
-    & > div {          // help has several paragraphs; space them
-        display: grid;
-        gap: 1em;
-    }
+    p + p { margin-top: 1em; }
+}
+
+#download-sums {
+    & > div { border-left-color: $c-gray; }
+
+    td:first-child { width: 3em; }
+
+    code { word-break: break-all; }
 }
 
 #download-warn {
-    border-left: 1px solid $c-banner;
     margin-bottom: 1em;   // the next heading has no top margin of its own
+
+    & > div { border-left-color: $c-banner; }
 }
+
+.help-button { color: $c-primary; }
+.sums-button { color: $c-gray; }
+.warn-title  { color: $c-banner; }
 
 acronym {
     border-bottom: 1px dashed $c-dot;
@@ -420,7 +463,7 @@ acronym {
     cursor: help;
 }
 
-/*  SCREENS.CSS  */
+/*  SCREENSHOTS  */
 
 #screen {
     display: flex;
@@ -447,6 +490,7 @@ acronym {
     img {
         display: block;
         max-width: 100%;
+        height: auto;
         margin: 0 auto;
         border: 1px solid $c-screen-border;
         border-radius: 4px;
@@ -493,7 +537,8 @@ iframe {
 
     img {
         margin-bottom: 0.5em;
-        height: 7em;
+        width: 100px;
+        height: 100px;
     }
 
     p {
@@ -549,21 +594,29 @@ iframe {
         }
     }
 
-    .td {
-        &-description {
-            width: auto;
-        }
+    .td-description {
+        width: auto;
+    }
 
-        &-languages a {
-            display: block;
-            width: max-content;
-            margin-left: auto;
-          }
+    .right a {
+        display: block;
+        width: max-content;
+        margin-left: auto;
+    }
 
-        &-languages a + a {
-            margin-top: 0.5em;
-            margin-left: auto;
-        }
+    .right a + a {
+        margin-top: 0.5em;
+        margin-left: auto;
+    }
+
+    .help-button,
+    .sums-button {
+        display: block;
+        width: max-content;
+    }
+
+    .sums-button {
+        margin-top: 0.5em;
     }
 
     #footer {

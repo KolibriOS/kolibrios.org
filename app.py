@@ -42,6 +42,8 @@ def _inject_autobuild_vers():
         "autobuild_vers": autobuild.autobuild_vers,
         "autobuild_sizes": autobuild.autobuild_sizes,
         "autobuild_files": autobuild.autobuild_files,
+        "autobuild_sums": autobuild.autobuild_sums,
+        "autobuild_sums_files": autobuild.autobuild_sums_files,
     }
 
 

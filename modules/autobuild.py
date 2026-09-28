@@ -24,12 +24,18 @@ FILE_RE = re.compile(
     r'(?:(?!</tr>).)*?datetime="(?P<ts>[^"]+)"',
     re.S | re.I,
 )
+# A line of the sha256sum output CI puts next to the files: "<hex>  <name>"
+SUMS_FILE = "sha256sums.txt"
+SUM_RE = re.compile(r"^(?P<sum>[0-9a-f]{64}) [ *](?P<name>\S+)", re.M | re.I)
 
 autobuild_date = date.today()
 autobuild_vers = "0.0.0.0-0-g0000000"
 autobuild_sizes = {l: {e: "?" for e in DOWNLOAD_EXTS} for l in DOWNLOAD_LANGS}
 # Falls back to the /ci/ index until a versioned path is parsed.
 autobuild_files = {l: {e: "ci/" for e in DOWNLOAD_EXTS} for l in DOWNLOAD_LANGS}
+# SHA-256 per file, "" when unknown; the path of the lang's sums file, "" when none
+autobuild_sums = {l: {e: "" for e in DOWNLOAD_EXTS} for l in DOWNLOAD_LANGS}
+autobuild_sums_files = {l: "" for l in DOWNLOAD_LANGS}
 
 _started = False
 _updater_lock = threading.Lock()
@@ -66,6 +72,16 @@ def _refresh_autobuild_once():
             autobuild_sizes[lang][ext] = f"{int(m['size']) / 1048576:.1f} MB"
             autobuild_files[lang][ext] = f"ci/{dirname}/{lang}/{m['name']}"
             dates.append(m["ts"][:10])  # ISO "YYYY-MM-DD" prefix, sorts chronologically
+
+        try:
+            txt = _fetch(f"{CI_URL}{dirname}/{lang}/{SUMS_FILE}")
+            sums = {m["name"]: m["sum"].lower() for m in SUM_RE.finditer(txt)}
+        except Exception:
+            sums = {}
+        for ext in DOWNLOAD_EXTS:
+            name = autobuild_files[lang][ext].rsplit("/", 1)[-1]
+            autobuild_sums[lang][ext] = sums.get(name, "")
+        autobuild_sums_files[lang] = f"ci/{dirname}/{lang}/{SUMS_FILE}" if sums else ""
 
     autobuild_vers = dirname
     if dates:

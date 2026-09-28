@@ -2,7 +2,7 @@
     <table>
         <tr>
             <td valign="top" width="128">
-                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="{{ _('title:index')}}">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="{{ _('title:index')}}" width="128" height="128">
             </td>
             <td valign="top">
                 <h1>{{ _('banner:header') }}</h1>
@@ -10,7 +10,7 @@
                 <a href="{{ _('banner:url') }}">{{ _('banner:url') }}</a>
             </td>
             <td valign="top" width="128">
-                <img src="{{ url_for('static', filename='img/banners/' + _('banner:img')) }}" alt="{{ _('banner:alt') }}">
+                <img src="{{ url_for('static', filename='img/banners/' + _('banner:img')) }}" alt="{{ _('banner:alt') }}" width="128" height="128">
             </td>
         </tr>
     </table>

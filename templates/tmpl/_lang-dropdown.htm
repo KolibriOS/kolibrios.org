@@ -5,7 +5,7 @@
         {# <font bg> highlights the current language in the CSS-less KolibriOS WebView. #}
         {% if selected %}<font bg=#FF9800>{% endif %}
         <a{% if selected %} class="a-sel"{% endif %} href="{{ url_for(request.url_rule.endpoint, lang=lang_code) }}">
-            <img src="{{ url_for('static', filename='img/flags/%s.png' % lang_code) }}" alt="{{ lang_code }}">
+            <img src="{{ url_for('static', filename='img/flags/%s.png' % lang_code) }}" alt="{{ lang_code }}" width="16" height="11">
             {{ g.locales_name[lang_code] }}
         </a>
         {% if selected %}</font>{% endif %}
