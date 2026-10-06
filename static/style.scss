@@ -407,6 +407,12 @@ hr {
     margin-right: 1em;
 }
 
+.try-online {
+    background: linear-gradient(90deg, #4df124, #f3a509, #fb5269, #248cef);
+    background-clip: text;
+    color: transparent;
+}
+
 #download-help,
 #download-sums,
 #download-warn > div {
