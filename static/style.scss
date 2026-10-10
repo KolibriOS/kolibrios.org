@@ -35,6 +35,26 @@ $c-hover-top-bd:   #484848;
 $c-dot:            #CCCCCC;
 $c-screen-border:  #182028;
 
+$c-body-bg-img-dark:url(img/bg-dark.png);
+$c-body-bg-dark:   #2E2E2E;
+$c-text-dark:      #CCCCCC;
+
+$c-shadow-soft-dark:#00000055;
+
+$c-article-bg-dark:#383838;
+$c-article-bd-dark:#505050;
+
+$c-banner-bd-dark: #FFFFFF33;
+
+$c-link-dark:      #5AA9F8;
+$c-link-hover-dark:#8CC4FF;
+$c-text-link-dark: #E0E0E0;
+
+$c-dot-dark:       #555555;
+
+$c-hr-top-dark:    #424242;
+$c-hr-bot-dark:    #7A7A7A;
+
 /*  STYLES  */
 
 body {
@@ -621,5 +641,71 @@ iframe {
 
     #footer {
         margin: 1em auto;
+    }
+}
+
+/*  DARK THEME  */
+
+@media (prefers-color-scheme: dark) {
+    html {
+        color-scheme: dark;
+    }
+
+    body {
+        background-color: $c-body-bg-dark;
+        background-image: $c-body-bg-img-dark;
+    }
+
+    #article {
+        background: $c-article-bg-dark;
+        border-color: $c-article-bd-dark;
+        box-shadow: $c-shadow-soft-dark 0 4px 4px -2px;
+        color: $c-text-dark;
+    }
+
+    #banner {
+        border-color: $c-banner-bd-dark;
+        outline-color: $c-body-bg-dark;
+    }
+
+    a {
+        color: $c-text-link-dark;
+
+        &:hover {
+            color: $c-white;
+        }
+    }
+
+    table a {
+        color: $c-link-dark;
+
+        &:hover {
+            color: $c-link-hover-dark;
+        }
+    }
+
+    #lang-dropdown > div {
+        border-color: $c-article-bd-dark;
+    }
+
+    .p-socials img[src$="i_matrix.png"] {
+        filter: invert(1);
+    }
+
+    hr {
+        border-style: solid;
+        border-color: $c-hr-top-dark $c-hr-bot-dark $c-hr-bot-dark $c-hr-top-dark;
+    }
+
+    #screen input {
+        background: $c-dot-dark;
+
+        &:checked {
+            background: $c-text-dark;
+        }
+    }
+
+    #footer {
+        text-shadow: $c-black 1px 1px 0px;
     }
 }
