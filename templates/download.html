@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ lang }}">
+<html lang="{{ g.locale }}">
 
 {% include 'tmpl/_header.htm' %}
 
@@ -7,7 +7,7 @@
 
     {% include 'tmpl/_menu.htm' %}
 
-    <div id="article">
+    <main id="article">
         <h1>{{ _('downloads:header') }}</h1>
 
         <table>
@@ -55,13 +55,7 @@
                         title="{{ autobuild_vers }}, {{ autobuild_sizes[l][ext] }}"
                         class="button">
                         {{ lang }}
-                        {% if l == 'en_US' %}
-                            <img src="{{ url_for('static', filename='img/flags/en.png') }}" alt="{{ lang }}" width="16" height="11">
-                        {% elif l == 'ru_RU' %}
-                            <img src="{{ url_for('static', filename='img/flags/ru.png') }}" alt="{{ lang }}" width="16" height="11">
-                        {% elif l == 'es_ES' %}
-                            <img src="{{ url_for('static', filename='img/flags/es.png') }}" alt="{{ lang }}" width="16" height="11">
-                        {% endif %}
+                        <img src="{{ url_for('static', filename='img/flags/%s.png' % l[:2]) }}" alt="" width="16" height="11">
                     </a>
                     {% endfor %}
                 </td>
@@ -174,7 +168,7 @@
             </figure>
             {% endfor %}
         </div>
-    </div>
+    </main>
 
     {% include 'tmpl/_footer.htm' %}
 </body>
