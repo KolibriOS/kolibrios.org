@@ -52,8 +52,7 @@
                 <td class="right">
                     {% for l, lang in dl_langs %}
                     <a href="//builds.kolibrios.org/{{ autobuild_files[l][ext] }}"
-                        title="{{ autobuild_vers }}, {{ autobuild_sizes[l][ext] }}"
-                        class="button">
+                        title="{{ autobuild_vers }}, {{ autobuild_sizes[l][ext] }}">
                         {{ lang }}
                         <img src="{{ url_for('static', filename='img/flags/%s.png' % l[:2]) }}" alt="" width="16" height="11">
                     </a>
