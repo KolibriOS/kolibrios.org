@@ -99,6 +99,7 @@ font {
 
 #lang-switch {
     position: relative;
+    display: inline-block;   // one box: the flag never wraps away from its checkbox and dropdown
 }
 
 #lang-toggle + label {
@@ -135,7 +136,7 @@ font {
 
 #lang-dropdown {
     position: absolute;
-    top: 48px;
+    top: 55px;
     right: -8px;           // centring it overflowed the viewport
     z-index: 9100;
     width: max-content;    // the anchor is a tiny span, else this collapses and wraps
@@ -583,6 +584,11 @@ iframe {
             b {
                 display: block;
             }
+        }
+
+        // the info buttons and the release links do not fit side by side
+        &-margin-top > td {
+            display: block;
         }
     }
 
