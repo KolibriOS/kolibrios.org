@@ -10,6 +10,7 @@ $c-black:          #000000;
 $c-menu-bg:        #161617CC;
 $c-menu-hover:     #FFE36A;
 $c-menu-shadow:    #00000040;
+$c-try-online:     linear-gradient(90deg, #4DF124, #F3A509, #FB5269, #248CEF);
 
 $c-shadow-soft:    #1C1A281F;
 
@@ -76,6 +77,13 @@ font {
 
     img {
         filter: drop-shadow(2px 2px 2px $c-menu-shadow);
+    }
+
+    .try-online {
+        background: $c-try-online;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
     }
 }
 
@@ -405,12 +413,6 @@ hr {
 
 .help-button {
     margin-right: 1em;
-}
-
-.try-online {
-    background: linear-gradient(90deg, #4df124, #f3a509, #fb5269, #248cef);
-    background-clip: text;
-    color: transparent;
 }
 
 #download-help,
