@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ lang }}">
+<html lang="{{ g.locale }}">
 
 {% include 'tmpl/_header.htm' %}
 
@@ -7,13 +7,13 @@
 
     {% include 'tmpl/_menu.htm' %}
 
-    <div id="article">
+    <main id="article">
         {% include 'tmpl/_banner.htm' %}
         
         {% include 'tmpl/_article.htm' %}
 
         {% include 'tmpl/_socials.htm' %}
-    </div>
+    </main>
 
     {% include 'tmpl/_footer.htm' %}
 </body>

@@ -77,10 +77,6 @@ font {
     padding: 0.5em 0;
     text-align: center;
     text-shadow: 2px 2px 2px $c-menu-shadow;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9000;
 
     & > * {
         color: $c-white;
@@ -111,6 +107,7 @@ font {
 
 #lang-switch {
     position: relative;
+    display: inline-block;
 }
 
 #lang-toggle + label {
@@ -147,7 +144,7 @@ font {
 
 #lang-dropdown {
     position: absolute;
-    top: 48px;
+    top: 55px;
     right: -8px;           // centring it overflowed the viewport
     z-index: 9100;
     width: max-content;    // the anchor is a tiny span, else this collapses and wraps
@@ -175,7 +172,6 @@ font {
     }
 
     & > div {
-        display: block;
         border-radius: 4px;
         border: 1px solid $c-text;
         box-shadow: 0 0 10px $c-menu-shadow;
@@ -204,7 +200,6 @@ font {
                 color: $c-gray !important;
 
                 img {
-                    color: $c-gray !important;
                     filter: brightness(0.5);
                 }
             }
@@ -214,8 +209,6 @@ font {
                 vertical-align: middle;
                 margin-right: 10px;
                 margin-top: -3px;
-                width: 16px;
-                height: 11px;
                 filter: drop-shadow(1px 2px 2px $c-menu-shadow);
             }
 
@@ -250,7 +243,7 @@ font {
     border-radius: 4px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     display: block;
-    margin: 0px 0px 1em;
+    margin: 0 0 1em;
     padding: calc(1.25em - 1px);
     text-decoration: none;
 
@@ -285,7 +278,7 @@ font {
     }
 
     p {
-        margin: 0em;
+        margin: 0;
     }
 
     a {
@@ -301,7 +294,6 @@ font {
 
 h1 {
     font-size: 125%;
-    padding: 0;
     margin: 0 0 16px;
 }
 
@@ -320,15 +312,14 @@ p {
 .p {
     &-socials {
         text-align: center;
-        margin-bottom: 0px;
+        margin-bottom: 0;
 
         a {
-            margin: 1em 1em;
+            margin: 1em;
             text-decoration: none;
         }
 
         br {
-            margin: 0em 0em 1em;
             display: none;
         }
 
@@ -360,17 +351,7 @@ table a {
     }
 }
 
-tr {
-    vertical-align: middle;
-}
-
 .tr {
-    &-header {
-        b {
-            display: inline;
-        }
-    }
-
     &-margin {
         &-bot > td {
             padding-bottom: 1em;
@@ -485,12 +466,6 @@ hr {
 .sums-button { color: $c-gray; }
 .warn-title  { color: $c-banner; }
 
-acronym {
-    border-bottom: 1px dashed $c-dot;
-    text-decoration: none;
-    cursor: help;
-}
-
 /*  SCREENSHOTS  */
 
 #screen {
@@ -558,8 +533,6 @@ iframe {
     margin: 2em auto;
     text-align: center;
     color: $c-gray;
-    display: block;
-    width: 100%;
     text-shadow: $c-white 1px 1px 0px;
     font-size: 90%;
 
@@ -619,6 +592,10 @@ iframe {
             b {
                 display: block;
             }
+        }
+
+        &-margin-top > td {
+            display: block;
         }
     }
 
